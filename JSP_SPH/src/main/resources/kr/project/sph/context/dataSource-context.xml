@@ -24,21 +24,21 @@
 			</bean>
 		</property>
 	</bean>	 -->
-	<!-- <bean id="sqlSessionFactory"
+	 <bean id="sqlSessionFactory"
 		class="org.mybatis.spring.SqlSessionFactoryBean"
-		p:dataSource-ref="dataSourceSpied"
+		p:dataSource-ref="dataSource"
 		p:configLocation="classpath:kr/ac/sbs/mybatis/config/sqlConfig.xml"
 		p:mapperLocations="classpath:kr/ac/sbs/mybatis/mappers/*-Mapper.xml" 
-	/> -->
+	/> 
 
-	<!-- <bean id="sqlSession"
+	 <bean id="sqlSession"
 		class="org.mybatis.spring.SqlSessionTemplate"
 		c:sqlSessionFactory-ref="sqlSessionFactory" 
 	/>
 
 	<bean id="transactionManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
-		p:dataSource-ref="dataSourceSpied" 
-	/> -->
+		p:dataSource-ref="dataSource" 
+	/> 
 
 </beans>

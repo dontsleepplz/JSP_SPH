@@ -10,6 +10,8 @@
 		<typeAlias type="java.lang.String" alias="str" />
 		<typeAlias type="java.lang.Integer" alias="int" />
 		
+		<typeAlias type="kr.project.sph.dto.MenuVO" alias="menu" />
+		<typeAlias type="kr.project.sph.dto.MemberVO" alias="member" />
 	</typeAliases>
 </configuration>
 

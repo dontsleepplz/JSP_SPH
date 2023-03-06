@@ -25,7 +25,10 @@ SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일 hh:mm:ss");
   
   
 </head>
+<style>
 
+
+</style>
 <body class="hold-transition sidebar-mini">
   <div class="wrapper">
 
@@ -163,14 +166,14 @@ SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일 hh:mm:ss");
       </ul>
     </nav>
 
-    <aside class="main-sidebar sidebar-dark-primary elevation-0" style="background-color:white;" >
+    <aside class="main-sidebar sidebar-dark-primary elevation-0" style="background-color:white; border-right:1px solid #DFE1E4" >
 
-      <a href="index3.html" class="brand-link" style="background-color: rgb(180, 220, 255);">
+      <a href="index3.html" class="brand-link" style="background-color: rgb(180, 220, 255);border-bottom:none;">
         <img src="<%=request.getContextPath() %>/resources/img/SPHLogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-0" style="opacity: .8;">
         <span class="brand-text font-weight-light" style="color:black;">SPH</span>
       </a>
 
-      <div class="sidebar" style="background-color:white;">
+      <div class="sidebar" >
 
         <nav class="mt-2">
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
