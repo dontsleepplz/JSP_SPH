@@ -410,7 +410,7 @@ SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일 hh:mm:ss");
     </div>
     <!-- E:wrapper -->
 
-    <script>
+    <!-- <script>
       function getTime() {
         var d = new Date(); // 현재 날짜와 시간
         var yyyy = d.getFullYear();
@@ -425,7 +425,7 @@ SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일 hh:mm:ss");
         timeBoard.innerHTML = time; // 출력
         setTimeout(getTime, 1000); //1000밀리초(1초) 마다 반복
       }
-    </script>
+    </script> -->
 
     <script>
       (function() {
@@ -512,7 +512,7 @@ SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일 hh:mm:ss");
     <!-- Bootstrap 4 -->
     <script src="<%=request.getContextPath()%>/resources/bootstrap/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE App -->
-    <script src="<%=request.getContextPath()%>/resources/bootstrap/dist/js/adminlte.min.js"></script>
+    <script src="<%=request.getContextPath()%>/resources/bootstrap/dist/js/adminlte.js"></script>
     <!-- common.js  -->
     <script src="<%=request.getContextPath()%>/resources/js/common.min.js"></script>
 </body>
