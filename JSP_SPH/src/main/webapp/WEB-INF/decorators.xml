@@ -1,0 +1,23 @@
+<decorators defaultdir="/WEB-INF/decorator">
+	
+	<decorator name="Test" page="decorator.jsp">
+		<pattern>*.do</pattern>
+	</decorator>
+	
+	<decorator name="" page="">
+		
+	
+	</decorator>
+	
+	<!-- <decorator name="" page="open_decorator.jsp">
+		<pattern>/**/*.do</pattern>
+		<pattern>/main.do</pattern>		
+	</decorator> -->
+			
+			
+			
+	<excludes>
+		<pattern>/resources/*</pattern>
+		<pattern>login2.jsp</pattern>
+	</excludes>	
+</decorators>
