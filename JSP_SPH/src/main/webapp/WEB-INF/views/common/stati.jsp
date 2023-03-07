@@ -5,7 +5,7 @@
 <%@ page import="java.text.SimpleDateFormat"%>
 <%
 	Date nowTime = new Date();
-SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일 hh:mm:ss");
+SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월");
 %>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -25,12 +25,13 @@ SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일 hh:mm:ss");
 <!-- Theme style -->
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/bootstrap/dist/css/adminlte.min.css">
-
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
 </head>
 <style>
 </style>
-<body class="hold-transition sidebar-mini">
+<body class="hold-transition sidebar-mini" onload="getTime()">
 	<div class="wrapper">
 
 		<nav
@@ -231,12 +232,41 @@ SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일 hh:mm:ss");
 				<div class="container-fluid">
 					<div class="row mb-2">
 						<div class="col-sm-6">
-							<h1 class="m-0">Dashboard v3</h1>
+							<h1 class="m-0" id="WhatTimeIsItNow">
+								<i class="fa-regular fa-calendar-days"></i>
+							</h1>
 						</div>
 						<div class="col-sm-6">
 							<ol class="breadcrumb float-sm-right">
-								<li class="breadcrumb-item"><a href="#">Home</a></li>
-								<li class="breadcrumb-item active">Dashboard v3</li>
+								<li class="breadcrumb-item active"><div class="form-inline">
+										<div class="input-group" data-widget="sidebar-search">
+											<input class="form-control form-control-sidebar"
+												type="search" placeholder="Search" aria-label="Search">
+											<div class="input-group-append">
+												<button class="btn btn-sidebar">
+													<i class="fas fa-search fa-fw"></i>
+												</button>
+											</div>
+										</div>
+										<div class="sidebar-search-results">
+											<div class="list-group">
+												<a href="#" class="list-group-item"><div
+														class="search-title">
+														<strong class="text-light"></strong>N<strong
+															class="text-light"></strong>o<strong class="text-light"></strong>
+														<strong class="text-light"></strong>e<strong
+															class="text-light"></strong>l<strong class="text-light"></strong>e<strong
+															class="text-light"></strong>m<strong class="text-light"></strong>e<strong
+															class="text-light"></strong>n<strong class="text-light"></strong>t<strong
+															class="text-light"></strong> <strong class="text-light"></strong>f<strong
+															class="text-light"></strong>o<strong class="text-light"></strong>u<strong
+															class="text-light"></strong>n<strong class="text-light"></strong>d<strong
+															class="text-light"></strong>!<strong class="text-light"></strong>
+													</div>
+													<div class="search-path"></div></a>
+											</div>
+										</div>
+									</div></li>
 							</ol>
 						</div>
 					</div>
@@ -244,207 +274,48 @@ SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일 hh:mm:ss");
 			</div>
 
 			<div class="content">
+
 				<div class="container-fluid">
-					<div class="row">
-						<div class="col-lg-6">
-							<div class="card">
-								<div class="card-header border-0">
-									<div class="d-flex justify-content-between">
-										<h3 class="card-title">Online Store Visitors</h3>
-										<a href="javascript:void(0);">View Report</a>
-									</div>
+					<div class="col-md-4">
+					
+						<div class="card card-primary card-outline">
+							<div class="card-header">
+								<h3 class="card-title">
+									<i class="far fa-chart-bar"></i> Donut Chart
+								</h3>
+								<div class="card-tools">
+									<button type="button" class="btn btn-tool"
+										data-card-widget="collapse">
+										<i class="fas fa-minus"></i>
+									</button>
 								</div>
-								<div class="card-body">
-									<div class="d-flex">
-										<p class="d-flex flex-column">
-											<span class="text-bold text-lg">820</span> <span>Visitors
-												Over Time</span>
-										</p>
-										<p class="ml-auto d-flex flex-column text-right">
-											<span class="text-success"> <i class="fas fa-arrow-up"></i>
-												12.5%
-											</span> <span class="text-muted">Since last week</span>
-										</p>
-									</div>
-
-									<div class="position-relative mb-4">
-										<canvas id="visitors-chart" height="200"></canvas>
-									</div>
-									<div class="d-flex flex-row justify-content-end">
-										<span class="mr-2"> <i
-											class="fas fa-square text-primary"></i> This Week
-										</span> <span> <i class="fas fa-square text-gray"></i> Last
-											Week
-										</span>
-									</div>
+							</div>
+							<div class="card-body" style="border: 1px solid red;">
+								<div id="donut-chart"
+									style="height: 450px; padding: 0px; position: relative;">
+									<canvas class="flot-base" width="763" height="300"
+										style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 763.5px; height: 300px;"></canvas>
+									<canvas class="flot-overlay" width="763" height="300"
+										style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 763.5px; height: 300px;"></canvas>
+									<span class="pieLabel" id="pieLabel0"
+										style="position: absolute; top: 69.5px; left: 439.703px;"><div
+											style="font-size: 13px; text-align: center; padding: 2px; color: #fff; font-weight: 600;">
+											Series2<br>30%
+										</div></span><span class="pieLabel" id="pieLabel1"
+										style="position: absolute; top: 209.5px; left: 417.703px;"><div
+											style="font-size: 13px; text-align: center; padding: 2px; color: #fff; font-weight: 600;">
+											Series3<br>20%
+										</div></span><span class="pieLabel" id="pieLabel2"
+										style="position: absolute; top: 128.5px; left: 258.703px;"><div
+											style="font-size: 13px; text-align: center; padding: 2px; color: #fff; font-weight: 600;">
+											Series4<br>50%
+										</div></span>
 								</div>
 							</div>
 
-							<div class="card">
-								<div class="card-header border-0">
-									<h3 class="card-title">Products</h3>
-									<div class="card-tools">
-										<a href="#" class="btn btn-tool btn-sm"> <i
-											class="fas fa-download"></i>
-										</a> <a href="#" class="btn btn-tool btn-sm"> <i
-											class="fas fa-bars"></i>
-										</a>
-									</div>
-								</div>
-								<div class="card-body table-responsive p-0">
-									<table class="table table-striped table-valign-middle">
-										<thead>
-											<tr>
-												<th>Product</th>
-												<th>Price</th>
-												<th>Sales</th>
-												<th>More</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td><img src="dist/img/default-150x150.png"
-													alt="Product 1" class="img-circle img-size-32 mr-2">
-													Some Product</td>
-												<td>$13 USD</td>
-												<td><small class="text-success mr-1"> <i
-														class="fas fa-arrow-up"></i> 12%
-												</small> 12,000 Sold</td>
-												<td><a href="#" class="text-muted"> <i
-														class="fas fa-search"></i>
-												</a></td>
-											</tr>
-											<tr>
-												<td><img src="dist/img/default-150x150.png"
-													alt="Product 1" class="img-circle img-size-32 mr-2">
-													Another Product</td>
-												<td>$29 USD</td>
-												<td><small class="text-warning mr-1"> <i
-														class="fas fa-arrow-down"></i> 0.5%
-												</small> 123,234 Sold</td>
-												<td><a href="#" class="text-muted"> <i
-														class="fas fa-search"></i>
-												</a></td>
-											</tr>
-											<tr>
-												<td><img src="dist/img/default-150x150.png"
-													alt="Product 1" class="img-circle img-size-32 mr-2">
-													Amazing Product</td>
-												<td>$1,230 USD</td>
-												<td><small class="text-danger mr-1"> <i
-														class="fas fa-arrow-down"></i> 3%
-												</small> 198 Sold</td>
-												<td><a href="#" class="text-muted"> <i
-														class="fas fa-search"></i>
-												</a></td>
-											</tr>
-											<tr>
-												<td><img src="dist/img/default-150x150.png"
-													alt="Product 1" class="img-circle img-size-32 mr-2">
-													Perfect Item <span class="badge bg-danger">NEW</span></td>
-												<td>$199 USD</td>
-												<td><small class="text-success mr-1"> <i
-														class="fas fa-arrow-up"></i> 63%
-												</small> 87 Sold</td>
-												<td><a href="#" class="text-muted"> <i
-														class="fas fa-search"></i>
-												</a></td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-							</div>
-
-						</div>
-
-						<div class="col-lg-6">
-							<div class="card">
-								<div class="card-header border-0">
-									<div class="d-flex justify-content-between">
-										<h3 class="card-title">Sales</h3>
-										<a href="javascript:void(0);">View Report</a>
-									</div>
-								</div>
-								<div class="card-body">
-									<div class="d-flex">
-										<p class="d-flex flex-column">
-											<span class="text-bold text-lg">$18,230.00</span> <span>Sales
-												Over Time</span>
-										</p>
-										<p class="ml-auto d-flex flex-column text-right">
-											<span class="text-success"> <i class="fas fa-arrow-up"></i>
-												33.1%
-											</span> <span class="text-muted">Since last month</span>
-										</p>
-									</div>
-
-									<div class="position-relative mb-4">
-										<canvas id="sales-chart" height="200"></canvas>
-									</div>
-									<div class="d-flex flex-row justify-content-end">
-										<span class="mr-2"> <i
-											class="fas fa-square text-primary"></i> This year
-										</span> <span> <i class="fas fa-square text-gray"></i> Last
-											year
-										</span>
-									</div>
-								</div>
-							</div>
-
-							<div class="card">
-								<div class="card-header border-0">
-									<h3 class="card-title">Online Store Overview</h3>
-									<div class="card-tools">
-										<a href="#" class="btn btn-sm btn-tool"> <i
-											class="fas fa-download"></i>
-										</a> <a href="#" class="btn btn-sm btn-tool"> <i
-											class="fas fa-bars"></i>
-										</a>
-									</div>
-								</div>
-								<div class="card-body">
-									<div
-										class="d-flex justify-content-between align-items-center border-bottom mb-3">
-										<p class="text-success text-xl">
-											<i class="ion ion-ios-refresh-empty"></i>
-										</p>
-										<p class="d-flex flex-column text-right">
-											<span class="font-weight-bold"> <i
-												class="ion ion-android-arrow-up text-success"></i> 12%
-											</span> <span class="text-muted">CONVERSION RATE</span>
-										</p>
-									</div>
-
-									<div
-										class="d-flex justify-content-between align-items-center border-bottom mb-3">
-										<p class="text-warning text-xl">
-											<i class="ion ion-ios-cart-outline"></i>
-										</p>
-										<p class="d-flex flex-column text-right">
-											<span class="font-weight-bold"> <i
-												class="ion ion-android-arrow-up text-warning"></i> 0.8%
-											</span> <span class="text-muted">SALES RATE</span>
-										</p>
-									</div>
-
-									<div
-										class="d-flex justify-content-between align-items-center mb-0">
-										<p class="text-danger text-xl">
-											<i class="ion ion-ios-people-outline"></i>
-										</p>
-										<p class="d-flex flex-column text-right">
-											<span class="font-weight-bold"> <i
-												class="ion ion-android-arrow-down text-danger"></i> 1%
-											</span> <span class="text-muted">REGISTRATION RATE</span>
-										</p>
-									</div>
-
-								</div>
-							</div>
 						</div>
 
 					</div>
-
 				</div>
 				<!-- container-fluid -->
 
@@ -466,6 +337,18 @@ SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일 hh:mm:ss");
 	</div>
 	<!-- E:wrapper -->
 
+	<script>
+		function getTime() {
+			var d = new Date(); // 현재 날짜와 시간
+			var yyyy = d.getFullYear();
+			var MM = d.getMonth();
+			var timeBoard = document.getElementById("WhatTimeIsItNow"); // 값이 입력될 공간
+			var time = yyyy + "년 " + MM + "월 " // 형식 지정
+			timeBoard.innerHTML = time; // 출력
+		}
+	</script>
+
+
 	<script
 		src="<%=request.getContextPath()%>/resources/bootstrap/plugins/jquery/jquery.min.js"></script>
 
@@ -477,7 +360,6 @@ SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일 hh:mm:ss");
 
 	<script
 		src="<%=request.getContextPath()%>/resources/bootstrap/plugins/chart.js/Chart.min.js"></script>
-
 
 	<script
 		src="<%=request.getContextPath()%>/resources/bootstrap/dist/js/pages/dashboard3.js"></script>

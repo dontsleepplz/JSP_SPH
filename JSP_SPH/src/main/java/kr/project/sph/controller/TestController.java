@@ -35,5 +35,10 @@ public class TestController {
 	public void side() {
 
 	}
+	
+	@GetMapping("/common/stati")
+	public void stati() {
+
+	}
 
 }
