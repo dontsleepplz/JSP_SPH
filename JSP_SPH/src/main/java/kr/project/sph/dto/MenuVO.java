@@ -2,77 +2,57 @@ package kr.project.sph.dto;
 
 public class MenuVO {
 
-	private String mCode;
-	private String mName;
-	private String mUrl;
-	private int menuLevel;
-	private String upCode;
-	private int isNav;
-	private String jText;
-	private String mIcon;
-
-	public String getmCode() {
-		return mCode;
+	private String mcode; // 메뉴 코드
+	private String mname; // 메뉴 이름
+	private String murl;  // 메뉴  url
+	private String micon; // 메뉴 아이콘
+	private String jText; // javaScript
+	private String upcode; // 상위메뉴 코드
+	private int mlevel; //메뉴 레벨
+	
+	
+	public String getMcode() {
+		return mcode;
 	}
-
-	public void setmCode(String mCode) {
-		this.mCode = mCode;
+	public void setMcode(String mcode) {
+		this.mcode = mcode;
 	}
-
-	public String getmName() {
-		return mName;
+	public String getMname() {
+		return mname;
 	}
-
-	public void setmName(String mName) {
-		this.mName = mName;
+	public void setMname(String mname) {
+		this.mname = mname;
 	}
-
-	public String getmUrl() {
-		return mUrl;
+	public String getMurl() {
+		return murl;
 	}
-
-	public void setmUrl(String mUrl) {
-		this.mUrl = mUrl;
+	public void setMurl(String murl) {
+		this.murl = murl;
 	}
-
-	public int getMenuLevel() {
-		return menuLevel;
+	public String getMicon() {
+		return micon;
 	}
-
-	public void setMenuLevel(int menuLevel) {
-		this.menuLevel = menuLevel;
+	public void setMicon(String micon) {
+		this.micon = micon;
 	}
-
-	public String getUpCode() {
-		return upCode;
-	}
-
-	public void setUpCode(String upCode) {
-		this.upCode = upCode;
-	}
-
-	public int getIsNav() {
-		return isNav;
-	}
-
-	public void setIsNav(int isNav) {
-		this.isNav = isNav;
-	}
-
 	public String getjText() {
 		return jText;
 	}
-
 	public void setjText(String jText) {
 		this.jText = jText;
 	}
-
-	public String getmIcon() {
-		return mIcon;
+	public String getUpcode() {
+		return upcode;
 	}
-
-	public void setmIcon(String mIcon) {
-		this.mIcon = mIcon;
+	public void setUpcode(String upcode) {
+		this.upcode = upcode;
 	}
-
+	public int getMlevel() {
+		return mlevel;
+	}
+	public void setMlevel(int mlevel) {
+		this.mlevel = mlevel;
+	}
 }
+
+

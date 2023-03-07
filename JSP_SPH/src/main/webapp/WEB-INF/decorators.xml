@@ -1,18 +1,14 @@
 <decorators defaultdir="/WEB-INF/decorator">
 	
-	<decorator name="Test" page="decorator.jsp">
+	<decorator name="Frame" page="decorator.jsp">
 		<pattern>*.do</pattern>
 	</decorator>
 	
-	<decorator name="" page="">
-		
 	
-	</decorator>
-	
-	<!-- <decorator name="" page="open_decorator.jsp">
+	<decorator name="iFrame" page="iframe_decorator.jsp">
 		<pattern>/**/*.do</pattern>
 		<pattern>/main.do</pattern>		
-	</decorator> -->
+	</decorator> 
 			
 			
 			
