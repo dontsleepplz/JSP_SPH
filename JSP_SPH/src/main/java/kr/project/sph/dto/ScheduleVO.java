@@ -2,7 +2,7 @@ package kr.project.sph.dto;
 
 import java.util.Date;
 
-public class SecheduleVO {
+public class ScheduleVO {
 
 	private int sno;
 	private String title;

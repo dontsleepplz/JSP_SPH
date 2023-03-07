@@ -10,8 +10,58 @@
 		<typeAlias type="java.lang.String" alias="str" />
 		<typeAlias type="java.lang.Integer" alias="int" />
 		
+		<!-- Common -->
 		<typeAlias type="kr.project.sph.dto.MenuVO" alias="menu" />
 		<typeAlias type="kr.project.sph.dto.MemberVO" alias="member" />
+		<typeAlias type="kr.project.sph.dto.CommonVO" alias="common" />
+		<typeAlias type="kr.project.sph.dto.ChartVO" alias="chart" />
+		<typeAlias type="kr.project.sph.dto.ContactGroupVO" alias="contactGroup" />
+		<typeAlias type="kr.project.sph.dto.DepartVO" alias="depart" />
+		<typeAlias type="kr.project.sph.dto.ManagementVO" alias="management" />
+		<typeAlias type="kr.project.sph.dto.RankVO" alias="rank" />
+		<typeAlias type="kr.project.sph.dto.RoleVO" alias="role" />
+		
+		<!-- Attendance -->
+		<typeAlias type="kr.project.sph.dto.AttendanceVO" alias="attendance" />
+		<typeAlias type="kr.project.sph.dto.OffVO" alias="Off" />
+		
+		<!-- ElecSign -->
+		<typeAlias type="kr.project.sph.dto.ElecAttachVO" alias="elecAttach" />
+		<typeAlias type="kr.project.sph.dto.ElecLineVO" alias="elecLine" />
+		<typeAlias type="kr.project.sph.dto.ElecSignVO" alias="elecSign" />
+		
+		<!-- Board -->
+		<typeAlias type="kr.project.sph.dto.LibraryAttachVO" alias="libraryAttach" />
+		<typeAlias type="kr.project.sph.dto.LibraryVO" alias="library" />
+		<typeAlias type="kr.project.sph.dto.NoticeAttachVO" alias="noticeAttach" />
+		<typeAlias type="kr.project.sph.dto.NoticeVO" alias="notice" />
+		
+		<!-- Mail -->
+		<typeAlias type="kr.project.sph.dto.MailAttachVO" alias="mailAttach" />
+		<typeAlias type="kr.project.sph.dto.MailVO" alias="mail" />
+		<typeAlias type="kr.project.sph.dto.MailReceiveVO" alias="mailReceive" />
+		
+		<!-- Auth -->
+		<typeAlias type="kr.project.sph.dto.MemberAuthVO" alias="memberAuth" />
+		<typeAlias type="kr.project.sph.dto.RankAuthVO" alias="rankAuth" />
+		
+		<!-- Work -->
+		<typeAlias type="kr.project.sph.dto.OperationTeamVO" alias="operationTeam" />
+		<typeAlias type="kr.project.sph.dto.OperationVO" alias="operation" />
+		<typeAlias type="kr.project.sph.dto.PatientVO" alias="patient" />
+		<typeAlias type="kr.project.sph.dto.ReservationVO" alias="reservation" />
+		<typeAlias type="kr.project.sph.dto.ScheduleVO" alias="schedule" />
+		<typeAlias type="kr.project.sph.dto.ToDoVO" alias="toDo" />
+		<typeAlias type="kr.project.sph.dto.WardRecordVO" alias="wardRecord" />
+		<typeAlias type="kr.project.sph.dto.WardVO" alias="ward" />
+		
+		<!-- Report -->
+		<typeAlias type="kr.project.sph.dto.ReportAttachVO" alias="reportAttach" />
+		<typeAlias type="kr.project.sph.dto.ReportVO" alias="report" />
+		<typeAlias type="kr.project.sph.dto.ReportReplyVO" alias="reportReply" />
+		
+		
+		
 	</typeAliases>
 </configuration>
 

@@ -1,6 +1,6 @@
 package kr.project.sph.dto;
 
-public class OperationteamVO {
+public class OperationTeamVO {
 
 	private int otno;
 	private String role;
