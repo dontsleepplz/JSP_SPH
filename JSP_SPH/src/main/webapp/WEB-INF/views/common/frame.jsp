@@ -482,7 +482,7 @@ SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일 hh:mm:ss");
         </div>
 
       </div>
-
+	  <!-- E:content -->
     </div>
 	<!-- E:content-wrapper -->
     <aside class="control-sidebar control-sidebar-dark">
@@ -497,6 +497,7 @@ SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일 hh:mm:ss");
       </div>
     </footer>
   </div>
+  <!-- E:wrapper -->
 
   <script src="<%=request.getContextPath()%>/resources/bootstrap/plugins/jquery/jquery.min.js"></script>
 
