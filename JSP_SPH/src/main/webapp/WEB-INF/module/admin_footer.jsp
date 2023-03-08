@@ -1,20 +1,24 @@
 <!-- S:footer -->
-    
-    <aside class="control-sidebar control-sidebar-dark">
+<footer class="main-footer">
+	<strong>Copyright © 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.
+	</strong> All rights reserved.
+	<div class="float-right d-none d-sm-inline-block">
+		<b>Version</b> 3.2.0
+	</div>
+</footer>
+<aside class="control-sidebar control-sidebar-dark"></aside>
 
-    </aside>
 
-   
-  </div>
-  <!-- E:wrapper -->
-	
-	<!-- MainFooterScript -->
-	<script>
+</div>
+<!-- E:wrapper -->
+
+<!-- MainFooterScript -->
+<script>
 	function open_Page(url,mCode){
 		$('iframe[name="ifr"]').attr("src",url);
 		if(typeof(history.pushState) == 'function'){
 			var renewURL = location.href;
-			renewURL = renewURL.substring(0, renewURL.indexOf(".do")+3);
+			renewURL = renewURL.substring(0, renewURL.indexOf(".admin")+6);
 			
 			if(mCode != 'M0000000'){
 				renewURL += "?mCode="+mCode;
@@ -30,7 +34,7 @@
 	function open_SubMenu(mCode){
 		if(mCode!="M000000"){
 			$.ajax({
-				url:"<%=request.getContextPath()%>/subMenu.do?mCode="+mCode,
+				url:"<%=request.getContextPath()%>/subMenu.admin?mCode="+mCode,
 				type:"get",
 				success:function(data){
 					printData(data,$('.subMenuList'),$('#subMenu-list-template'),'.subMenu');
@@ -60,9 +64,10 @@
 		open_SubMenu('${menu.mcode}'.substring(0,3)+"0000");
 	}
 	</script>
-	
-<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
-<script type="text/x-handlebars-template"  id="subMenu-list-template" >
+
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+<script type="text/x-handlebars-template" id="subMenu-list-template">
 {{#each .}}
 	<li class="nav-item subMenu" >
     	<a href="javascript:open_Page('<%=request.getContextPath()%>{{murl}}','{{mcode}}');"	class="nav-link">
@@ -72,17 +77,21 @@
 	</li>
 {{/each}}
 </script>
-	
 
-	<!-- jQuery -->
-	<script src="<%=request.getContextPath()%>/resources/bootstrap/plugins/jquery/jquery.min.js"></script>
-	<!-- Bootstrap 4 -->
-	<script src="<%=request.getContextPath()%>/resources/bootstrap/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-	<!-- AdminLTE App -->
-	<script src="<%=request.getContextPath()%>/resources/bootstrap/dist/js/adminlte.min.js"></script>
-	<!-- DashBoard3 -->
-	<script src="<%=request.getContextPath()%>/resources/bootstrap/dist/js/pages/dashboard3.js"></script>
-	<!-- common.js  -->
-	<script src="<%=request.getContextPath()%>/resources/js/common.min.js"></script>
+
+<!-- jQuery -->
+<script
+	src="<%=request.getContextPath()%>/resources/bootstrap/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script
+	src="<%=request.getContextPath()%>/resources/bootstrap/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script
+	src="<%=request.getContextPath()%>/resources/bootstrap/dist/js/adminlte.min.js"></script>
+<!-- DashBoard3 -->
+<script
+	src="<%=request.getContextPath()%>/resources/bootstrap/dist/js/pages/dashboard3.js"></script>
+<!-- common.js  -->
+<script src="<%=request.getContextPath()%>/resources/js/common.min.js"></script>
 </body>
 </html>

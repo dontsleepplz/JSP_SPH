@@ -1,23 +1,27 @@
 <decorators defaultdir="/WEB-INF/decorator">
-	
+
 	<decorator name="Frame" page="decorator.jsp">
 		<pattern>*.do</pattern>
 	</decorator>
-	
-	
+
+
 	<decorator name="iFrame" page="iframe_decorator.jsp">
 		<pattern>/**/*.do</pattern>
-		<pattern>/main.do</pattern>		
-	</decorator> 
-	
-	<decorator name="admin" page="admin_decorator.jsp">
-		<pattern>/admin/**/*.do</pattern>
+		<pattern>/main.do</pattern>
 	</decorator>
 	
-			
-			
+	<decorator name="admin" page="admin_decorator.jsp">
+		<pattern>*.admin</pattern>
+	</decorator>
+	
+	<decorator name="iframe_admin" page="admin_iframe_decorator.jsp">
+		<pattern>/**/**/*.admin</pattern>
+	</decorator>
+	
+	
+	
 	<excludes>
 		<pattern>/resources/*</pattern>
 		<pattern>login2.jsp</pattern>
-	</excludes>	
+	</excludes>
 </decorators>
