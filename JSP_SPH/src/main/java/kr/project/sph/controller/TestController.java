@@ -69,6 +69,26 @@ public class TestController {
 	// footer.jsp(하단 js) ->
 	// indexpage.jsp -> testController.index -> iframe_decorator.jsp
 
+	
+	@GetMapping("/common/congu")
+	public void congu() {
+
+	}
+	
+	
+	//frame.jsp처럼 작성해주셔야합니다.
+	//menu.setMurl("경로");
+	//경로 부분에 경로 입력해주시고 마지막에 .do 붙여주셔야하고
+	//경로수정하셨으면 GetMapping으로 메소드 하나 더 만들으셔서 경로주고 사용하시면 됩니다.
+	
+	//요청(Request) -> Encoding filter -> sitemesh-> dispatcherServlet-> adapter->controller
+	//-> dispatcherServlet-> decorators-> decorator
+	
+	//확인 순서 : web.xml -> sitemesh.xml -> decorators.xml -> decorator.jsp -> footer.jsp(하단 js) ->
+	//indexpage.jsp -> testController.index -> iframe_decorator.jsp
+	
+	
+	
 	@GetMapping("/index")
 	public ModelAndView index(@RequestParam(defaultValue = "M000000") String mCode, Model model) throws Exception {
 		String url = "/common/indexPage";
