@@ -70,8 +70,16 @@ public class TestController {
 	// indexpage.jsp -> testController.index -> iframe_decorator.jsp
 
 	
-	@GetMapping("/common/congu")
-	public void congu() {
+	@GetMapping("/common/conguA")
+	public void conguA() {
+
+	}
+	@GetMapping("/common/conguD")
+	public void conguD() {
+
+	}
+	@GetMapping("/common/conguP")
+	public void conguP() {
 
 	}
 	
