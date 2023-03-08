@@ -52,6 +52,12 @@ public class TestController {
 
 	}
 	
+	@GetMapping("/common/congu")
+	public void congu() {
+
+	}
+	
+	
 	//frame.jsp처럼 작성해주셔야합니다.
 	//menu.setMurl("경로");
 	//경로 부분에 경로 입력해주시고 마지막에 .do 붙여주셔야하고
