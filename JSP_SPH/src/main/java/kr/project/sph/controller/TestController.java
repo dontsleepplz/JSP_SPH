@@ -77,7 +77,7 @@ public class TestController {
 
 		// URL 스트링에 직접입력
 		menu.setMcode("M000000");
-		menu.setMurl("/common/frame.do");
+		menu.setMurl("/admin/member/membermain.admin");
 		menu.setMname("test");
 
 		menuList.add(menu);

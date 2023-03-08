@@ -259,5 +259,4 @@
       </div>
         <script src="<%=request.getContextPath()%>/resources/bootstrap/plugins/chart.js/Chart.min.js"></script>
 	<!-- S:footer -->
-	<!-- E:content-wrapper -->
     
