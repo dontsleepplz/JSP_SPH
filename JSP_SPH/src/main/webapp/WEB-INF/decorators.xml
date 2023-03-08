@@ -9,7 +9,11 @@
 		<pattern>/**/*.do</pattern>
 		<pattern>/main.do</pattern>		
 	</decorator> 
-			
+	
+	<decorator name="admin" page="admin_decorator.jsp">
+		<pattern>/admin/**/*.do</pattern>
+	</decorator>
+	
 			
 			
 	<excludes>
