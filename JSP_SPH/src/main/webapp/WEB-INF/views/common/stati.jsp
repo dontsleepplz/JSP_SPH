@@ -15,7 +15,7 @@ SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월");
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AdminLTE 3 | Dashboard 3</title>
+<title>통계입니다만</title>
 
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -191,34 +191,16 @@ SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월");
 					<ul class="nav nav-pills nav-sidebar flex-column"
 						data-widget="treeview" role="menu" data-accordion="false">
 
-						<li class="nav-item menu-open"><a href="#"
-							class="nav-link active"> <i
-								class="nav-icon fas fa-tachometer-alt"></i>
-								<p>
-									Dashboard <i class="right fas fa-angle-left"></i>
-								</p>
-						</a>
-							<ul class="nav nav-treeview">
-								<li class="nav-item"><a href="./index.html"
-									class="nav-link"> <i class="far fa-circle nav-icon"></i>
-										<p>Dashboard v1</p>
-								</a></li>
-								<li class="nav-item"><a href="./index2.html"
-									class="nav-link"> <i class="far fa-circle nav-icon"></i>
-										<p>Dashboard v2</p>
-								</a></li>
-								<li class="nav-item"><a href="./index3.html"
-									class="nav-link active"> <i class="far fa-circle nav-icon"></i>
-										<p>Dashboard v3</p>
-								</a></li>
-							</ul></li>
-						<li class="nav-item"><a href="pages/widgets.html"
-							class="nav-link"> <i class="nav-icon fas fa-th"></i>
-								<p>
-									Widgets <span class="right badge badge-danger">New</span>
-								</p>
-						</a></li>
-
+						<li class="nav-item menu-open">
+							<a href="#" class="nav-link active"> 
+								<i class="nav-icon fas fa-tachometer-alt"></i>
+								<p> 부서 <i class="right fas fa-angle-left"></i> </p>
+							</a>
+						</li>
+						 <li><a href="#">치과</a></li>
+						 <li><a href="#">이비인후과</a></li>
+						 <li><a href="#">내과</a></li>
+						 <li><a href="#">외과</a></li>
 					</ul>
 				</nav>
 
@@ -230,13 +212,30 @@ SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월");
 
 			<div class="content-header">
 				<div class="container-fluid">
+
 					<div class="row mb-2">
-						<div class="col-sm-6">
+
+						<div class="col-sm-4">
 							<h1 class="m-0" id="WhatTimeIsItNow">
-								<i class="fa-regular fa-calendar-days"></i>
+								<!-- 달력이모티콘 넣기 -->
 							</h1>
 						</div>
-						<div class="col-sm-6">
+						
+						<div class="col-sm-4">
+							<ul class="pagination float-sm-center">
+								<li class="paginate_button page-item previous"
+									id="example2_previous" style="width:150px;">
+									<a href="#" aria-controls="example2" data-dt-idx="#" tabindex="0" class="page-link">Previous</a>
+								</li>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<li class="paginate_button page-item next" 
+									id="example2_next" style="width:150px;">
+									<a href="#" aria-controls="example2" data-dt-idx="#" tabindex="0" class="page-link">Next</a>
+								</li>
+							</ul>
+						</div>
+						
+						<div class="col-sm-4">
 							<ol class="breadcrumb float-sm-right">
 								<li class="breadcrumb-item active"><div class="form-inline">
 										<div class="input-group" data-widget="sidebar-search">
@@ -252,70 +251,219 @@ SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월");
 											<div class="list-group">
 												<a href="#" class="list-group-item"><div
 														class="search-title">
-														<strong class="text-light"></strong>N<strong
-															class="text-light"></strong>o<strong class="text-light"></strong>
-														<strong class="text-light"></strong>e<strong
-															class="text-light"></strong>l<strong class="text-light"></strong>e<strong
-															class="text-light"></strong>m<strong class="text-light"></strong>e<strong
-															class="text-light"></strong>n<strong class="text-light"></strong>t<strong
-															class="text-light"></strong> <strong class="text-light"></strong>f<strong
-															class="text-light"></strong>o<strong class="text-light"></strong>u<strong
-															class="text-light"></strong>n<strong class="text-light"></strong>d<strong
-															class="text-light"></strong>!<strong class="text-light"></strong>
+														<strong class="text-light"></strong> N<strong
+															class="text-light"></strong> o<strong class="text-light"></strong>
+														<strong class="text-light"></strong> e<strong
+															class="text-light"></strong> l<strong class="text-light"></strong>
+														e<strong class="text-light"></strong> m<strong
+															class="text-light"></strong> e<strong class="text-light"></strong>
+														n<strong class="text-light"></strong> t<strong
+															class="text-light"></strong> <strong class="text-light"></strong>
+														f<strong class="text-light"></strong> o<strong
+															class="text-light"></strong> u<strong class="text-light"></strong>
+														n<strong class="text-light"></strong> d<strong
+															class="text-light"></strong> !<strong class="text-light"></strong>
 													</div>
-													<div class="search-path"></div></a>
+													<div class="search-path"></div> </a>
 											</div>
 										</div>
 									</div></li>
 							</ol>
 						</div>
+
 					</div>
+					<!-- row mb-2 -->
 				</div>
+				<!-- container-fluid -->
 			</div>
+			<!-- content-header -->
 
 			<div class="content">
 
 				<div class="container-fluid">
-					<div class="col-md-4">
-					
-						<div class="card card-primary card-outline">
-							<div class="card-header">
-								<h3 class="card-title">
-									<i class="far fa-chart-bar"></i> Donut Chart
-								</h3>
-								<div class="card-tools">
-									<button type="button" class="btn btn-tool"
-										data-card-widget="collapse">
-										<i class="fas fa-minus"></i>
-									</button>
+					<div class="row">
+						<div class="col-md-4" id="accordion">
+
+							<div class="card card-primary card-outline" style="width: 480px;">
+
+								<div class="card-header">
+
+									<h3 class="card-title">
+										<i class="far fa-chart-bar"></i> 환 자
+									</h3>
+
+									<div class="card-tools">
+										<button type="button" class="btn btn-tool"
+											data-card-widget="collapse">
+											<i class="fas fa-minus"></i>
+										</button>
+									</div>
+
 								</div>
-							</div>
-							<div class="card-body" style="border: 1px solid red;">
-								<div id="donut-chart"
-									style="height: 450px; padding: 0px; position: relative;">
-									<canvas class="flot-base" width="763" height="300"
-										style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 763.5px; height: 300px;"></canvas>
-									<canvas class="flot-overlay" width="763" height="300"
-										style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 763.5px; height: 300px;"></canvas>
-									<span class="pieLabel" id="pieLabel0"
-										style="position: absolute; top: 69.5px; left: 439.703px;"><div
-											style="font-size: 13px; text-align: center; padding: 2px; color: #fff; font-weight: 600;">
-											Series2<br>30%
-										</div></span><span class="pieLabel" id="pieLabel1"
-										style="position: absolute; top: 209.5px; left: 417.703px;"><div
-											style="font-size: 13px; text-align: center; padding: 2px; color: #fff; font-weight: 600;">
-											Series3<br>20%
-										</div></span><span class="pieLabel" id="pieLabel2"
-										style="position: absolute; top: 128.5px; left: 258.703px;"><div
-											style="font-size: 13px; text-align: center; padding: 2px; color: #fff; font-weight: 600;">
-											Series4<br>50%
-										</div></span>
+
+								<div class="card-body collapse show" id="collapseOne"
+									data-parent="#accordion">
+									<div id="donut-chart"
+										style="height: 440px; padding: 0px; position: relative;">
+
+										<canvas class="flot-base" width="440" height="440"
+											style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 440px; height: 440px;"></canvas>
+
+										<canvas class="flot-overlay" width="440" height="440"
+											style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 440px; height: 440px;"></canvas>
+
+										<span class="pieLabel" id="pieLabel0"
+											style="position: absolute; top: 69.5px; left: 439.703px;">
+											<div
+												style="font-size: 13px; text-align: center; padding: 2px; color: #000000; font-weight: 600;">
+												Series2<br>30%
+											</div>
+										</span> <span class="pieLabel" id="pieLabel1"
+											style="position: absolute; top: 209.5px; left: 417.703px;">
+											<div
+												style="font-size: 13px; text-align: center; padding: 2px; color: #000000; font-weight: 600;">
+												Series3<br>20%
+											</div>
+										</span> <span class="pieLabel" id="pieLabel2"
+											style="position: absolute; top: 128.5px; left: 258.703px;">
+											<div
+												style="font-size: 13px; text-align: center; padding: 2px; color: #000000; font-weight: 600;">
+												Series4<br>50%
+											</div>
+										</span>
+
+									</div>
+
 								</div>
+
 							</div>
+							<!-- card card-primary card-outline -->
+
+							<div class="card card-primary card-outline collapsed-card"
+								style="width: 480px;">
+
+
+								<div class="card-header">
+
+									<h3 class="card-title">
+										<i class="far fa-chart-bar"></i> 입 원
+									</h3>
+
+									<div class="card-tools">
+										<button type="button" class="btn btn-tool"
+											data-card-widget="collapse">
+											<i class="fas fa-plus"></i>
+										</button>
+									</div>
+
+								</div>
+
+								<div class="card-body collapse" id="collapseTwo"
+									data-parent="#accordion">
+									<div id="donut-chart"
+										style="height: 440px; padding: 0px; position: relative;">
+
+										<canvas class="flot-base" width="440" height="440"
+											style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 440px; height: 440px;"></canvas>
+
+										<canvas class="flot-overlay" width="440" height="440"
+											style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 440px; height: 440px;"></canvas>
+
+										<span class="pieLabel" id="pieLabel0"
+											style="position: absolute; top: 69.5px; left: 439.703px;">
+											<div
+												style="font-size: 13px; text-align: center; padding: 2px; color: #000000; font-weight: 600;">
+												Series2<br>30%
+											</div>
+										</span> <span class="pieLabel" id="pieLabel1"
+											style="position: absolute; top: 209.5px; left: 417.703px;">
+											<div
+												style="font-size: 13px; text-align: center; padding: 2px; color: #000000; font-weight: 600;">
+												Series3<br>20%
+											</div>
+										</span> <span class="pieLabel" id="pieLabel2"
+											style="position: absolute; top: 128.5px; left: 258.703px;">
+											<div
+												style="font-size: 13px; text-align: center; padding: 2px; color: #000000; font-weight: 600;">
+												Series4<br>50%
+											</div>
+										</span>
+
+									</div>
+
+								</div>
+
+							</div>
+							<!-- card card-primary card-outline -->
+
+							<div class="card card-primary card-outline collapsed-card"
+								style="width: 480px;">
+
+
+
+								<div class="card-header">
+
+									<h3 class="card-title">
+										<i class="far fa-chart-bar"></i> 매 출
+									</h3>
+
+									<div class="card-tools">
+										<button type="button" class="btn btn-tool"
+											data-card-widget="collapse">
+											<i class="fas fa-plus"></i>
+										</button>
+									</div>
+
+								</div>
+
+
+								<div class="card-body collapse" id="collapseThree"
+									data-parent="#accordion">
+									<div id="donut-chart"
+										style="height: 440px; padding: 0px; position: relative;">
+
+										<canvas class="flot-base" width="440" height="440"
+											style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 440px; height: 440px;"></canvas>
+
+										<canvas class="flot-overlay" width="440" height="440"
+											style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 440px; height: 440px;"></canvas>
+
+										<span class="pieLabel" id="pieLabel0"
+											style="position: absolute; top: 69.5px; left: 439.703px;">
+											<div
+												style="font-size: 13px; text-align: center; padding: 2px; color: #000000; font-weight: 600;">
+												Series2<br>30%
+											</div>
+										</span> <span class="pieLabel" id="pieLabel1"
+											style="position: absolute; top: 209.5px; left: 417.703px;">
+											<div
+												style="font-size: 13px; text-align: center; padding: 2px; color: #000000; font-weight: 600;">
+												Series3<br>20%
+											</div>
+										</span> <span class="pieLabel" id="pieLabel2"
+											style="position: absolute; top: 128.5px; left: 258.703px;">
+											<div
+												style="font-size: 13px; text-align: center; padding: 2px; color: #000000; font-weight: 600;">
+												Series4<br>50%
+											</div>
+										</span>
+
+									</div>
+
+								</div>
+
+							</div>
+							<!-- card card-primary card-outline -->
 
 						</div>
+						<!-- col-md-4 -->
 
+
+						<div class="col-md-8" style="border: 1px solid red;"></div>
+						<!-- col-md-8 -->
 					</div>
+					<!-- row -->
+					
 				</div>
 				<!-- container-fluid -->
 
@@ -347,7 +495,6 @@ SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월");
 			timeBoard.innerHTML = time; // 출력
 		}
 	</script>
-
 
 	<script
 		src="<%=request.getContextPath()%>/resources/bootstrap/plugins/jquery/jquery.min.js"></script>
