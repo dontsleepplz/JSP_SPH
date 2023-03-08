@@ -233,52 +233,83 @@ SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월");
 
 					<div class="input-group row">
 
-						<div class="col-sm-8">
-							<h1 class="m-0">전체주소록</h1>
+						<div class="col-sm-3">
+							<h3 class="m-0">전체주소록</h3>
 						</div>
 
-
-						<div class="col-sm-4">
-							<select class="form-control col-md-3" name="perPageNum"
-								id="perPageNum" onchange="list_go('${cri.page }');">
-								<option value="10" ${cri.perPageNum eq 10 ? 'selected' : '' }>정렬개수</option>
-								<option value="2" ${cri.perPageNum eq 2 ? 'selected' : '' }>2개씩</option>
-								<option value="3" ${cri.perPageNum eq 3 ? 'selected' : '' }>3개씩</option>
-								<option value="5" ${cri.perPageNum eq 5 ? 'selected' : '' }>5개씩</option>
-							</select>
-							<!-- search bar -->
-							<select class="form-control col-md-3" name="searchType"
-								id="searchType">
-								<option value="">검색구분</option>
-								<option value="i" ${cri.searchType=='i' ? 'selected':'' }>아이디</option>
-								<option value="n" ${cri.searchType=='n' ? 'selected':'' }>이
-									름</option>
-								<option value="p" ${cri.searchType=='p' ? 'selected':'' }>전화번호</option>
-								<option value="e" ${cri.searchType=='e' ? 'selected':'' }>이메일</option>
-							</select>
-							<!-- keyword -->
-							<input class="form-control" type="text" name="keyword"
-								placeholder="검색어를 입력하세요." value="${cri.keyword }" /> <span
-								class="input-group-append">
-								<button class="btn btn-primary" type="button" id="searchBtn"
-									data-card-widget="search" onclick="list_go(1);">
-									<i class="fa fa-fw fa-search"></i>
+						<div class="col-sm-2" style="margin-left:0px;">
+							
+								<button type="button" class="btn btn-primary float-right">
+									<i class="fas fa-plus"></i> 개인주소록 추가
 								</button>
-							</span>
+							
+						</div>
+ 
+						<div class="col-sm-7">
+							<ol class="breadcrumb float-sm-right">
+								<li class="breadcrumb-item active"><div class="form-inline">
+										<div class="input-group" data-widget="sidebar-search">
+											<input class="form-control form-control-sidebar"
+												type="search" placeholder="Search" aria-label="Search">
+											<div class="input-group-append">
+												<button class="btn btn-sidebar">
+													<i class="fas fa-search fa-fw"></i>
+												</button>
+											</div>
+										</div>
+										<div class="sidebar-search-results">
+											<div class="list-group">
+												<a href="#" class="list-group-item"><div
+														class="search-title">
+														<strong class="text-light"></strong> N<strong
+															class="text-light"></strong> o<strong class="text-light"></strong>
+														<strong class="text-light"></strong> e<strong
+															class="text-light"></strong> l<strong class="text-light"></strong>
+														e<strong class="text-light"></strong> m<strong
+															class="text-light"></strong> e<strong class="text-light"></strong>
+														n<strong class="text-light"></strong> t<strong
+															class="text-light"></strong> <strong class="text-light"></strong>
+														f<strong class="text-light"></strong> o<strong
+															class="text-light"></strong> u<strong class="text-light"></strong>
+														n<strong class="text-light"></strong> d<strong
+															class="text-light"></strong> !<strong class="text-light"></strong>
+													</div>
+													<div class="search-path"></div> </a>
+											</div>
+										</div>
+									</div></li>
 						</div>
 
 					</div>
 					<!-- row mb-2 -->
-					
+
 				</div>
 				<!-- container-fluid -->
 			</div>
 			<!-- content-header -->
 
+
 			<div class="content">
 
 				<div class="container-fluid">
-					<div class="row"></div>
+
+					<div class="col-md-12">
+					
+						<div class="row">
+						
+							<!-- 출퇴근 -->
+							<div class="col-md-3">
+							
+							
+							
+							
+					
+							</div>
+							
+						</div>
+						<!-- col-md-12 -->
+					
+					</div>
 					<!-- row -->
 
 				</div>
