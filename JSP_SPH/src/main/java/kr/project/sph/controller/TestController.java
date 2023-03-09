@@ -37,7 +37,10 @@ public class TestController {
 
 	}
 
-	@GetMapping("/calender/cal")
+	@GetMapping("/operation/regist")
+	public void opregist() {}
+	
+	@GetMapping("/calender/calendar")
 	public void cal() {
 
 	}
@@ -56,6 +59,8 @@ public class TestController {
 	public void membertest() {
 	}
 
+	@GetMapping("/calender/regist")
+	public void calregist() {}
 	// frame.jsp처럼 작성해주셔야합니다.
 	// menu.setMurl("경로");
 	// 경로 부분에 경로 입력해주시고 마지막에 .do 붙여주셔야하고
