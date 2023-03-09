@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <%@ page import="java.util.Date"%>
 <%@ page import="java.text.SimpleDateFormat"%>
 <%
@@ -8,7 +10,13 @@
 SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일 hh:mm:ss");
 %>
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="memberList" value="${dataMap.memberList }" />
+<c:set var="calendarList" value="${dataMap.calendarList }" />
+<c:set var="toDoList" value="${dataMap.toDoList }" />
+<c:set var="noticeList" value="${dataMap.noticeList }" />
+<c:set var="mailList" value="${dataMap.mailList }" />
+<c:set var="elecSignList" value="${dataMap.elecSignList }" />
+<c:set var="operationList" value="${dataMap.operationList }" />
 
 <!DOCTYPE html>
 <html>
@@ -26,14 +34,20 @@ SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일 hh:mm:ss");
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/bootstrap/dist/css/adminlte.min.css">
 
-
 </head>
+
 <style>
 #calendar {
 	max-width: 100%;
 	max-height: 100%;
 }
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
 </style>
+
 <body class="hold-transition sidebar-mini" onload="getTime()">
 	<!-- div에는 onload="getTime()" 안먹음 -->
 	<div class="wrapper">
@@ -239,186 +253,301 @@ SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일 hh:mm:ss");
 					<div class="col-md-12">
 
 						<div class="row" style="padding-top: 10px;">
+
 							<!-- 출퇴근 -->
-							<div class="col-md-2" style="dispiay: inlile;">
+							<div class="col-md-2">
+								<div class="card" style="height: 48vh;">
+									<div class="card-body">
 
-								<div class="card card-outline" style="height: 45vh;">
-
-									<div class="card-body box-profile">
-
-										<div class="text-center">
-
-											<img class="profile-user-img img-fluid"
-												style="margin: auto; padding: auto;"
-												src="resources/images/cat.jpg" alt="User profile picture">
-
+										<div class="row" style="height: 200px; margin-bottom: 10px;">
+											<div class="mailbox-attachments clearfix col-md-12"
+												style="text-align: center;">
+												<div id="pictureView" class="memPicture"
+													data-id="${member.id }"
+													style="border: 1px solid green; height: 200px; width: 150px; margin: 0 auto"></div>
+											</div>
 										</div>
 
-										<h3 class="profile-username text-center"
-											style="margin: auto; padding: auto;">고양이</h3>
+										<div class="form-group row">
 
-										<p class="text-muted text-center"
-											style="margin: auto; padding: auto;">할수있다 3팀</p>
+											<div class="col-md-12 text-center">
+												<p class="profile-username" style="margin: 0 auto;"
+													value="${member.name }">홍길동</p>
+											</div>
 
-										<p class="text-center" id="TimeNow"
-											style="margin: auto; padding: auto;"></p>
+											<div class="col-md-12 text-center">
+												<p class="profile-username" style="margin: 0 auto;"
+													value="${member.departCode }">활빈당</p>
+											</div>
 
-										<ul class="list-group list-group-unbordered mb-3"
-											style="margin: auto; padding: auto;">
-											<li class="list-group-item"><b>출근시간 : </b> <a
-												class="float-right">#</a></li>
-											<li class="list-group-item"><b>퇴근시간 : </b> <a
-												class="float-right">#</a></li>
-										</ul>
+											<div class="col-md-12 text-center" style="padding: 10px;">
+												<p class="text-center" id="TimeNow" style="margin: auto;"></p>
+											</div>
 
-										<div class="text-center">
-											<a href="#" class="btn btn-primary btn-block"
-												style="display: inline; margin: auto; padding: auto;"><b>출근</b></a>
-											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#"
-												class="btn btn-primary btn-block"
-												style="display: inline; margin: auto; padding: auto;"><b>퇴근</b></a>
+											<div class="col-md-12">
+												<ul class="list-group list-group-unbordered mb-12"
+													style="margin: 0px;">
+													<li class="list-group-item"><b>출근시간 : </b> <a
+														class="float-right">#</a></li>
+													<li class="list-group-item"><b>퇴근시간 : </b> <a
+														class="float-right">#</a></li>
+												</ul>
+											</div>
+
+											<div class="col-md-12">
+												<div class="row" style="padding: 10px;">
+													<div class="col-md-6 text-center">
+														<button type="button" class="btn btn-block btn-primary">
+															<a href="#">출근</a>
+														</button>
+													</div>
+													<div class="col-md-6 text-center">
+														<button type="button" class="btn btn-block btn-danger">
+															<a href="#">퇴근</a>
+														</button>
+													</div>
+												</div>
+											</div>
 										</div>
 
 									</div>
-
 								</div>
-
 							</div>
 
 							<!-- 캘린더 -->
-							<div class="col-md-5" style="dispiay: inlile;">
-								<div class="card" style="height: 45vh;">
+							<div class="col-md-5">
+								<div class="card" style="height: 48vh;">
 									<div id="calendar"
 										class="fc fc-media-screen fc-direction-ltr fc-theme-standard">
-
 									</div>
 								</div>
-
 							</div>
 
 							<!-- todo -->
-							<div class="col-md-5" style="dispiay: inlile;">
+							<div class="col-md-5">
 
-								<div class="card card-row card-primary"
-									style="height: 45vh; dispiay: inlile; margin: auto; padding: auto;">
+								<div class="card card-row card-primar" style="height: 48vh;">
+
 									<div class="card-header"
 										style="background: none; border: 1px solid gray;">
 										<h3 class="card-title" style="color: black;">ToDo +</h3>
 									</div>
+
 									<div class="card-body">
-										<div class="card card-outline">
-											<div class="card-header">
-												<h5 class="card-title">ToDo1</h5>
-												<div class="card-tools">
-													<a href="#" class="btn btn-tool btn-link">#</a> <a href="#"
-														class="btn btn-tool"> <i class="fas fa-pen"></i>
-													</a>
+
+										<c:if test="${!empty toDoList }">
+											<c:forEach items="${toDoList }" var="toDo">
+
+												<div class="card card-outline">
+													<div class="card-header">
+														<div class="col-md-3 text-left">${toDoList.toDoTime }</div>
+														<div class="col-md-8 text-left">${toDoList.title }</div>
+														<div class="col-md-1 text-right">
+															<button type="button" class="btn btn-tool"
+																data-card-widget="remove">
+																<i class="fas fa-times"></i>
+															</button>
+															<!-- 진짜 지울수 있게 해보기 -->
+														</div>
+													</div>
+												</div>
+
+											</c:forEach>
+										</c:if>
+
+										<c:if test="${empty toDoList }">
+
+											<div class="card card-outline">
+												<div class="card-header">
+													
+													<div class="row">
+													
+														<div class="col-md-10 text-left">해당내용이 없습니다.</div>
+
+														<!-- 버튼예시 지워야함 -->
+														<div class="col-md-2 text-right">
+															<button type="button" class="btn btn-tool"
+																data-card-widget="remove">
+																<i class="fas fa-times"></i>
+															</button>
+														</div>
+														<!-- 버튼예시 지워야함 -->
+
+													</div>
 												</div>
 											</div>
-										</div>
+
+										</c:if>
+
 									</div>
+
 								</div>
 
 							</div>
 
 						</div>
+						<!-- E:row -->
 
 					</div>
+					<!-- E:col-md-12 -->
+
 
 					<div class="col-md-12">
 						<div class="row" style="padding-bottom: 10px;">
 
-							<div class="col-md-3" style="dispiay: block;">
+							<div class="col-md-3">
 
 								<div class="card card-row card-primary"
-									style="height: 45vh; dispiay: inlile; margin: auto; padding: auto;">
+									style="height: 42vh; dispiay: inlile; margin: auto; padding: auto;">
+
 									<div class="card-header"
 										style="background: none; border: 1px solid gray;">
 										<h3 class="card-title" style="color: black;">공지사항 +</h3>
 									</div>
+
 									<div class="card-body">
-										<div class="card card-outline">
-											<div class="card-header">
-												<h5 class="card-title">공지1</h5>
-												<div class="card-tools">
-													<a href="#" class="btn btn-tool btn-link">#</a> <a href="#"
-														class="btn btn-tool"> <i class="fas fa-pen"></i>
-													</a>
+
+										<c:if test="${!empty noticeList }">
+											<c:forEach items="${noticeList }" var="notice">
+												<div class="row">
+													<div class="card card-outline" style="cursor:pointer;" onclick="OpenWindow();">
+														<div class="card-header">
+															<div class="col-md-12 text-left">${noticeList.title }</div>
+														</div>
+													</div>
+												</div>
+											</c:forEach>
+										</c:if>
+
+										<c:if test="${empty noticeList }">
+											<div>
+												<div class="card card-outline">
+													<div class="card-header">
+														<div class="col-md-12 text-left">해당내용이 없습니다.</div>
+													</div>
 												</div>
 											</div>
-										</div>
+										</c:if>
+
 									</div>
 								</div>
 
 							</div>
 
-							<div class="col-md-3" style="dispiay: inlile;">
+							<div class="col-md-3">
 
 								<div class="card card-row card-primary"
-									style="height: 45vh; dispiay: inlile; margin: auto; padding: auto;">
+									style="height: 42vh; dispiay: inlile; margin: auto; padding: auto;">
+
 									<div class="card-header"
 										style="background: none; border: 1px solid gray;">
 										<h3 class="card-title" style="color: black;">메일 +</h3>
 									</div>
+
 									<div class="card-body">
-										<div class="card card-outline">
-											<div class="card-header">
-												<h5 class="card-title">메일1</h5>
-												<div class="card-tools">
-													<a href="#" class="btn btn-tool btn-link">#</a> <a href="#"
-														class="btn btn-tool"> <i class="fas fa-pen"></i>
-													</a>
+
+										<c:if test="${!empty mailList }">
+											<c:forEach items="${mailList }" var="mail">
+												<div class="row">
+													<div class="card card-outline" style="cursor:pointer;" onclick="OpenWindow();">
+														<div class="card-header">
+															<div class="col-md-3 text-left">${mailList.writer }</div>
+															<div class="col-md-9 text-left">${mailList.title }</div>
+														</div>
+													</div>
+												</div>
+											</c:forEach>
+										</c:if>
+
+										<c:if test="${empty mailList }">
+											<div>
+												<div class="card card-outline">
+													<div class="card-header">
+														<div class="col-md-12 text-left">해당내용이 없습니다.</div>
+													</div>
 												</div>
 											</div>
-										</div>
+										</c:if>
+
 									</div>
 								</div>
 
 							</div>
 
-							<div class="col-md-3" style="dispiay: inlile;">
+							<div class="col-md-3">
 
 								<div class="card card-row card-primary"
-									style="height: 45vh; dispiay: inlile; margin: auto; padding: auto;">
+									style="height: 42vh; dispiay: inlile; margin: auto; padding: auto;">
+
 									<div class="card-header"
 										style="background: none; border: 1px solid gray;">
 										<h3 class="card-title" style="color: black;">전자결재 +</h3>
 									</div>
+
 									<div class="card-body">
-										<div class="card card-outline">
-											<div class="card-header">
-												<h5 class="card-title">전자결재1</h5>
-												<div class="card-tools">
-													<a href="#" class="btn btn-tool btn-link">#</a> <a href="#"
-														class="btn btn-tool"> <i class="fas fa-pen"></i>
-													</a>
+
+										<c:if test="${!empty elecSignList }">
+											<c:forEach items="${elecSignList }" var="elecSign">
+												<div class="row">
+													<div class="card card-outline" style="cursor:pointer;" onclick="OpenWindow();">
+														<div class="card-header">
+															<div class="col-md-3 text-left">${elecSignList.writer }</div>
+															<div class="col-md-9 text-left">${elecSignList.title }</div>
+														</div>
+													</div>
+												</div>
+											</c:forEach>
+										</c:if>
+
+										<c:if test="${empty elecSignList }">
+											<div>
+												<div class="card card-outline">
+													<div class="card-header">
+														<div class="col-md-12 text-left">해당내용이 없습니다.</div>
+													</div>
 												</div>
 											</div>
-										</div>
+										</c:if>
+
 									</div>
 								</div>
 
 							</div>
 
-							<div class="col-md-3" style="dispiay: inlile;">
+							<div class="col-md-3">
 
 								<div class="card card-row card-primary"
-									style="height: 45vh; dispiay: inlile; margin: auto; padding: auto;">
+									style="height: 42vh; dispiay: inlile; margin: auto; padding: auto;">
+
 									<div class="card-header"
 										style="background: none; border: 1px solid gray;">
 										<h3 class="card-title" style="color: black;">수술 +</h3>
 									</div>
+
 									<div class="card-body">
-										<div class="card card-outline">
-											<div class="card-header">
-												<h5 class="card-title">수술1</h5>
-												<div class="card-tools">
-													<a href="#" class="btn btn-tool btn-link">#</a> <a href="#"
-														class="btn btn-tool"> <i class="fas fa-pen"></i>
-													</a>
+
+										<c:if test="${!empty operationList }">
+											<c:forEach items="${operationList }" var="operation">
+												<div class="row">
+													<div class="card card-outline" style="cursor:pointer;" onclick="OpenWindow();">
+														<div class="card-header">
+															<div class="col-md-12 text-left">${operationList.content }</div>
+														</div>
+													</div>
+												</div>
+											</c:forEach>
+										</c:if>
+
+										<c:if test="${empty operationList }">
+											<div>
+												<div class="card card-outline">
+													<div class="card-header">
+														<div class="col-md-12 text-left">해당내용이 없습니다.</div>
+													</div>
 												</div>
 											</div>
-										</div>
+										</c:if>
+
 									</div>
 								</div>
 
@@ -426,75 +555,75 @@ SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일 hh:mm:ss");
 
 						</div>
 
-
 					</div>
-					<!-- container-fluid -->
 
 				</div>
-				<!-- E:content -->
+				<!-- E:container-fluid -->
 
 			</div>
-			<!-- E:content-wrapper -->
+			<!-- E:content -->
+
 			<aside class="control-sidebar control-sidebar-dark"></aside>
 
 		</div>
-		<!-- E:wrapper -->
+		<!-- E:content-wrapper -->
 
-		<script>
-			document.addEventListener('DOMContentLoaded', function() {
-				var calendarEl = document.getElementById('calendar');
+	</div>
+	<!-- E:wrapper -->
 
-				var calendar = new FullCalendar.Calendar(calendarEl, {
-			           headerToolbar : {
-			               left : 'prev,next today',
-			               center : 'title',
-			               right : 'dayGridMonth,timeGridWeek,timeGridDay'
-			           },
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			var calendarEl = document.getElementById('calendar');
 
-					navLinks : true, // can click day/week names to navigate views
-					selectable : true,
-					nowIndicator : true,
-					dayMaxEvents : true,
-					locale : 'ko',
-					selectMirror : true
-				});
-				calendar.render();
+			var calendar = new FullCalendar.Calendar(calendarEl, {
+				headerToolbar : {
+					left : 'prev,next today',
+					center : 'title',
+					right : 'dayGridMonth,timeGridDay'
+				},
+
+				navLinks : true, // can click day/week names to navigate views
+				selectable : true,
+				nowIndicator : true,
+				dayMaxEvents : true,
+				locale : 'ko',
+				selectMirror : true
 			});
-		</script>
+			calendar.render();
+		});
+	</script>
 
-		<script>
-			function getTime() {
-				var d = new Date(); // 현재 날짜와 시간
-				var MM = d.getMonth() + 1;
-				var dd = d.getDate();
-				var hh = d.getHours(); // 시
-				var mm = d.getMinutes(); // 분
-				var ss = d.getSeconds(); // 초
-				var timeBoard = document.getElementById("TimeNow"); // 값이 입력될 공간
-				var time = MM + "월 " + dd + "일 " + hh + "시 " + mm + "분 " + ss
-						+ "초" // 형식 지정
-				timeBoard.innerHTML = time; // 출력
-				setTimeout(getTime, 1000); //1000밀리초(1초) 마다 반복
-			}
-		</script>
+	<script>
+		function getTime() {
+			var d = new Date(); // 현재 날짜와 시간
+			var MM = d.getMonth() + 1;
+			var dd = d.getDate();
+			var hh = d.getHours(); // 시
+			var mm = d.getMinutes(); // 분
+			var ss = d.getSeconds(); // 초
+			var timeBoard = document.getElementById("TimeNow"); // 값이 입력될 공간
+			var time = MM + "월 " + dd + "일 " + hh + "시 " + mm + "분 " + ss + "초" // 형식 지정
+			timeBoard.innerHTML = time; // 출력
+			setTimeout(getTime, 1000); //1000밀리초(1초) 마다 반복
+		}
+	</script>
 
-		<script
-			src="<%=request.getContextPath()%>/resources/fullcal/dist/index.global.js"></script>
+	<script
+		src="<%=request.getContextPath()%>/resources/fullcal/dist/index.global.js"></script>
 
-		<script
-			src="<%=request.getContextPath()%>/resources/bootstrap/plugins/jquery/jquery.min.js"></script>
+	<script
+		src="<%=request.getContextPath()%>/resources/bootstrap/plugins/jquery/jquery.min.js"></script>
 
-		<script
-			src="<%=request.getContextPath()%>/resources/bootstrap/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script
+		src="<%=request.getContextPath()%>/resources/bootstrap/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-		<script
-			src="<%=request.getContextPath()%>/resources/bootstrap/dist/js/adminlte.js"></script>
+	<script
+		src="<%=request.getContextPath()%>/resources/bootstrap/dist/js/adminlte.js"></script>
 
-		<script
-			src="<%=request.getContextPath()%>/resources/bootstrap/plugins/chart.js/Chart.min.js"></script>
+	<script
+		src="<%=request.getContextPath()%>/resources/bootstrap/plugins/chart.js/Chart.min.js"></script>
 
-		<script
-			src="<%=request.getContextPath()%>/resources/bootstrap/dist/js/pages/dashboard3.js"></script>
+	<script
+		src="<%=request.getContextPath()%>/resources/bootstrap/dist/js/pages/dashboard3.js"></script>
 </body>
-
 </html>
