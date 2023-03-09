@@ -43,8 +43,10 @@ public class TestController {
 	@GetMapping("/operation/regist")
 	public void opregist() {}
 	
+	
+
 	@GetMapping("/calender/calendar")
-	public void cal() {
+	public void calendar() {
 
 	}
 

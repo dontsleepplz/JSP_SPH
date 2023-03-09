@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <%@ page import="java.util.Date"%>
 <%@ page import="java.text.SimpleDateFormat"%>
 <%
@@ -8,14 +10,12 @@
 SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일 hh:mm:ss");
 %>
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MainD</title>
+<title>MainDcopy</title>
 
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -26,16 +26,14 @@ SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일 hh:mm:ss");
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/bootstrap/dist/css/adminlte.min.css">
 
-
 </head>
+
 <style>
-#calendar {
-	max-width: 100%;
-	max-height: 100%;
-}
 </style>
+
 <body class="hold-transition sidebar-mini" onload="getTime()">
 	<!-- div에는 onload="getTime()" 안먹음 -->
+
 	<div class="wrapper">
 
 		<nav
@@ -57,6 +55,7 @@ SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일 hh:mm:ss");
 					data-widget="navbar-search" href="#" role="button"> <i
 						class="fas fa-search"></i>
 				</a>
+
 					<div class="navbar-search-block">
 						<form class="form-inline">
 							<div class="input-group input-group-sm">
@@ -79,16 +78,17 @@ SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일 hh:mm:ss");
 					data-toggle="dropdown" href="#"> <i class="far fa-comments"></i>
 						<span class="badge badge-danger navbar-badge">3</span>
 				</a>
+
 					<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
 						<a href="#" class="dropdown-item">
-
 							<div class="media">
 								<img src="dist/img/user1-128x128.jpg" alt="User Avatar"
 									class="img-size-50 mr-3 img-circle">
 								<div class="media-body">
 									<h3 class="dropdown-item-title">
-										Brad Diesel <span class="float-right text-sm text-danger"><i
-											class="fas fa-star"></i></span>
+										Brad Diesel <span class="float-right text-sm text-danger">
+											<i class="fas fa-star"></i>
+										</span>
 									</h3>
 									<p class="text-sm">Call me whenever you can...</p>
 									<p class="text-sm text-muted">
@@ -230,6 +230,7 @@ SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일 hh:mm:ss");
 
 		</aside>
 
+
 		<div class="content-wrapper">
 
 			<div class="content">
@@ -238,12 +239,12 @@ SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일 hh:mm:ss");
 
 					<div class="col-md-12">
 
-						<div class="row" style="padding-top: 10px;">
+						<div class="row" style="padding-top: 10px; border: 1px solid red;">
 							<!-- 출퇴근 -->
-							<div class="col-md-2" style="dispiay: inlile;">
-
-								<div class="card card-outline" style="height: 45vh;">
-
+							<div class="col-md-2">
+							
+								<div class="card card-outline">
+							
 									<div class="card-body box-profile">
 
 										<div class="text-center">
@@ -255,12 +256,12 @@ SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일 hh:mm:ss");
 										</div>
 
 										<h3 class="profile-username text-center"
-											style="margin: auto; padding: auto;">고양이</h3>
+											style="margin: auto; padding: auto;">${member.name }</h3>
 
 										<p class="text-muted text-center"
 											style="margin: auto; padding: auto;">할수있다 3팀</p>
 
-										<p class="text-center" id="TimeNow"
+										<p class="text-center" id="WhatTimeIsItNow"
 											style="margin: auto; padding: auto;"></p>
 
 										<ul class="list-group list-group-unbordered mb-3"
@@ -280,221 +281,97 @@ SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일 hh:mm:ss");
 										</div>
 
 									</div>
-
 								</div>
-
 							</div>
 
-							<!-- 캘린더 -->
-							<div class="col-md-5" style="dispiay: inlile;">
-								<div class="card" style="height: 45vh;">
-									<div id="calendar"
-										class="fc fc-media-screen fc-direction-ltr fc-theme-standard">
 
-									</div>
-								</div>
 
+							<div class="col-md-5">
+								<div class="card card-outline"></div>
 							</div>
 
-							<!-- todo -->
-							<div class="col-md-5" style="dispiay: inlile;">
-
-								<div class="card card-row card-primary"
-									style="height: 45vh; dispiay: inlile; margin: auto; padding: auto;">
-									<div class="card-header"
-										style="background: none; border: 1px solid gray;">
-										<h3 class="card-title" style="color: black;">ToDo +</h3>
-									</div>
-									<div class="card-body">
-										<div class="card card-outline">
-											<div class="card-header">
-												<h5 class="card-title">ToDo1</h5>
-												<div class="card-tools">
-													<a href="#" class="btn btn-tool btn-link">#</a> <a href="#"
-														class="btn btn-tool"> <i class="fas fa-pen"></i>
-													</a>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-
+							<div class="col-md-5">
+								<div class="card card-outline"></div>
 							</div>
 
 						</div>
 
 					</div>
+
 
 					<div class="col-md-12">
-						<div class="row" style="padding-bottom: 10px;">
 
-							<div class="col-md-3" style="dispiay: block;">
+						<div class="row"
+							style="padding-bottom: 10px; border: 1px solid blue;">
 
-								<div class="card card-row card-primary"
-									style="height: 45vh; dispiay: inlile; margin: auto; padding: auto;">
-									<div class="card-header"
-										style="background: none; border: 1px solid gray;">
-										<h3 class="card-title" style="color: black;">공지사항 +</h3>
-									</div>
-									<div class="card-body">
-										<div class="card card-outline">
-											<div class="card-header">
-												<h5 class="card-title">공지1</h5>
-												<div class="card-tools">
-													<a href="#" class="btn btn-tool btn-link">#</a> <a href="#"
-														class="btn btn-tool"> <i class="fas fa-pen"></i>
-													</a>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-
+							<div class="col-md-3">
+								<div class="card card-outline"></div>
 							</div>
 
-							<div class="col-md-3" style="dispiay: inlile;">
-
-								<div class="card card-row card-primary"
-									style="height: 45vh; dispiay: inlile; margin: auto; padding: auto;">
-									<div class="card-header"
-										style="background: none; border: 1px solid gray;">
-										<h3 class="card-title" style="color: black;">메일 +</h3>
-									</div>
-									<div class="card-body">
-										<div class="card card-outline">
-											<div class="card-header">
-												<h5 class="card-title">메일1</h5>
-												<div class="card-tools">
-													<a href="#" class="btn btn-tool btn-link">#</a> <a href="#"
-														class="btn btn-tool"> <i class="fas fa-pen"></i>
-													</a>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-
+							<div class="col-md-3">
+								<div class="card card-outline"></div>
 							</div>
 
-							<div class="col-md-3" style="dispiay: inlile;">
-
-								<div class="card card-row card-primary"
-									style="height: 45vh; dispiay: inlile; margin: auto; padding: auto;">
-									<div class="card-header"
-										style="background: none; border: 1px solid gray;">
-										<h3 class="card-title" style="color: black;">전자결재 +</h3>
-									</div>
-									<div class="card-body">
-										<div class="card card-outline">
-											<div class="card-header">
-												<h5 class="card-title">전자결재1</h5>
-												<div class="card-tools">
-													<a href="#" class="btn btn-tool btn-link">#</a> <a href="#"
-														class="btn btn-tool"> <i class="fas fa-pen"></i>
-													</a>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-
+							<div class="col-md-3">
+								<div class="card card-outline"></div>
 							</div>
 
-							<div class="col-md-3" style="dispiay: inlile;">
-
-								<div class="card card-row card-primary"
-									style="height: 45vh; dispiay: inlile; margin: auto; padding: auto;">
-									<div class="card-header"
-										style="background: none; border: 1px solid gray;">
-										<h3 class="card-title" style="color: black;">수술 +</h3>
-									</div>
-									<div class="card-body">
-										<div class="card card-outline">
-											<div class="card-header">
-												<h5 class="card-title">수술1</h5>
-												<div class="card-tools">
-													<a href="#" class="btn btn-tool btn-link">#</a> <a href="#"
-														class="btn btn-tool"> <i class="fas fa-pen"></i>
-													</a>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-
+							<div class="col-md-3">
+								<div class="card card-outline"></div>
 							</div>
 
 						</div>
 
-
 					</div>
-					<!-- container-fluid -->
 
 				</div>
-				<!-- E:content -->
+				<!-- content-wrapper -->
 
 			</div>
-			<!-- E:content-wrapper -->
-			<aside class="control-sidebar control-sidebar-dark"></aside>
+			<!-- content -->
 
 		</div>
-		<!-- E:wrapper -->
+		<!-- container-fluid -->
 
-		<script>
-			document.addEventListener('DOMContentLoaded', function() {
-				var calendarEl = document.getElementById('calendar');
+		<aside class="control-sidebar control-sidebar-dark"></aside>
 
-				var calendar = new FullCalendar.Calendar(calendarEl, {
-			           headerToolbar : {
-			               left : 'prev,next today',
-			               center : 'title',
-			               right : 'dayGridMonth,timeGridWeek,timeGridDay'
-			           },
+	</div>
+	<!-- E:wrapper -->
 
-					navLinks : true, // can click day/week names to navigate views
-					selectable : true,
-					nowIndicator : true,
-					dayMaxEvents : true,
-					locale : 'ko',
-					selectMirror : true
-				});
-				calendar.render();
-			});
-		</script>
+	<script>
+		function getTime() {
+			var d = new Date(); // 현재 날짜와 시간
+			var yyyy = d.getFullYear();
+			var MM = d.getMonth();
+			var dd = d.getDay();
+			var hh = d.getHours(); // 시
+			var mm = d.getMinutes(); // 분
+			var ss = d.getSeconds(); // 초
+			var timeBoard = document.getElementById("WhatTimeIsItNow"); // 값이 입력될 공간
+			var time = yyyy + "년 " + MM + "월 " + dd + "일 " + hh + "시 " + mm
+					+ "분 " + ss + "초" // 형식 지정
+			timeBoard.innerHTML = time; // 출력
+			setTimeout(getTime, 1000); //1000밀리초(1초) 마다 반복
+		}
+	</script>
 
-		<script>
-			function getTime() {
-				var d = new Date(); // 현재 날짜와 시간
-				var MM = d.getMonth() + 1;
-				var dd = d.getDate();
-				var hh = d.getHours(); // 시
-				var mm = d.getMinutes(); // 분
-				var ss = d.getSeconds(); // 초
-				var timeBoard = document.getElementById("TimeNow"); // 값이 입력될 공간
-				var time = MM + "월 " + dd + "일 " + hh + "시 " + mm + "분 " + ss
-						+ "초" // 형식 지정
-				timeBoard.innerHTML = time; // 출력
-				setTimeout(getTime, 1000); //1000밀리초(1초) 마다 반복
-			}
-		</script>
+	<script
+		src="<%=request.getContextPath()%>/resources/fullcal/dist/index.global.js"></script>
 
-		<script
-			src="<%=request.getContextPath()%>/resources/fullcal/dist/index.global.js"></script>
+	<script
+		src="<%=request.getContextPath()%>/resources/bootstrap/plugins/jquery/jquery.min.js"></script>
 
-		<script
-			src="<%=request.getContextPath()%>/resources/bootstrap/plugins/jquery/jquery.min.js"></script>
+	<script
+		src="<%=request.getContextPath()%>/resources/bootstrap/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-		<script
-			src="<%=request.getContextPath()%>/resources/bootstrap/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script
+		src="<%=request.getContextPath()%>/resources/bootstrap/dist/js/adminlte.js"></script>
 
-		<script
-			src="<%=request.getContextPath()%>/resources/bootstrap/dist/js/adminlte.js"></script>
+	<script
+		src="<%=request.getContextPath()%>/resources/bootstrap/plugins/chart.js/Chart.min.js"></script>
 
-		<script
-			src="<%=request.getContextPath()%>/resources/bootstrap/plugins/chart.js/Chart.min.js"></script>
-
-		<script
-			src="<%=request.getContextPath()%>/resources/bootstrap/dist/js/pages/dashboard3.js"></script>
+	<script
+		src="<%=request.getContextPath()%>/resources/bootstrap/dist/js/pages/dashboard3.js"></script>
 </body>
 
 </html>

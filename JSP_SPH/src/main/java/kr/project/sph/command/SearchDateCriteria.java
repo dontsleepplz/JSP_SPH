@@ -42,9 +42,7 @@ public class SearchDateCriteria {
 	}
 
 	public SearchDateCriteria(Date startDate, Date endDate) {
-
 		parseSearchDateCriteria(DateToString(startDate), DateToString(endDate));
-		
 	}
 	
 
@@ -79,8 +77,6 @@ public class SearchDateCriteria {
 		return searchEndDate;
 	}
 	
-	
-	//
 	
 	public Date getSearchStartDateToDate() {
 		Date date = null;
