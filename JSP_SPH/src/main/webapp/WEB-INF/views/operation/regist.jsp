@@ -124,51 +124,24 @@ SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일 hh:mm:ss");
 														<option>마취과</option>
 														<option>신경외과</option>
 														
-													</select><span
-														class="select2 select2-container select2-container--default"
-														dir="ltr" data-select2-id="4" style="width: 100%;"><span
-														class="selection"><span
-															class="select2-selection select2-selection--single"
-															role="combobox" aria-haspopup="true"
-															aria-expanded="false" tabindex="0" aria-disabled="false"
-															aria-labelledby="select2-8bpd-container"><span
-																class="select2-selection__rendered"
-																id="select2-8bpd-container" role="textbox"
-																aria-readonly="true" title="ASC">ASC</span><span
-																class="select2-selection__arrow" role="presentation"><b
-																	role="presentation"></b></span></span></span><span class="dropdown-wrapper"
-														aria-hidden="true"></span></span>
+													</select>
 												</div>
 											</div>
-											<div class="col-3">
+											<div class="col-4">
 												<div class="form-group">
-													<label>Order By:</label> <select
-														class="select2 select2-hidden-accessible"
-														style="width: 100%;" data-select2-id="6" tabindex="-1"
+													<label>의사:</label> 
+													<select class="select2 select2-hidden-accessible" style="width: 100%;" data-select2-id="6" tabindex="-1"
 														aria-hidden="true">
-														<option selected="" data-select2-id="8">Title</option>
-														<option>Date</option>
-													</select><span
-														class="select2 select2-container select2-container--default"
-														dir="ltr" data-select2-id="7" style="width: 100%;"><span
-														class="selection"><span
-															class="select2-selection select2-selection--single"
-															role="combobox" aria-haspopup="true"
-															aria-expanded="false" tabindex="0" aria-disabled="false"
-															aria-labelledby="select2-jkbd-container"><span
-																class="select2-selection__rendered"
-																id="select2-jkbd-container" role="textbox"
-																aria-readonly="true" title="Title">Title</span><span
-																class="select2-selection__arrow" role="presentation"><b
-																	role="presentation"></b></span></span></span><span class="dropdown-wrapper"
-														aria-hidden="true"></span></span>
+														<option selected="" data-select2-id="8">황정민</option>
+														<option>주지훈</option>
+													</select>
 												</div>
 											</div>
 										</div>
 										<div class="form-group">
 											<div class="input-group input-group-lg">
 												<input type="search" class="form-control form-control-lg"
-													placeholder="Type your keywords here" value="Lorem ipsum">
+													placeholder="Type your keywords here" value="">
 												<div class="input-group-append">
 													<button type="submit" class="btn btn-lg btn-default">
 														<i class="fa fa-search"></i>

@@ -26,6 +26,9 @@ public class TestController {
 	public void testFrame() {
 
 	}
+	
+	@GetMapping("/work/main")
+	public void wmain() {}
 
 	@GetMapping("/common/login2")
 	public void login2() {
