@@ -36,9 +36,14 @@ public class TestController {
 	public void mainD() {
 
 	}
+	
+	@GetMapping("/common/mainDcopy")
+	public void mainDcopy() {
 
-	@GetMapping("/calender/cal")
-	public void cal() {
+	}
+
+	@GetMapping("/calender/calendar")
+	public void calendar() {
 
 	}
 
