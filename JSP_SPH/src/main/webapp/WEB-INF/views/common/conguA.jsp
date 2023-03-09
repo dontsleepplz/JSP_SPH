@@ -30,6 +30,13 @@ SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월");
 
 </head>
 <style>
+ul {
+	list-style: none;
+}
+
+li {
+	float: left;
+}
 </style>
 <body class="hold-transition sidebar-mini">
 	<div class="wrapper">
@@ -233,19 +240,11 @@ SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월");
 
 					<div class="input-group row">
 
-						<div class="col-sm-3">
+						<div class="col-sm-5">
 							<h3 class="m-0">전체주소록</h3>
 						</div>
 
-						<div class="col-sm-2" style="margin-left:0px;">
-							
-								<button type="button" class="btn btn-primary float-right">
-									<i class="fas fa-plus"></i> 개인주소록 추가
-								</button>
-							
-						</div>
- 
-						<div class="col-sm-7">
+						<div class="col-md-7">
 							<ol class="breadcrumb float-sm-right">
 								<li class="breadcrumb-item active"><div class="form-inline">
 										<div class="input-group" data-widget="sidebar-search">
@@ -279,9 +278,9 @@ SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월");
 										</div>
 									</div></li>
 						</div>
-
+						
 					</div>
-					<!-- row mb-2 -->
+					<!-- input-group row -->
 
 				</div>
 				<!-- container-fluid -->
@@ -293,24 +292,197 @@ SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월");
 
 				<div class="container-fluid">
 
-					<div class="col-md-12">
-					
-						<div class="row">
-						
-							<!-- 출퇴근 -->
-							<div class="col-md-3">
-							
-							
-							
-							
-					
+
+					<div class="row">
+
+						<!-- 자음검색  -->
+						<div class="col-md-3">
+
+							<div>
+								<ul>
+									<li><a href="#">전체&nbsp;</a></li>
+								</ul>
+								<ul>
+									<li><a href="#">ㄱ&nbsp;</a></li>
+								</ul>
+								<ul>
+									<li><a href="#">ㄴ&nbsp;</a></li>
+								</ul>
+								<ul>
+									<li><a href="#">ㄷ&nbsp;</a></li>
+								</ul>
+								<ul>
+									<li><a href="#">ㄹ&nbsp;</a></li>
+								</ul>
+								<ul>
+									<li><a href="#">ㅁ&nbsp;</a></li>
+								</ul>
+								<ul>
+									<li><a href="#">ㅂ&nbsp;</a></li>
+								</ul>
+								<ul>
+									<li><a href="#">ㅅ&nbsp;</a></li>
+								</ul>
+								<ul>
+									<li><a href="#">ㅇ&nbsp;</a></li>
+								</ul>
+								<ul>
+									<li><a href="#">ㅈ&nbsp;</a></li>
+								</ul>
+								<ul>
+									<li><a href="#">ㅊ&nbsp;</a></li>
+								</ul>
+								<ul>
+									<li><a href="#">ㅋ&nbsp;</a></li>
+								</ul>
+								<ul>
+									<li><a href="#">ㅌ&nbsp;</a></li>
+								</ul>
+								<ul>
+									<li><a href="#">ㅍ&nbsp;</a></li>
+								</ul>
+								<ul>
+									<li><a href="#">ㅎ&nbsp;</a></li>
+								</ul>
 							</div>
-							
+
 						</div>
-						<!-- col-md-12 -->
-					
+						<!-- col-md-3 -->
+						
+						<div class="col-md-2" style="margin-left: 0px; padding:10px;">
+
+							<button type="button" class="btn btn-primary float-left"
+								style="min-width: 180px;">
+								<i class="fas fa-plus"></i> 개인주소록 추가
+							</button>
+
+						</div>
+
 					</div>
 					<!-- row -->
+
+					<div class="row">
+						<div class="col-md-3">
+
+
+							<div class="card card-row card-primary" style="height:70vh;">
+								<div class="card-header">
+									<h3 class="card-title">조직도</h3>
+								</div>
+								<div class="card-body">
+									<div class="card card-primary card-outline">
+										<div class="card-header">
+											<h5 class="card-title">Create first milestone</h5>
+											<div class="card-tools">
+												<a href="#" class="btn btn-tool btn-link">#5</a> <a href="#"
+													class="btn btn-tool"> <i class="fas fa-pen"></i>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-9">
+
+							<section class="content" >
+								<div class="card" style="height:70vh;">
+									<div class="card-header">
+										<h3 class="card-title">jsGrid</h3>
+									</div>
+
+									<div class="card-body">
+										<div id="jsGrid1" class="jsgrid"
+											style="position: relative; height: 80%; width: 80%;">
+											<div class="jsgrid-grid-header jsgrid-header-scrollbar">
+												<table class="jsgrid-table">
+													<tr class="jsgrid-header-row">
+														<th class="jsgrid-header-cell jsgrid-header-sortable"
+															style="width: 150px;">Name</th>
+														<th
+															class="jsgrid-header-cell jsgrid-align-right jsgrid-header-sortable jsgrid-header-sort jsgrid-header-sort-desc"
+															style="width: 50px;">Age</th>
+														<th class="jsgrid-header-cell jsgrid-header-sortable"
+															style="width: 200px;">Address</th>
+														<th
+															class="jsgrid-header-cell jsgrid-align-center jsgrid-header-sortable"
+															style="width: 100px;">Country</th>
+														<th
+															class="jsgrid-header-cell jsgrid-align-center jsgrid-header-sortable"
+															style="width: 100px;">Is Married</th>
+													</tr>
+													
+														<tr class="jsgrid-row">
+															<td class="jsgrid-cell" style="width: 150px;">Alexis
+																Clements</td>
+															<td class="jsgrid-cell jsgrid-align-right"
+																style="width: 50px;">69</td>
+															<td class="jsgrid-cell" style="width: 200px;">P.O.
+																Box 176, 5107 Proin Rd.</td>
+															<td class="jsgrid-cell jsgrid-align-center"
+																style="width: 100px;">Brazil</td>
+															<td class="jsgrid-cell jsgrid-align-center"
+																style="width: 100px;"><input type="checkbox"
+																disabled=""></td>
+														</tr>
+														<tr class="jsgrid-alt-row">
+															<td class="jsgrid-cell" style="width: 150px;">Dominic
+																Raymond</td>
+															<td class="jsgrid-cell jsgrid-align-right"
+																style="width: 50px;">68</td>
+															<td class="jsgrid-cell" style="width: 200px;">Ap
+																#689-4874 Nisi Rd.</td>
+															<td class="jsgrid-cell jsgrid-align-center"
+																style="width: 100px;">United States</td>
+															<td class="jsgrid-cell jsgrid-align-center"
+																style="width: 100px;"><input type="checkbox"
+																disabled=""></td>
+														</tr>
+														<tr>
+														<td>왜 td 안먹냐 진짜</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											<div class="jsgrid-pager-container">
+												<div class="jsgrid-pager">
+													Pages: <span
+														class="jsgrid-pager-nav-button jsgrid-pager-nav-inactive-button"><a
+														href="javascript:void(0);">First</a></span> <span
+														class="jsgrid-pager-nav-button jsgrid-pager-nav-inactive-button"><a
+														href="javascript:void(0);">Prev</a></span> <span
+														class="jsgrid-pager-page jsgrid-pager-current-page">1</span><span
+														class="jsgrid-pager-page"><a
+														href="javascript:void(0);">2</a></span><span
+														class="jsgrid-pager-page"><a
+														href="javascript:void(0);">3</a></span><span
+														class="jsgrid-pager-page"><a
+														href="javascript:void(0);">4</a></span><span
+														class="jsgrid-pager-page"><a
+														href="javascript:void(0);">5</a></span> <span
+														class="jsgrid-pager-nav-button"><a
+														href="javascript:void(0);">Next</a></span> <span
+														class="jsgrid-pager-nav-button"><a
+														href="javascript:void(0);">Last</a></span> &nbsp;&nbsp; 1 of 5
+												</div>
+											</div>
+											<div class="jsgrid-load-shader"
+												style="display: none; position: absolute; inset: 0px; z-index: 1000;"></div>
+											<div class="jsgrid-load-panel"
+												style="display: none; position: absolute; top: 50%; left: 50%; z-index: 1000;">Please,
+												wait...</div>
+										</div>
+									</div>
+
+								</div>
+
+							</section>
+
+						</div>
+
+					</div>
+
 
 				</div>
 				<!-- container-fluid -->
@@ -333,16 +505,6 @@ SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월");
 	</div>
 	<!-- E:wrapper -->
 
-	<script>
-		function getTime() {
-			var d = new Date(); // 현재 날짜와 시간
-			var yyyy = d.getFullYear();
-			var MM = d.getMonth();
-			var timeBoard = document.getElementById("WhatTimeIsItNow"); // 값이 입력될 공간
-			var time = yyyy + "년 " + MM + "월 " // 형식 지정
-			timeBoard.innerHTML = time; // 출력
-		}
-	</script>
 
 	<script
 		src="<%=request.getContextPath()%>/resources/bootstrap/plugins/jquery/jquery.min.js"></script>
