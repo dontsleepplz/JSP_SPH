@@ -19,7 +19,15 @@
   
   <decorator:head />
 </head>
+<style>
+div.card-body {
+	overflow-x:hidden;
+}
+body {
+	overflow-y:hidden;
+}
 
+</style>
 <body class="hold-transition sidebar-mini">
   <div class="wrapper">
 	<!-- iframe_header -->

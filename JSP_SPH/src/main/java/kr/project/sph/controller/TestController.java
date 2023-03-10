@@ -93,19 +93,15 @@ public class TestController {
 
 	}
 	
+	@GetMapping("/example/Example")
+	public void ppp() {
+		
+	}
 	
-	//frame.jsp처럼 작성해주셔야합니다.
-	//menu.setMurl("경로");
-	//경로 부분에 경로 입력해주시고 마지막에 .do 붙여주셔야하고
-	//경로수정하셨으면 GetMapping으로 메소드 하나 더 만들으셔서 경로주고 사용하시면 됩니다.
-	
-	//요청(Request) -> Encoding filter -> sitemesh-> dispatcherServlet-> adapter->controller
-	//-> dispatcherServlet-> decorators-> decorator
-	
-	//확인 순서 : web.xml -> sitemesh.xml -> decorators.xml -> decorator.jsp -> footer.jsp(하단 js) ->
-	//indexpage.jsp -> testController.index -> iframe_decorator.jsp
-	
-	
+	@GetMapping("/admin/main")
+	public void pp2() {
+		
+	}
 	
 	@GetMapping("/index")
 	public ModelAndView index(@RequestParam(defaultValue = "M000000") String mCode, Model model) throws Exception {
@@ -115,7 +111,7 @@ public class TestController {
 
 		// URL 스트링에 직접입력
 		menu.setMcode("M000000");
-		menu.setMurl("/calender/calendar.do");
+		menu.setMurl("/admin/member/membermain.admin");
 		menu.setMname("test");
 
 		menuList.add(menu);

@@ -25,7 +25,16 @@ SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일 hh:mm:ss");
   
   <decorator:head />
 </head>
+<style>
+div.card-body {
+	overflow-x:hidden;
+}
+body {
+	overflow-y:hidden;
+}
 
+
+</style>
 <body class="hold-transition sidebar-mini">
   <div class="wrapper">
 

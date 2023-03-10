@@ -4,11 +4,17 @@
 
 <!-- S:iframe -->
 <!-- membermain -->
+<style>
+div.card {
+	min-height: 100%;
+	max-height: 100%;
+}
+</style>
 <div class="content-header">
 	<div class="container-fluid">
 		<div class="row mb-2">
 			<div class="col-sm-6">
-				<h1 class="m-0">Admin</h1>
+				<h1 class="m-0">사원 관리</h1>
 			</div>
 			<div class="col-sm-6">
 				<ol class="breadcrumb float-sm-right">
@@ -24,148 +30,195 @@
 	<div class="container-fluid">
 
 		<div class="row">
-			<div class="col-lg-6">
+			<div class="col-lg-5">
 
-				<div class="card">
-					<div class="card-header border-0">
-						<h3 class="card-title">사원 목록</h3>
+				<div class="card" style="">
+					<div class="card-header">
+						<h3 class="card-title">회원 목록</h3>&nbsp;
+						<button type="submit" class="btn btn-primary" style="width:12%;height:10%;padding:0;">등록</button>
 						<div class="card-tools">
-							<a href="#" class="btn btn-tool btn-sm"> <i
-								class="fas fa-download"></i>
-							</a> <a href="#" class="btn btn-tool btn-sm"> <i
-								class="fas fa-bars"></i>
-							</a>
+							<div class="input-group input-group-sm">
+								<input type="text" name="table_search"
+									class="form-control float-right" placeholder="Search" style="width:110px;">
+								<div class="input-group-append">
+									<button type="submit" class="btn btn-default">
+										<i class="fas fa-search"></i>
+									</button>
+								</div>
+							</div>
 						</div>
 					</div>
+
 					<div class="card-body table-responsive p-0">
-						<table class="table table-striped table-valign-middle">
+						<table class="table table-head-fixed text-nowrap">
 							<thead>
 								<tr>
-							
-									<th>사원번호</th>
-									<th>부서</th>
-									<th>아이디</th>
-									<th>연락처</th>
+									<th>ID</th>
+									<th>User</th>
+									<th>Date</th>
+									<th>Status</th>
+									<th>Reason</th>
 								</tr>
 							</thead>
 							<tbody>
-								<c:forEach items="${memberList}" var="member">
-									<tr>
-										<td>${member.MNO }</td>
-										<td>${member.depart }</td>
-										<td>${member.id }</td>
-										<td>${member.phone }</td>
-									</tr>
-								</c:forEach>
+								<tr>
+									<td>183</td>
+									<td>John Doe</td>
+									<td>11-7-2014</td>
+									<td><span class="tag tag-success">Approved</span></td>
+									<td>doner.</td>
+								</tr>
+								<tr>
+									<td>219</td>
+									<td>Alexander</td>
+									<td>11-7-2014</td>
+									<td><span class="tag tag-warning">Pending</span></td>
+									<td>doner.</td>
+								</tr>
+								<tr>
+									<td>657</td>
+									<td>Bob Doe</td>
+									<td>11-7-2014</td>
+									<td><span class="tag tag-primary">Approved</span></td>
+									<td>doner.</td>
+								</tr>
+								<tr>
+									<td>175</td>
+									<td>Mike Doe</td>
+									<td>11-7-2014</td>
+									<td><span class="tag tag-danger">Denied</span></td>
+									<td>doner.</td>
+								</tr>
+								<tr>
+									<td>134</td>
+									<td>Jim Doe</td>
+									<td>11-7-2014</td>
+									<td><span class="tag tag-success">Approved</span></td>
+									<td>doner.</td>
+								</tr>
+								<tr>
+									<td>494</td>
+									<td>Victoria Doe</td>
+									<td>11-7-2014</td>
+									<td><span class="tag tag-warning">Pending</span></td>
+									<td>doner.</td>
+								</tr>
+								<tr>
+									<td>832</td>
+									<td>Michael Doe</td>
+									<td>11-7-2014</td>
+									<td><span class="tag tag-primary">Approved</span></td>
+									<td>doner.</td>
+								</tr>
+								<tr>
+									<td>982</td>
+									<td>Rocky Doe</td>
+									<td>11-7-2014</td>
+									<td><span class="tag tag-danger">Denied</span></td>
+									<td>doner.</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+				</div>
+
+			</div>
+			<div class="col-lg-5">
+				<div class="card">
+					<div class="card-header">
+						<h3 class="card-title">접속 로그</h3>
+						<div class="card-tools">
+							<div class="input-group input-group-sm">
+								<input type="text" name="table_search"
+									class="form-control float-right" placeholder="Search" style="width:110px;">
+								<div class="input-group-append">
+									<button type="submit" class="btn btn-default">
+										<i class="fas fa-search"></i>
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="card-body table-responsive p-0">
+						<table class="table table-head-fixed text-nowrap">
+							<thead>
+								<tr>
+									<th>ID</th>
+									<th>User</th>
+									<th>Date</th>
+									<th>Status</th>
+									<th>Reason</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>183</td>
+									<td>John Doe</td>
+									<td>11-7-2014</td>
+									<td><span class="tag tag-success">Approved</span></td>
+									<td>doner.</td>
+								</tr>
+								<tr>
+									<td>219</td>
+									<td>Alexander</td>
+									<td>11-7-2014</td>
+									<td><span class="tag tag-warning">Pending</span></td>
+									<td>doner.</td>
+								</tr>
+								<tr>
+									<td>657</td>
+									<td>Bob Doe</td>
+									<td>11-7-2014</td>
+									<td><span class="tag tag-primary">Approved</span></td>
+									<td>doner.</td>
+								</tr>
+								<tr>
+									<td>175</td>
+									<td>Mike Doe</td>
+									<td>11-7-2014</td>
+									<td><span class="tag tag-danger">Denied</span></td>
+									<td>doner.</td>
+								</tr>
+								<tr>
+									<td>134</td>
+									<td>Jim Doe</td>
+									<td>11-7-2014</td>
+									<td><span class="tag tag-success">Approved</span></td>
+									<td>doner.</td>
+								</tr>
+								<tr>
+									<td>494</td>
+									<td>Victoria Doe</td>
+									<td>11-7-2014</td>
+									<td><span class="tag tag-warning">Pending</span></td>
+									<td>doner.</td>
+								</tr>
+								<tr>
+									<td>832</td>
+									<td>Michael Doe</td>
+									<td>11-7-2014</td>
+									<td><span class="tag tag-primary">Approved</span></td>
+									<td>doner.</td>
+								</tr>
+								<tr>
+									<td>982</td>
+									<td>Rocky Doe</td>
+									<td>11-7-2014</td>
+									<td><span class="tag tag-danger">Denied</span></td>
+									<td>doner.</td>
+								</tr>
 							</tbody>
 						</table>
 					</div>
 				</div>
 
 			</div>
-
-
-
-
-
-
-
-			<div class="col-lg-6">
-				<div class="card">
-					<div class="card-header border-0">
-						<div class="d-flex justify-content-between">
-							<h3 class="card-title">Sales</h3>
-							<a href="javascript:void(0);">View Report</a>
-						</div>
-					</div>
-					<div class="card-body">
-						<div class="d-flex">
-							<p class="d-flex flex-column">
-								<span class="text-bold text-lg">$18,230.00</span> <span>Sales
-									Over Time</span>
-							</p>
-							<p class="ml-auto d-flex flex-column text-right">
-								<span class="text-success"> <i class="fas fa-arrow-up"></i>
-									33.1%
-								</span> <span class="text-muted">Since last month</span>
-							</p>
-						</div>
-
-						<div class="position-relative mb-4">
-							<canvas id="sales-chart" height="200"></canvas>
-						</div>
-						<div class="d-flex flex-row justify-content-end">
-							<span class="mr-2"> <i class="fas fa-square text-primary"></i>
-								This year
-							</span> <span> <i class="fas fa-square text-gray"></i> Last year
-							</span>
-						</div>
-					</div>
-				</div>
-
-				<div class="card">
-					<div class="card-header border-0">
-						<h3 class="card-title">Online Store Overview</h3>
-						<div class="card-tools">
-							<a href="#" class="btn btn-sm btn-tool"> <i
-								class="fas fa-download"></i>
-							</a> <a href="#" class="btn btn-sm btn-tool"> <i
-								class="fas fa-bars"></i>
-							</a>
-						</div>
-					</div>
-					<div class="card-body">
-						<div
-							class="d-flex justify-content-between align-items-center border-bottom mb-3">
-							<p class="text-success text-xl">
-								<i class="ion ion-ios-refresh-empty"></i>
-							</p>
-							<p class="d-flex flex-column text-right">
-								<span class="font-weight-bold"> <i
-									class="ion ion-android-arrow-up text-success"></i> 12%
-								</span> <span class="text-muted">CONVERSION RATE</span>
-							</p>
-						</div>
-
-						<div
-							class="d-flex justify-content-between align-items-center border-bottom mb-3">
-							<p class="text-warning text-xl">
-								<i class="ion ion-ios-cart-outline"></i>
-							</p>
-							<p class="d-flex flex-column text-right">
-								<span class="font-weight-bold"> <i
-									class="ion ion-android-arrow-up text-warning"></i> 0.8%
-								</span> <span class="text-muted">SALES RATE</span>
-							</p>
-						</div>
-
-						<div
-							class="d-flex justify-content-between align-items-center mb-0">
-							<p class="text-danger text-xl">
-								<i class="ion ion-ios-people-outline"></i>
-							</p>
-							<p class="d-flex flex-column text-right">
-								<span class="font-weight-bold"> <i
-									class="ion ion-android-arrow-down text-danger"></i> 1%
-								</span> <span class="text-muted">REGISTRATION RATE</span>
-							</p>
-						</div>
-
-					</div>
-				</div>
-			</div>
-
-		</div>
-
-
-		<div class="row">
-			<div class="col-12">
-
-				<div class="card">
+			<div class="col-lg-2">
+				<div class="card card-danger">
 					<div class="card-header">
-						<h3 class="card-title">
-							<i class="far fa-chart-bar"></i> jQuery Knob
-						</h3>
+						<h3 class="card-title">사용자계정 상태</h3>
 						<div class="card-tools">
 							<button type="button" class="btn btn-tool"
 								data-card-widget="collapse">
@@ -177,65 +230,104 @@
 							</button>
 						</div>
 					</div>
-
-					<div class="card-body">
-						<div class="row">
-							<div class="col-6 col-md-3 text-center">
-								<div style="display: inline; width: 90px; height: 90px;">
-									<canvas width="135" height="135"
-										style="width: 90px; height: 90px;"></canvas>
-									<input type="text" class="knob" value="30" data-width="90"
-										data-height="90" data-fgcolor="#3c8dbc"
-										style="width: 49px; height: 30px; position: absolute; vertical-align: middle; margin-top: 30px; margin-left: -69px; border: 0px; background: none; font: bold 18px Arial; text-align: center; color: rgb(60, 141, 188); padding: 0px; appearance: none;">
-								</div>
-								<div class="knob-label">New Visitors</div>
+					<div class="card-body" >
+						<div class="chartjs-size-monitor">
+							<div class="chartjs-size-monitor-expand">
+								<div class=""></div>
 							</div>
-
-							<div class="col-6 col-md-3 text-center">
-								<div style="display: inline; width: 90px; height: 90px;">
-									<canvas width="135" height="135"
-										style="width: 90px; height: 90px;"></canvas>
-									<input type="text" class="knob" value="70" data-width="90"
-										data-height="90" data-fgcolor="#f56954"
-										style="width: 49px; height: 30px; position: absolute; vertical-align: middle; margin-top: 30px; margin-left: -69px; border: 0px; background: none; font: bold 18px Arial; text-align: center; color: rgb(245, 105, 84); padding: 0px; appearance: none;">
-								</div>
-								<div class="knob-label">Bounce Rate</div>
+							<div class="chartjs-size-monitor-shrink">
+								<div class=""></div>
 							</div>
-
-							
-
-							
-
 						</div>
-<div class="col-md-6">
-						<div class="row">
-
-							<div class="col-6 text-center">
-								<div style="display: inline; width: 90px; height: 90px;">
-									<canvas width="135" height="135"
-										style="width: 90px; height: 90px;"></canvas>
-									<input type="text" class="knob" value="50" data-width="90"
-										data-height="90" data-fgcolor="#39CCCC"
-										style="width: 49px; height: 30px; position: absolute; vertical-align: middle; margin-top: 30px; margin-left: -69px; border: 0px; background: none; font: bold 18px Arial; text-align: center; color: rgb(57, 204, 204); padding: 0px; appearance: none;">
-								</div>
-								<div class="knob-label">CPU</div>
-							</div>
-
-						</div>
-</div>
+						<canvas id="donutChart"
+							style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 484px;"
+							width="605" height="312" class="chartjs-render-monitor"></canvas>
+							
 					</div>
 
 				</div>
+				
 
 			</div>
+			
+				
+
+			
 
 		</div>
+
+
+
 
 
 	</div>
 
 </div>
+
+
 <script
 	src="<%=request.getContextPath()%>/resources/bootstrap/plugins/chart.js/Chart.min.js"></script>
+<script
+	src="<%=request.getContextPath()%>/resources/bootstrap/plugins/datatables/jquery.dataTables.min.js"></script>
+<script
+	src="<%=request.getContextPath()%>/resources/bootstrap/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script
+	src="<%=request.getContextPath()%>/resources/bootstrap/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script
+	src="<%=request.getContextPath()%>/resources/bootstrap/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script
+	src="<%=request.getContextPath()%>/resources/bootstrap/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script
+	src="<%=request.getContextPath()%>/resources/bootstrap/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script
+	src="<%=request.getContextPath()%>/resources/bootstrap/plugins/jszip/jszip.min.js"></script>
+<script
+	src="<%=request.getContextPath()%>/resources/bootstrap/plugins/pdfmake/pdfmake.min.js"></script>
+<script
+	src="<%=request.getContextPath()%>/resources/bootstrap/plugins/pdfmake/vfs_fonts.js"></script>
+<script
+	src="<%=request.getContextPath()%>/resources/bootstrap/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script
+	src="<%=request.getContextPath()%>/resources/bootstrap/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script
+	src="<%=request.getContextPath()%>/resources/bootstrap/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+
+<script>
+	window.onload = function() {
+		$(function() {
+			/* ChartJS
+			 * -------
+			 * Here we will create a few charts using ChartJS
+			 */
+			//-------------
+			//- DONUT CHART -
+			//-------------
+			// Get context with jQuery - using jQuery's .get() method.
+			var donutChartCanvas = $('#donutChart').get(0).getContext('2d')
+			var donutData = {
+				labels : [ 'Chrome', 'IE', 'FireFox', 'Safari', 'Opera',
+						'Navigator', ],
+				datasets : [ {
+					data : [ 700, 500, 400, 600, 300, 100 ],
+					backgroundColor : [ '#f56954', '#00a65a', '#f39c12',
+							'#00c0ef', '#3c8dbc', '#d2d6de' ],
+				} ]
+			}
+			var donutOptions = {
+				maintainAspectRatio : false,
+				responsive : true,
+			}
+			//Create pie or douhnut chart
+			// You can switch between pie and douhnut using the method below.
+			new Chart(donutChartCanvas, {
+				type : 'doughnut',
+				data : donutData,
+				options : donutOptions
+			})
+		})
+	}
+</script>
+
+
 <!-- S:footer -->
 <!-- E:content-wrapper -->

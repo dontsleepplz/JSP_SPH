@@ -22,11 +22,19 @@ SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일 hh:mm:ss");
   <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/bootstrap/plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/bootstrap/dist/css/adminlte.min.css">
-  
+  <!-- jQuery -->
+<script src="<%=request.getContextPath()%>/resources/bootstrap/plugins/jquery/jquery.min.js"></script>
   <decorator:head />
 </head>
+<style>
+body {
+ overflow-y:hidden;
+}
 
-<body class="hold-transition sidebar-mini">
+</style>
+
+
+<body class="hold-transition sidebar-mini" >
   <div class="wrapper">
 	<!-- header -->
     <nav class="main-header navbar navbar-expand navbar-white navbar-light" style="background-color: rgb(180, 220, 255);">

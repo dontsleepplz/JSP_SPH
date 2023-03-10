@@ -14,7 +14,7 @@ SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일 hh:mm:ss");
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1" style="overflow:hidden;">
   <title>SPH-admin</title>
   
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -22,9 +22,17 @@ SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일 hh:mm:ss");
   <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/bootstrap/plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/bootstrap/dist/css/adminlte.min.css">
-  
+  <!-- jQuery -->
+  <script src="<%=request.getContextPath()%>/resources/bootstrap/plugins/jquery/jquery.min.js"></script>
   <decorator:head />
 </head>
+<style>
+body {
+ overflow-y:hidden;
+}
+
+</style>
+
 
 <body class="hold-transition sidebar-mini">
   <div class="wrapper">
@@ -163,12 +171,13 @@ SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일 hh:mm:ss");
       </ul>
     </nav>
 
-    <aside class="main-sidebar sidebar-dark-primary elevation-0" style="background-color:white; border-right:1px solid #DFE1E4" >
+	
+    <aside class="main-sidebar sidebar-dark-primary elevation-0" style="background-color:white; border-right:1px solid #DFE1E4; min-height:0%;display:inline-block;" >
       <a href="index" class="brand-link" style="background-color: rgb(206, 212, 218);border-bottom:1px solid #dee2e6;">
         <img src="<%=request.getContextPath() %>/resources/img/SPHLogo.png" alt="SPH_logo" class="brand-image img-circle elevation-0" style="opacity: .8;">
         <span class="brand-text font-weight-light" style="color:black;">SPH</span>
       </a>
-
+		<c:if test="${!empty submenu }">
       <div class="sidebar" >
 
         <nav class="mt-2">
@@ -179,6 +188,7 @@ SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일 hh:mm:ss");
         </nav>
 
       </div>
-
+ 		</c:if>
     </aside>
+   
 <!-- E:admin_header -->
