@@ -5,7 +5,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 	
-	<context:property-placeholder file-encoding="utf-8" location="classpath:kr/ac/sbs/properties/*.properties" />
+	<context:property-placeholder file-encoding="utf-8" location="classpath:kr/project/sph/properties/*.properties" />
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	
