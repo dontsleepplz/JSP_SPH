@@ -15,6 +15,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 import kr.project.sph.command.SearchCriteria;
+import kr.project.sph.command.SearchDateCriteria;
 import kr.project.sph.dto.MemberVO;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -27,17 +28,45 @@ public class TestMemberDAOImpl {
 	@Autowired
 	private SqlSession session;
 	
-	//기간검색 없는 멤버리스트조회
 	@Test
-	public void testMemberList() throws Exception{
-		SearchCriteria cri = new SearchCriteria(1,100,"i","i");
+	public void testMemberListbyDate() throws Exception{
+		
+		SearchDateCriteria datecri = new SearchDateCriteria("20010411", "20230309");
+		SearchCriteria cri = new SearchCriteria(1,100,"i","i","r",datecri);
 		int offset = cri.getStartRowNum();
 		int limit = cri.getPerPageNum();
 		RowBounds rowBounds = new RowBounds(offset,limit);
 		List<MemberVO> memberList = session.selectList("Member-Mapper.selectSearchMemberList",cri,rowBounds);
 		
+		System.out.println(datecri.getYmdStartDate());
+		System.out.println(datecri.getYmdEndDate());
+		for(int i=0;i<memberList.size();i++) {
+			MemberVO member = new MemberVO();
+			member = memberList.get(i);
+			System.out.println(member.getName());
+			System.out.println(session);
+		}
+		
 		Assert.assertEquals(2, memberList.size());
 	}
+	
+	@Test
+	public void testMemberList() throws Exception{
+		SearchCriteria cri = new SearchCriteria(1,100,"r","i");
+		int offset = cri.getStartRowNum();
+		int limit = cri.getPerPageNum();
+		RowBounds rowBounds = new RowBounds(offset,limit);
+		List<MemberVO> memberList =session.selectList("Member-Mapper.selectSearchMemberList",cri,rowBounds);
+		MemberVO member = new MemberVO();
+		
+		for(int i = 0; i<memberList.size();i++) {
+			member = memberList.get(i);
+			System.out.println(member.getRegDate());
+		}
+		
+		Assert.assertEquals(3, memberList.size());
+	}
+	
 	
 	@Test
 	public void testSelectMemberByMNO() throws Exception{

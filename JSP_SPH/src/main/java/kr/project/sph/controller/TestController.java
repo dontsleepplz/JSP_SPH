@@ -118,6 +118,7 @@ public class TestController {
 		// URL 스트링에 직접입력
 		menu.setMcode("M000000");
 		menu.setMurl("/common/stati.do");
+		menu.setMurl("/calender/calendar.do");
 		menu.setMname("test");
 
 		menuList.add(menu);

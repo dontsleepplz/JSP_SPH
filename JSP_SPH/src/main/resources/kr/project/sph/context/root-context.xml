@@ -11,5 +11,7 @@
 	
 	<import resource="./dataSource-context.xml"/>
 	<import resource="./application-context.xml"/>
+	<import resource="./mail-context.xml"/>	
+	<import resource="./report-context.xml"/>
 	
 </beans>

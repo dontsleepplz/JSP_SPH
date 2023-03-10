@@ -22,19 +22,26 @@
 		<if test="searchType == 'e'.toString() ">
 			and email like '%'||#{keyword}||'%'
 		</if>
-		<if test="searchType == 'j'.toString() ">
-			and regdate between '${searchStartDate}' and '${searchEndDate}'
-		</if>
 		<if test="searchType == 'd'.toString() ">
 			and departcode like '%'||#{departCode}||'%'
 		</if>
+		
 	</sql>
-	<!-- <sql id="date">
-		<if test="datecri != null">
-			and regdate between ${searchStartDate} and ${searchEndDate}
-		</if>
-		<if test="datecri == null"></if>
-	</sql> -->
+	<sql id="dateSearch">
+			<if test="searchDate == 'j'.toString() ">
+				and joindate between #{dateCri.ymdStartDate} and #{dateCri.ymdEndDate}
+			</if>
+			<if test="searchDate == 'r'.toString() ">
+				and regdate between #{dateCri.ymdStartDate} and #{dateCri.ymdEndDate}
+			</if>
+			<if test="searchDate == 'u'.toString() ">
+				and updatedate between #{dateCri.ymdStartDate} and #{dateCri.ymdEndDate}
+			</if>
+			<if test="searchDate == 'l'.toString() ">
+				and leavedate between #{dateCri.ymdStartDate} and #{dateCri.ymdEndDate}
+			</if>
+	</sql>
+	
 
 	<select id="selectSearchMemberList" resultType="member">
 		select
@@ -42,25 +49,16 @@
 		from member
 		where mno is not null
 		<include refid="search" />
+		<include refid="dateSearch" />
 		order by regDate desc
 	</select>
-	
-	<!-- <select id="selectSearchWithDateMemberList" resultType="member">
-		select
-		*
-		from member
-		where id is not null
-		<include refid="date" />
-		<include refid="search" />
-		order by regDate desc
-	</select> -->
 	
 	<select id="selectSearchMemberListCount" resultType="int">
 		select count(*)
 		from member
 		where id is not null
-		<include refid="date" />
 		<include refid="search" />
+		<include refid="dateSearch" />
 	</select>
 	<select id="selectMemberByMNO" parameterType="int" resultType="member">
 		select
