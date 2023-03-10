@@ -184,7 +184,15 @@ a {
 				</div>
 				<!-- ./col-md-4 -->
 
-				<div class="col-md-8"></div>
+				<div class="col-md-8">
+					<div class="card" style="height: 85vh;">
+						<div class="card-body">
+
+							<h1> 대충 옆에거 차트 디테일 </h1>
+							
+						</div>
+					</div>
+				</div>
 				<!-- ./col-md-8 -->
 
 			</div>
@@ -306,4 +314,3 @@ a {
 
 	});
 </script>
-
