@@ -4,12 +4,12 @@
 
 <title>SPH Groupware System</title>
 
-<head></head>
+
 
 <body>
 	<!-- S:iframe -->
 	<div class="content-wrapper">
-		<iframe name="ifr" src="" frameborder="0" style="width:100%;height:85vh;"></iframe>
+		<iframe name="ifr" src="" frameborder="0" style="width:100%;height:90vh;"></iframe>
 	</div>
 	<!-- E:iframe -->
 </body>

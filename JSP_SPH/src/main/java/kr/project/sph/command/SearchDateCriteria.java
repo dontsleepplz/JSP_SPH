@@ -9,29 +9,26 @@ import kr.project.sph.exception.NotFormatStringException;
 public class SearchDateCriteria {
 	
 	private SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+	private SimpleDateFormat ymdFormat = new SimpleDateFormat("yyyymmdd");
+	private String hyphenStartDate;
+	private String hyphenEndDate;
+	private String ymdStartDate;
+	private String ymdEndDate;
+	private Date searchEnd;
+	private Date searchStart;
+	
+	
+	//Calendar클래스 이용해서 특정날짜 지정 가능
 
-	private String searchStartDate;
-	private String searchEndDate;
+	public SearchDateCriteria() {}
 
-//	private String year;
-//	private String month;
-//	private String day;
-//	private String hour;
-//	private String minute;
-//	private String second;
-
-	public SearchDateCriteria() {
-	}
-
-	public SearchDateCriteria(int startDate, int endDate) {
-		// 생각중
-	}
-
-	public SearchDateCriteria(String startDate, String endDate) throws NotFormatStringException {
+	public SearchDateCriteria(String startDate, String endDate) throws NotFormatStringException, ParseException {
 		try {
 			if (startDate.length() == 19 && endDate.length() == 19) {
-				parseSearchDateCriteria(startDate, endDate);
-			} else {
+				parseHypenDateCriteria(startDate, endDate);
+			}else if(startDate.length() == 8 && endDate.length() == 8 ){
+				parseYMDDateCriteria(startDate, endDate);
+			}else {
 				NotFormatStringException e = new NotFormatStringException();
 				throw e;
 			}
@@ -41,19 +38,43 @@ public class SearchDateCriteria {
 		}
 	}
 
-	public SearchDateCriteria(Date startDate, Date endDate) {
-
-		parseSearchDateCriteria(DateToString(startDate), DateToString(endDate));
-		
+	public SearchDateCriteria(Date startDate, Date endDate) throws ParseException {
+		parseHypenDateCriteria(DateToHypenString(startDate), DateToHypenString(endDate));
+		parseYMDDateCriteria(DateToYMDString(startDate), DateToYMDString(endDate));
 	}
 	
-
-	private String DateToString(Date date) {
+	
+	private void parseHypenDateCriteria(String startDate, String endDate) throws ParseException {
+		this.hyphenStartDate = startDate;
+		this.hyphenEndDate = endDate;
+		this.searchEnd = HypenStringToDate(startDate);
+		this.searchStart = HypenStringToDate(endDate);
+	}
+	
+	private void parseYMDDateCriteria(String stringStartDate, String stringEndDate ) throws ParseException {
+		this.ymdStartDate = stringStartDate;
+		this.ymdEndDate = stringEndDate;
+		this.searchEnd = YMDStringToDate(stringStartDate);
+		this.searchStart = YMDStringToDate(stringEndDate);
+	}
+	
+	
+	
+	
+	private String DateToHypenString(Date date) {
 		String stringDate = format.format(date);
 		return stringDate;
 	}
 	
-	private Date StringToDate(String stringDate) throws ParseException{
+	private String DateToYMDString(Date date) {
+		String stringDate = ymdFormat.format(date);
+		return stringDate;
+	}
+	
+	
+	
+	
+	private Date HypenStringToDate(String stringDate) throws ParseException{
 		try {
 			Date date = format.parse(stringDate);
 			return date;
@@ -62,46 +83,50 @@ public class SearchDateCriteria {
 			throw e;
 		}
 	}
-
-	private void parseSearchDateCriteria(String startDate, String endDate) {
-		this.searchStartDate = startDate;
-		this.searchEndDate = endDate;
-	}
 	
-	
-	
-	
-	public String getSearchStartDate() {
-		return searchStartDate;
-	}
-
-	public String getSearchEndDate() {
-		return searchEndDate;
-	}
-	
-	
-	//
-	
-	public Date getSearchStartDateToDate() {
-		Date date = null;
+	private Date YMDStringToDate(String stringDate) throws ParseException{
 		try {
-			date = StringToDate(searchStartDate);
+			Date date = ymdFormat.parse(stringDate);
+			return date;
 		} catch (ParseException e) {
 			e.printStackTrace();
+			throw e;
 		}
-		return date;
 	}
+
+	public String getHyphenStartDate() {
+		return hyphenStartDate;
+	}
+
+	public String getHyphenEndDate() {
+		return hyphenEndDate;
+	}
+
+	public String getYmdStartDate() {
+		return ymdStartDate;
+	}
+
+	public String getYmdEndDate() {
+		return ymdEndDate;
+	}
+
+	public Date getSearchEnd() {
+		return searchEnd;
+	}
+
+	public Date getSearchStart() {
+		return searchStart;
+	}
+
 	
 	
-	public Date getSearchEndDateToDate() {
-		Date date = null;
-		try {
-			date = StringToDate(searchEndDate);
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
-		return date;
-	}
+	
+	
+	
+	
+	
+	
+	
 	
 
 }

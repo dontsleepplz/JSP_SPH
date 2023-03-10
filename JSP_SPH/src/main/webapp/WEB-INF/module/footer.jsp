@@ -1,15 +1,13 @@
 <!-- S:footer -->
-    
-    <aside class="control-sidebar control-sidebar-dark">
 
-    </aside>
+<aside class="control-sidebar control-sidebar-dark"></aside>
 
-   
-  </div>
-  <!-- E:wrapper -->
-	
-	<!-- MainFooterScript -->
-	<script>
+
+</div>
+<!-- E:wrapper -->
+
+<!-- MainFooterScript -->
+<script>
 	function open_Page(url,mCode){
 		$('iframe[name="ifr"]').attr("src",url);
 		if(typeof(history.pushState) == 'function'){
@@ -60,9 +58,10 @@
 		open_SubMenu('${menu.mcode}'.substring(0,3)+"0000");
 	}
 	</script>
-	
-<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
-<script type="text/x-handlebars-template"  id="subMenu-list-template" >
+
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+<script type="text/x-handlebars-template" id="subMenu-list-template">
 {{#each .}}
 	<li class="nav-item subMenu" >
     	<a href="javascript:open_Page('<%=request.getContextPath()%>{{murl}}','{{mcode}}');"	class="nav-link">
@@ -72,17 +71,21 @@
 	</li>
 {{/each}}
 </script>
-	
 
-	<!-- jQuery -->
-	<script src="<%=request.getContextPath()%>/resources/bootstrap/plugins/jquery/jquery.min.js"></script>
-	<!-- Bootstrap 4 -->
-	<script src="<%=request.getContextPath()%>/resources/bootstrap/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-	<!-- AdminLTE App -->
-	<script src="<%=request.getContextPath()%>/resources/bootstrap/dist/js/adminlte.min.js"></script>
-	<!-- DashBoard3 -->
-	<script src="<%=request.getContextPath()%>/resources/bootstrap/dist/js/pages/dashboard3.js"></script>
-	<!-- common.js  -->
-	<script src="<%=request.getContextPath()%>/resources/js/common.min.js"></script>
+
+<!-- jQuery -->
+<script
+	src="<%=request.getContextPath()%>/resources/bootstrap/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script
+	src="<%=request.getContextPath()%>/resources/bootstrap/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script
+	src="<%=request.getContextPath()%>/resources/bootstrap/dist/js/adminlte.min.js"></script>
+<!-- DashBoard3 -->
+<script
+	src="<%=request.getContextPath()%>/resources/bootstrap/dist/js/pages/dashboard3.js"></script>
+<!-- common.js  -->
+<script src="<%=request.getContextPath()%>/resources/js/common.min.js"></script>
 </body>
 </html>
