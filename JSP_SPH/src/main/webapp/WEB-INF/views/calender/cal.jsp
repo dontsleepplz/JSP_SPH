@@ -62,7 +62,7 @@
 			</a>
 
 			<ul class="navbar-nav">
-				
+
 				<c:if test="${menuList }">
 					<li class="nav-item d-none d-sm-inline-block"><a href="#"
 						class="nav-link">${menu }</a></li>
@@ -203,82 +203,72 @@
 
 		<!-- 사이드바 c:if로 메인이 아니면 나오게 test값 넣어야함 -->
 		<c:if test="${empty submenu }">
-			<aside style="height: 100%;width:220px; margin-top: 73px;"
+			<aside
+				style="height: 100%; width: 240px; margin-top: 73px; background-color: rgb(180, 220, 255);"
 				class="main-sidebar sidebar-dark-primary elevation-4">
-				<div class="sidebar" style="height: 100%; background-color: white;">
-					<!-- aside -->
-					<div class="sidebar os-host os-theme-light os-host-overflow os-host-overflow-y os-host-resize-disabled os-host-transition os-host-scrollbar-horizontal-hidden"
-					style="background-color: white;">
-						<div class="os-resize-observer-host observed">
-							<div class="os-resize-observer" ></div>
-						</div>
-						<div class="os-size-auto-observer observed"
-							>
-							<div class="os-resize-observer"></div>
-						</div>
-						<div class="os-content-glue"
-							></div>
-						<div class="os-padding">
-							<div class="os-viewport os-viewport-native-scrollbars-invisible"
-								>
-								<div class="os-content"
-									>
+				<div class="card-header">
+					<h4 class="card-title">Draggable Events</h4>
+				</div>
+				<div class="card-body">
 
-									<nav class="mt-2">
-										<ul class="nav nav-pills nav-sidebar flex-column subMenuList"
-											data-widget="treeview" role="menu" data-accordion="false">
-											<!-- META : sideList -->
-											<!-- script -->
-											<li class="nav-item menu-open" style="width:188px"><a href="#"
-												class="nav-link active" style="width:inherit;"> <i
-													class="nav-icon fas fa-tachometer-alt"></i>
-													<p>
-														Dashboard <i class="right fas fa-angle-left"></i>
-													</p>
-											</a>
-												<ul class="nav nav-treeview" style="width:inherit;">
-													<li class="nav-item"><a href="./index.html"
-														class="nav-link"> <i class="far fa-circle nav-icon"></i>
-															<p>Dashboard v1</p>
-													</a></li>
-													<li class="nav-item"><a href="./index2.html"
-														class="nav-link"> <i class="far fa-circle nav-icon"></i>
-															<p>Dashboard v2</p>
-													</a></li>
-													<li class="nav-item"><a href="./index3.html"
-														class="nav-link active"> <i
-															class="far fa-circle nav-icon"></i>
-															<p>Dashboard v3</p>
-													</a></li>
-												</ul></li>
-										</ul>
-									</nav>
-
-								</div>
-							</div>
-						</div>
+					<div id="external-events">
 						<div
-							class="os-scrollbar os-scrollbar-horizontal os-scrollbar-unusable os-scrollbar-auto-hidden">
-							<div class="os-scrollbar-track">
-								<div class="os-scrollbar-handle"
-									></div>
-							</div>
-						</div>
+							class="external-event bg-success ui-draggable ui-draggable-handle"
+							style="position: relative;">Lunch</div>
 						<div
-							class="os-scrollbar os-scrollbar-vertical os-scrollbar-auto-hidden">
-							<div class="os-scrollbar-track">
-								<div class="os-scrollbar-handle"
-									></div>
-							</div>
+							class="external-event bg-warning ui-draggable ui-draggable-handle"
+							style="position: relative;">Go home</div>
+						<div
+							class="external-event bg-info ui-draggable ui-draggable-handle"
+							style="position: relative;">Do homework</div>
+						<div
+							class="external-event bg-primary ui-draggable ui-draggable-handle"
+							style="position: relative;">Work on UI design</div>
+						<div
+							class="external-event bg-danger ui-draggable ui-draggable-handle"
+							style="position: relative;">Sleep tight</div>
+						<div class="checkbox">
+							<label for="drop-remove"> <input type="checkbox"
+								id="drop-remove"> remove after drop
+							</label>
 						</div>
-						<div class="os-scrollbar-corner"></div>
 					</div>
+				</div>
+				<div class="card">
+					<div class="card-header">
+						<h3 class="card-title">Create Event</h3>
+					</div>
+					<div class="card-body">
+						<div class="btn-group" style="width: 100%; margin-bottom: 10px;">
+							<ul class="fc-color-picker" id="color-chooser">
+								<li><a class="text-primary" href="#"><i
+										class="fas fa-square"></i></a></li>
+								<li><a class="text-warning" href="#"><i
+										class="fas fa-square"></i></a></li>
+								<li><a class="text-success" href="#"><i
+										class="fas fa-square"></i></a></li>
+								<li><a class="text-danger" href="#"><i
+										class="fas fa-square"></i></a></li>
+								<li><a class="text-muted" href="#"><i
+										class="fas fa-square"></i></a></li>
+							</ul>
+						</div>
 
+						<div class="input-group">
+							<input id="new-event" type="text" class="form-control"
+								placeholder="Event Title">
+							<div class="input-group-append">
+								<button id="add-new-event" type="button" class="btn btn-primary">Add</button>
+							</div>
+
+						</div>
+
+					</div>
 				</div>
 			</aside>
 
 		</c:if>
-		
+
 		<!-- E:header -->
 
 
