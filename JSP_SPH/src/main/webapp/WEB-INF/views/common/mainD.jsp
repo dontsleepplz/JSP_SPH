@@ -5,6 +5,7 @@
 
 <%@ page import="java.util.Date"%>
 <%@ page import="java.text.SimpleDateFormat"%>
+
 <%
 	Date nowTime = new Date();
 SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일 hh:mm:ss");
@@ -20,6 +21,9 @@ SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일 hh:mm:ss");
 
 
 <style>
+body {
+ background-color:gray;
+}
 #calendar {
 	width: 100%;
 	height: 100%;
@@ -45,7 +49,7 @@ a {
 
 				<!-- 출퇴근 -->
 				<div class="col-md-2">
-					<div class="card" style="height: 53vh;">
+					<div class="card" style="height: 55vh;">
 						<div class="card-body">
 
 							<div class="row" style="height: 200px; margin-bottom: 10px;">
@@ -60,12 +64,12 @@ a {
 							<div class="form-group row">
 
 								<div class="col-md-12 text-center">
-									<p class="profile-username" style="margin: 0 auto;"
+									<p class="profile-username" style="margin: 0 auto; font-size:18px;"
 										value="${member.name }">홍길동</p>
 								</div>
 
 								<div class="col-md-12 text-center">
-									<p class="profile-username" style="margin: 0 auto;"
+									<p class="profile-username" style="margin: 0 auto; font-size:18px;"
 										value="${member.departCode }">활빈당</p>
 								</div>
 
@@ -105,7 +109,7 @@ a {
 
 				<!-- 캘린더 -->
 				<div class="col-md-5">
-					<div class="card" style="height: 53vh;">
+					<div class="card" style="height: 55vh;">
 						<div id="calendar"
 							class="fc fc-media-screen fc-direction-ltr fc-theme-standard">
 						</div>
@@ -115,18 +119,18 @@ a {
 				<!-- todo -->
 				<div class="col-md-5">
 
-					<div class="card card-row card-primar" style="height: 53vh;">
+					<div class="card card-row card-primar" style="height: 55vh;">
 
 						<div class="card-header"
 							style="background: none; border: 1px solid gray;">
 							<h3 class="card-title" style="color: black;">ToDo +</h3>
 						</div>
 
-						<div class="card-body">
+						<div class="card-body" style="overflow:auto;">
 
 							<c:if test="${!empty toDoList }">
 								<c:forEach items="${toDoList }" var="toDo">
-									<div class="card card-outline">
+									<div class="card card-outline" style="margin-bottom:3px;">
 										<div class="card-header">
 											<div class="col-md-3 text-left">${toDoList.toDoTime }</div>
 											<div class="col-md-8 text-left">${toDoList.title }</div>
@@ -181,19 +185,19 @@ a {
 				<div class="col-md-3">
 
 					<div class="card card-row card-primary"
-						style="height: 42vh; dispiay: inlile; margin: auto; padding: auto;">
+						style="height: 40vh; dispiay: inlile; margin: auto; padding: auto;">
 
 						<div class="card-header"
 							style="background: none; border: 1px solid gray;">
 							<h3 class="card-title" style="color: black;">공지사항 +</h3>
 						</div>
 
-						<div class="card-body">
+						<div class="card-body" style="overflow:auto;">
 
 							<c:if test="${!empty noticeList }">
 								<c:forEach items="${noticeList }" var="notice">
 									<div class="row">
-										<div class="card card-outline" style="cursor: pointer;"
+										<div class="card card-outline" style="cursor: pointer; margin-bottom:3px;"
 											onclick="OpenWindow();">
 											<div class="card-header">
 												<div class="col-md-12 text-left">${noticeList.title }</div>
@@ -221,19 +225,19 @@ a {
 				<div class="col-md-3">
 
 					<div class="card card-row card-primary"
-						style="height: 42vh; dispiay: inlile; margin: auto; padding: auto;">
+						style="height: 40vh; dispiay: inlile; margin: auto; padding: auto;">
 
 						<div class="card-header"
 							style="background: none; border: 1px solid gray;">
 							<h3 class="card-title" style="color: black;">메일 +</h3>
 						</div>
 
-						<div class="card-body">
+						<div class="card-body" style="overflow:auto;">
 
 							<c:if test="${!empty mailList }">
 								<c:forEach items="${mailList }" var="mail">
 									<div class="row">
-										<div class="card card-outline" style="cursor: pointer;"
+										<div class="card card-outline" style="cursor: pointer; margin-bottom:3px;"
 											onclick="OpenWindow();">
 											<div class="card-header">
 												<div class="col-md-3 text-left">${mailList.writer }</div>
@@ -262,19 +266,19 @@ a {
 				<div class="col-md-3">
 
 					<div class="card card-row card-primary"
-						style="height: 42vh; dispiay: inlile; margin: auto; padding: auto;">
+						style="height: 40vh; dispiay: inlile; margin: auto; padding: auto;">
 
 						<div class="card-header"
 							style="background: none; border: 1px solid gray;">
 							<h3 class="card-title" style="color: black;">전자결재 +</h3>
 						</div>
 
-						<div class="card-body">
+						<div class="card-body" style="overflow:auto;">
 
 							<c:if test="${!empty elecSignList }">
 								<c:forEach items="${elecSignList }" var="elecSign">
 									<div class="row">
-										<div class="card card-outline" style="cursor: pointer;"
+										<div class="card card-outline" style="cursor: pointer; margin-bottom:3px;"
 											onclick="OpenWindow();">
 											<div class="card-header">
 												<div class="col-md-3 text-left">${elecSignList.writer }</div>
@@ -303,19 +307,19 @@ a {
 				<div class="col-md-3">
 
 					<div class="card card-row card-primary"
-						style="height: 42vh; dispiay: inlile; margin: auto; padding: auto;">
+						style="height: 40vh; dispiay: inlile; margin: auto; padding: auto;">
 
 						<div class="card-header"
 							style="background: none; border: 1px solid gray;">
 							<h3 class="card-title" style="color: black;">수술 +</h3>
 						</div>
 
-						<div class="card-body">
+						<div class="card-body" style="overflow:auto;">
 
 							<c:if test="${!empty operationList }">
 								<c:forEach items="${operationList }" var="operation">
 									<div class="row">
-										<div class="card card-outline" style="cursor: pointer;"
+										<div class="card card-outline" style="cursor: pointer; margin-bottom:3px;"
 											onclick="OpenWindow();">
 											<div class="card-header">
 												<div class="col-md-12 text-left">${operationList.content }</div>
@@ -333,6 +337,7 @@ a {
 										</div>
 									</div>
 								</div>
+								
 							</c:if>
 
 						</div>

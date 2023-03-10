@@ -10,6 +10,13 @@
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/bootstrap/plugins/daterangepicker/daterangepicker.css">
 
+<style>
+a {
+	color: inherit;
+	text-decoration: none;
+}
+</style>
+
 <div class="content">
 
 	<div class="content-header">
@@ -32,22 +39,20 @@
 
 				</div>
 
-				<div class="col-md-6 text-left">
+				<div class="col-md-8 text-left">
 					<div class="row" style="padding: 10px;">
 						<div class="col-md-3 text-center">
-							<button type="button" class="btn btn-block btn-outline-primary">
-								<a href="#">Previous</a>
-							</button>
+							<button type="button" class="btn btn-block btn-outline-secondary"
+								onload="preStati_go()">Previous</button>
 						</div>
 						<div class="col-md-3 text-center">
-							<button type="button" class="btn btn-block btn-outline-primary">
-								<a href="#">Next</a>
-							</button>
+							<button type="button" class="btn btn-block btn-outline-secondary"
+								onload="nextStati_go()">Next</button>
 						</div>
 					</div>
 				</div>
 
-				<div class="col-md-4">
+				<div class="col-md-2">
 					<div class="form-inline">
 						<div class="input-group text-right" data-widget="sidebar-search">
 							<input class="form-control form-control-sidebar" type="search"
@@ -61,7 +66,8 @@
 						<div class="sidebar-search-results">
 							<div class="list-group">
 								<a href="#" class="list-group-item">
-									<div class="search-path"></div></a>
+									<div class="search-path"></div>
+								</a>
 							</div>
 						</div>
 					</div>
@@ -84,7 +90,98 @@
 
 			<div class="row">
 
-				<div class="col-md-4"></div>
+				<div class="col-md-4" id="accordion">
+
+
+					<div class="card card-danger">
+
+						<div class="card-header">
+							<a class="d-block w-100" data-toggle="collapse"
+								href="#collapseOne">
+								<h4 class="card-title w-100">
+									<i class="far fa-chart-bar"></i> 환 자
+								</h4>
+							</a>
+						</div>
+
+						<div id="collapseOne" class="collapse show"
+							data-parent="#accordion">
+							<div class="card-body">
+								<div class="chartjs-size-monitor">
+									<div class="chartjs-size-monitor-expand">
+										<div class=""></div>
+									</div>
+									<div class="chartjs-size-monitor-shrink">
+										<div class=""></div>
+									</div>
+								</div>
+								<canvas id="donutChartPa"
+									style="min-height: 500px; height: 500px; max-height: 500px; max-width: 100%; display: block; width: 764px;"
+									width="764" height="500" class="chartjs-render-monitor chart1"></canvas>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="card card-info">
+
+						<div class="card-header">
+							<a class="d-block w-100" data-toggle="collapse"
+								href="#collapseTwo">
+								<h4 class="card-title w-100">
+									<i class="far fa-chart-bar"></i> 입 원
+								</h4>
+							</a>
+						</div>
+
+						<div id="collapseTwo" class="collapse" data-parent="#accordion">
+							<div class="card-body">
+								<div class="chartjs-size-monitor">
+									<div class="chartjs-size-monitor-expand">
+										<div class=""></div>
+									</div>
+									<div class="chartjs-size-monitor-shrink">
+										<div class=""></div>
+									</div>
+								</div>
+								<canvas id="donutChartAd"
+									style="min-height: 500px; height: 500px; max-height: 500px; max-width: 100%; display: block; width: 764px;"
+									width="764" height="500" class="chartjs-render-monitor chart2"></canvas>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="card card-success">
+
+						<div class="card-header">
+							<a class="d-block w-100" data-toggle="collapse"
+								href="#collapseThree">
+								<h4 class="card-title w-100">
+									<i class="far fa-chart-bar"></i> 매 출
+								</h4>
+							</a>
+						</div>
+
+						<div id="collapseThree" class="collapse" data-parent="#accordion">
+							<div class="card-body">
+								<div class="chartjs-size-monitor">
+									<div class="chartjs-size-monitor-expand">
+										<div class=""></div>
+									</div>
+									<div class="chartjs-size-monitor-shrink">
+										<div class=""></div>
+									</div>
+								</div>
+								<canvas id="donutChartSa"
+									style="min-height: 500px; height: 500px; max-height: 500px; max-width: 100%; display: block; width: 764px;"
+									width="764" height="500" class="chartjs-render-monitor chart3"></canvas>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
 				<!-- ./col-md-4 -->
 
 				<div class="col-md-8"></div>
@@ -104,80 +201,109 @@
 
 <script
 	src="<%=request.getContextPath()%>/resources/bootstrap/dist/js/pages/dashboard3.js"></script>
-
+<script
+	src="<%=request.getContextPath()%>/resources/bootstrap/plugins/chart.js/Chart.min.js"></script>
 <script
 	src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 <script
 	src="<%=request.getContextPath()%>/resources/bootstrap/plugins/daterangepicker/daterangepicker.js"></script>
 
+<script
+	src="<%=request.getContextPath()%>/resources/bootstrap/plugins/jquery/jquery.min.js"></script>
+
 <script>
 	$(function() {
-		$('#datetimepicker1').datetimepicker({
-			format : 'L'
-		});
-		$('#datetimepicker2').datetimepicker({
-			format : 'L',
-			useCurrent : false
-		});
-		$("#datetimepicker1").on("change.datetimepicker", function(e) {
-			$('#datetimepicker2').datetimepicker('minDate', e.date);
-		});
-		$("#datetimepicker2").on("change.datetimepicker", function(e) {
-			$('#datetimepicker1').datetimepicker('maxDate', e.date);
-		});
-	});
+		//-------------
+		//- DONUT CHART -
+		//-------------
+		// Get context with jQuery - using jQuery's .get() method.
+		var donutChartCanvas = $('#donutChartPa').get(0).getContext('2d')
 
-	$(document).ready(function() {
-		$(function() {
-			$('input[name="daterange"]').daterangepicker({
-				"startDate" : "01/01/2023",
-				"endDate" : "17/01/2023",
-				opens : 'center',
-				locale : {
-					format : 'DD/MM/YYYY'
-				}
-			});
-		});
-	});
-
-	//Date range picker
-	$('#reservation').daterangepicker();
-	//Date range picker with time picker
-	$('#reservationtime').daterangepicker({
-		timePicker : true,
-		timePickerIncrement : 30,
-		locale : {
-			format : 'MM/DD/YYYY hh:mm A'
+		var donutData = {
+			labels : [ 'Chrome', 'IE', 'FireFox', 'Safari', 'Opera',
+					'Navigator', ],
+			datasets : [ {
+				data : [ 700, 500, 400, 600, 300, 100 ],
+				backgroundColor : [ '#f56954', '#00a65a', '#f39c12', '#00c0ef',
+						'#3c8dbc', '#d2d6de' ],
+			} ]
 		}
-	});
-	//Date range as a button
-	$('#daterange-btn')
-			.daterangepicker(
-					{
-						ranges : {
-							'Today' : [ moment(), moment() ],
-							'Yesterday' : [ moment().subtract(1, 'days'),
-									moment().subtract(1, 'days') ],
-							'Last 7 Days' : [ moment().subtract(6, 'days'),
-									moment() ],
-							'Last 30 Days' : [ moment().subtract(29, 'days'),
-									moment() ],
-							'This Month' : [ moment().startOf('month'),
-									moment().endOf('month') ],
-							'Last Month' : [
-									moment().subtract(1, 'month').startOf(
-											'month'),
-									moment().subtract(1, 'month')
-											.endOf('month') ]
-						},
-						startDate : moment().subtract(29, 'days'),
-						endDate : moment()
-					},
-					function(start, end) {
-						$('#reportrange span').html(
-								start.format('MMMM D, YYYY') + ' - '
-										+ end.format('MMMM D, YYYY'))
-					}
+		var donutOptions = {
+			maintainAspectRatio : false,
+			responsive : true,
+		}
+		//Create pie or douhnut chart
+		// You can switch between pie and douhnut using the method below.
+		new Chart(donutChartCanvas, {
+			type : 'doughnut',
+			data : donutData,
+			options : donutOptions
+		})
 
-			);
+	});
 </script>
+
+<script>
+	$(function() {
+		//-------------
+		//- DONUT CHART -
+		//-------------
+		// Get context with jQuery - using jQuery's .get() method.
+		var donutChartCanvas = $('#donutChartAd').get(0).getContext('2d')
+
+		var donutData = {
+			labels : [ 'Chrome', 'IE', 'FireFox', 'Safari', 'Opera',
+					'Navigator', ],
+			datasets : [ {
+				data : [ 700, 500, 400, 600, 300, 100 ],
+				backgroundColor : [ '#f56954', '#00a65a', '#f39c12', '#00c0ef',
+						'#3c8dbc', '#d2d6de' ],
+			} ]
+		}
+		var donutOptions = {
+			maintainAspectRatio : false,
+			responsive : true,
+		}
+		//Create pie or douhnut chart
+		// You can switch between pie and douhnut using the method below.
+		new Chart(donutChartCanvas, {
+			type : 'doughnut',
+			data : donutData,
+			options : donutOptions
+		})
+
+	});
+</script>
+
+<script>
+	$(function() {
+		//-------------
+		//- DONUT CHART -
+		//-------------
+		// Get context with jQuery - using jQuery's .get() method.
+		var donutChartCanvas = $('#donutChartSa').get(0).getContext('2d')
+
+		var donutData = {
+			labels : [ 'Chrome', 'IE', 'FireFox', 'Safari', 'Opera',
+					'Navigator', ],
+			datasets : [ {
+				data : [ 700, 500, 400, 600, 300, 100 ],
+				backgroundColor : [ '#f56954', '#00a65a', '#f39c12', '#00c0ef',
+						'#3c8dbc', '#d2d6de' ],
+			} ]
+		}
+		var donutOptions = {
+			maintainAspectRatio : false,
+			responsive : true,
+		}
+		//Create pie or douhnut chart
+		// You can switch between pie and douhnut using the method below.
+		new Chart(donutChartCanvas, {
+			type : 'doughnut',
+			data : donutData,
+			options : donutOptions
+		})
+
+	});
+</script>
+
