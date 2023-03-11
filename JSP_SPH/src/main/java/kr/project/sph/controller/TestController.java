@@ -106,7 +106,7 @@ public class TestController {
 	}
 	
 	@GetMapping("/index")
-	public ModelAndView index(@RequestParam(defaultValue = "M000000") String mCode, Model model) throws Exception {
+	public ModelAndView index(@RequestParam(defaultValue = "M000000") String mCode, Model model, String murl) throws Exception {
 		String url = "/common/indexPage";
 		List<MenuVO> menuList = new ArrayList<MenuVO>();
 		MenuVO menu = new MenuVO();
