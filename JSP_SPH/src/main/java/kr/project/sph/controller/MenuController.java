@@ -58,7 +58,7 @@ public class MenuController {
 
 		// URL 스트링에 직접입력
 		menu.setMcode("M000000");
-		menu.setMurl("/admin/member/membermain.admin");
+		menu.setMurl(murl);
 		menu.setMname("test");
 
 		menuList.add(menu);

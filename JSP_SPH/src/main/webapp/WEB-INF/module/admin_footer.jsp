@@ -73,9 +73,7 @@
 </script>
 
 
-<!-- jQuery -->
-<script
-	src="<%=request.getContextPath()%>/resources/bootstrap/plugins/jquery/jquery.min.js"></script>
+
 <!-- Bootstrap 4 -->
 <script
 	src="<%=request.getContextPath()%>/resources/bootstrap/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>

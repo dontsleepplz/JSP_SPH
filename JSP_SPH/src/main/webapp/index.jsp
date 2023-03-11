@@ -14,7 +14,6 @@
 		
 		var gourl= document.getElementById("url").value;
 		var template = gourl.substr(-3,2);
-		alert(template);
 		if(template=='do'){
 			location.href="<%= request.getContextPath()%>/index.do?murl="+gourl;
 		}else if(template=='mi'){
