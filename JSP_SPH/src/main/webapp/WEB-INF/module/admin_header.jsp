@@ -27,7 +27,7 @@ SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일 hh:mm:ss");
   <decorator:head />
 </head>
 <style>
-body {
+iframe {
  overflow-y:hidden;
 }
 
