@@ -13,8 +13,15 @@
 	function page_go(){
 		
 		var gourl= document.getElementById("url").value;
-		var template = gourl;
-		location.href="<%= request.getContextPath()%>/index.do?murl="+gourl;
+		var template = gourl.substr(-3,2);
+		alert(template);
+		if(template=='do'){
+			location.href="<%= request.getContextPath()%>/index.do?murl="+gourl;
+		}else if(template=='mi'){
+			location.href="<%= request.getContextPath()%>/index.admin?murl="+gourl;
+		}else{
+			alert('잘못된 url');
+		}
 	};
 </script>
 
