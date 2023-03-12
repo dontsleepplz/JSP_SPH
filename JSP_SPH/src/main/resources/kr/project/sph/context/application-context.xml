@@ -14,10 +14,14 @@
 	<bean id="menuDAO" class="kr.project.sph.dao.MenuDAOImpl" 
 		p:session-ref="sqlSession"
 	/>
-	
-	
+	<bean id="todoDAO" class="kr.project.sph.dao.ToDoDAOImpl"
+		p:session-ref="sqlSession"
+	/>	
 	<bean id="menuService" class="kr.project.sph.service.MenuServiceImpl" 
 		p:menuDAO-ref="menuDAO"
 	/>
+	<bean id="todoService" class="kr.project.sph.service.ToDoServiceImpl"
+		p:todoDAO-ref="todoDAO"
+		/>
 	
 </beans>
