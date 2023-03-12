@@ -10,7 +10,6 @@ public class ToDoVO {
 	private String com;
 	private String imp;
 	private Date toDoDate;
-	private Date toDoTime;
 	private Date regDate;
 	private int writer;
 
@@ -62,13 +61,6 @@ public class ToDoVO {
 		this.toDoDate = toDoDate;
 	}
 
-	public Date getToDoTime() {
-		return toDoTime;
-	}
-
-	public void setToDoTime(Date toDoTime) {
-		this.toDoTime = toDoTime;
-	}
 
 	public Date getRegDate() {
 		return regDate;

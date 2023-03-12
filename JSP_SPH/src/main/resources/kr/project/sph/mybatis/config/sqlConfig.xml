@@ -54,6 +54,7 @@
 		<typeAlias type="kr.project.sph.dto.ToDoVO" alias="toDo" />
 		<typeAlias type="kr.project.sph.dto.WardRecordVO" alias="wardRecord" />
 		<typeAlias type="kr.project.sph.dto.WardVO" alias="ward" />
+		<typeAlias type="kr.project.sph.dto.RequestVO" alias="request" />
 		
 		<!-- Report -->
 		<typeAlias type="kr.project.sph.dto.ReportAttachVO" alias="reportAttach" />
