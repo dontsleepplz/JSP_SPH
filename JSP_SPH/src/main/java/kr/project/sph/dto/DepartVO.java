@@ -1,5 +1,7 @@
 package kr.project.sph.dto;
 
+import java.util.List;
+
 public class DepartVO {
 
 	private String departCode;
@@ -9,6 +11,15 @@ public class DepartVO {
 	private String upCode;
 	private int memberMno;
 	private String position;
+	private List<MemberVO> memberList;
+
+	public List<MemberVO> getMemberList() {
+		return memberList;
+	}
+
+	public void setMemberList(List<MemberVO> memberList) {
+		this.memberList = memberList;
+	}
 
 	public String getDepartCode() {
 		return departCode;

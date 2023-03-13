@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="Reservation-Mapper">
+
+	<sql id="search">
+		<if test="searchType == 'r'.toString() ">
+			and rno like '%'||#{keyword}||'%'
+		</if>
+		<if test="searchType == 'm'.toString() ">
+			and mno like '%'||#{keyword}||'%'
+		</if>
+		<if test="searchType == 'p'.toString() ">
+			and pno like '%'||#{keyword}||'%'
+		</if>
+	</sql>
+	
+	<sql id="dateSearch">
+		<if test="searchDate == 'r'.toString() ">
+			and regDate between #{dateCri.ymdStartDate} and #{dateCri.ymdEndDate}
+		</if>
+		<if test="searchDate == 'e'.toString()">
+			and reservationDate between #{dateCri.hyphenStartDate} and #{dateCri.hyphenEndDate}
+		</if>
+		
+	</sql>
+	<select id="selectSearchReservationList" resultType="reservation">
+		select
+		*
+		from reservation
+		where orno is not null
+		<include refid="search" />
+		<include refid="dateSearch" />
+		order by rno desc
+	</select>
+
+	<select id="selectSearchReservationListCount" resultType="int">
+		select count(*)
+		from reservation
+		where rno is not null
+		<include refid="search" />
+		<include refid="dateSearch" />
+	</select>
+	
+	<select id="selectReservationByONO" parameterType="int"
+		resultType="reservation">
+		select
+		*
+		from reservation
+		where rno=#{rno}
+	</select>
+	<select id="selectReservationSequenceNextValue" resultType="int">
+		select
+		reservation_seq.nextVal
+		from dual
+	</select>
+
+	<update id="insertReservation" parameterType="reservation">
+		insert into
+		reservation(rno, reservationDate, regDate, mno, pno)
+		values(#{rno}, #{reservationDate},#{regDate},#{mno}, #{pno})
+	</update>
+
+	<update id="updateReservation" parameterType="reservation">
+		update reservation
+		set
+		reservationDate=#{reservationDate}, regDate=#{regDate}, mno=#{mno}, pno=#{pno}
+		where rno=#{rno}
+	</update>
+
+	<update id="deleteReservation" parameterType="int">
+		delete
+		from reservation
+		where
+		rno=#{rno}
+	</update>
+
+
+
+
+</mapper>

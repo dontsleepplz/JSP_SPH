@@ -1,6 +1,7 @@
 package kr.project.sph.dto;
 
 import java.util.Date;
+import java.util.List;
 
 public class MailVO {
 
@@ -11,6 +12,17 @@ public class MailVO {
 	private Date regDate;
 	private int writer;
 	private int state;
+	
+	private List<MailAttachVO> attachList;
+	
+
+	public List<MailAttachVO> getAttachList() {
+		return attachList;
+	}
+
+	public void setAttachList(List<MailAttachVO> attachList) {
+		this.attachList = attachList;
+	}
 
 	public int getMmno() {
 		return mmno;

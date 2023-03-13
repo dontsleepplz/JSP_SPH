@@ -1,6 +1,7 @@
 package kr.project.sph.dto;
 
 import java.util.Date;
+import java.util.List;
 
 public class LibraryVO {
 	private int lno;
@@ -10,6 +11,15 @@ public class LibraryVO {
 	private Date regDate;
 	private Date updateDate;
 	private int writer;
+	private List<LibraryAttachVO> attachList;
+
+	public List<LibraryAttachVO> getAttachList() {
+		return attachList;
+	}
+
+	public void setAttachList(List<LibraryAttachVO> attachList) {
+		this.attachList = attachList;
+	}
 
 	public int getLno() {
 		return lno;

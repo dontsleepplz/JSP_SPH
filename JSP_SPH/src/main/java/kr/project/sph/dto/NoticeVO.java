@@ -1,6 +1,7 @@
 package kr.project.sph.dto;
 
 import java.util.Date;
+import java.util.List;
 
 public class NoticeVO {
 
@@ -11,6 +12,16 @@ public class NoticeVO {
 	private Date regDate;
 	private Date updateDate;
 	private String writer;
+	
+	private List<NoticeVO> attachList;
+
+	public List<NoticeVO> getAttachList() {
+		return attachList;
+	}
+
+	public void setAttachList(List<NoticeVO> attachList) {
+		this.attachList = attachList;
+	}
 
 	public int getNno() {
 		return nno;

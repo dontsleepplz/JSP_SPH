@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="WardRecord-Mapper">
+
+	<sql id="search">
+		<if test="searchType == 'wrn'.toString() ">
+			and wardRecordNumber like '%'||#{keyword}||'%'
+		</if>
+		<if test="searchType == 'wrw'.toString() ">
+			and wardRecordWardNum like '%'||#{keyword}||'%'
+		</if>
+		<if test="searchType == 'wrm'.toString() ">
+			and wardRecordMno like '%'||#{keyword}||'%'
+		</if>
+	</sql>
+	
+	<sql id="dateSearch">
+		<if test="searchDate == 'd'.toString() ">
+			and wardRecordDate between #{dateCri.ymdStartDate} and #{dateCri.ymdEndDate}
+		</if>
+	</sql>
+	
+	<select id="selectSearchWardRecordList" resultType="wardRecord">
+		select
+		*
+		from wardRecord
+		where wardRecordNumber is not null
+		<include refid="search" />
+		<include refid="dateSearch"/>
+		order by wardRecordNumber desc
+	</select>
+
+	<select id="selectSearchWardRecordListCount" resultType="int">
+		select count(*)
+		from wardRecord
+		where wardRecordNumber is not null
+		<include refid="search" />
+		<include refid="dateSearch"/>
+	</select>
+	
+	<select id="selectWardRecordByWardRecordNumber" parameterType="int"
+		resultType="wardRecord">
+		select
+		*
+		from wardRecord
+		where wardRecordNumber=#{wardRecordNumber}
+	</select>
+	<select id="selectWardRecordSequenceNextValue" resultType="int">
+		select
+		wardRecord_seq.nextVal
+		from dual
+	</select>
+
+	<update id="insertWardRecord" parameterType="wardRecord">
+		insert into
+		wardRecord(wardRecordNumber, wardRecordWardNum, wardRecordMno,wardRecordDate)
+		values(#{wardRecordNumber},#{wardRecordWardNum},#{wardRecordMno},#{wardRecordDate})
+	</update>
+
+	<update id="updateWardRecord" parameterType="wardRecord">
+		update wardRecord
+		set
+		wardRecordWardNum=#{wardRecordWardNum},wardRecordMno=#{wardRecordMno},wardRecordMno=#{wardRecordMno}
+
+		where wardRecordNumber=#{wardRecordNumber}
+	</update>
+
+	<update id="deleteWardRecord" parameterType="int">
+		delete
+		from wardRecord
+		where
+		wardRecordNumber=#{wardRecordNumber}
+	</update>
+
+
+
+
+</mapper>

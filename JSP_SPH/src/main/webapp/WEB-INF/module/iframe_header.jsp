@@ -16,15 +16,12 @@
   <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/bootstrap/plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/bootstrap/dist/css/adminlte.min.css">
-  <!-- jQuery -->
-  <script src="<%=request.getContextPath()%>/resources/bootstrap/plugins/jquery/jquery.min.js"></script>
+  
   <decorator:head />
 </head>
+
 <style>
-div.card-body {
-	overflow-x:hidden;
-}
-body {
+body{
 	overflow-y:hidden;
 }
 

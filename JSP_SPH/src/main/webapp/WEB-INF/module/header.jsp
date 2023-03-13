@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
@@ -173,14 +174,13 @@ body {
     </nav>
 
 
-
-    <aside class="main-sidebar sidebar-dark-primary elevation-0" style="background-color:white; border-right:1px solid #DFE1E4" >
+    <aside class="main-sidebar sidebar-dark-primary elevation-0" style="background-color:white; border-right:1px solid #DFE1E4;min-height:0%;${empty submenu ?  'display:inline-block;' : ''}" >
 
       <a href="index" class="brand-link" style="background-color: rgb(180, 220, 255); border-bottom:1px solid #dee2e6;">
         <img src="<%=request.getContextPath() %>/resources/img/SPHLogo.png" alt="SPH_logo" class="brand-image img-circle elevation-0" style="opacity: .8;">
         <span class="brand-text font-weight-light" style="color:black;">SPH</span>
       </a>
-
+		<c:if test="${!empty submenu }">
       <div class="sidebar" >
 
         <nav class="mt-2">
@@ -191,6 +191,6 @@ body {
         </nav>
 
       </div>
-
+		</c:if>
     </aside>
 <!-- E:header -->

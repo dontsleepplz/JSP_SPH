@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="LibraryAttach-Mapper">
+<select id="selectLibraryAttachByLno" resultType="libraryAttach">
+		select * 
+		from LibraryAttach 
+		where lno = #{lno}
+	</select>	
+	
+	<select id="selectLibraryAttachByLano" resultType="libraryAttach">
+		select *
+		from LibraryAttach
+		where lano=#{lano}
+	</select>
+	
+	<update id="insertLibraryAttach">
+		insert into 
+		LibraryAttach (lano, uploadpath, filename, filetype, lno, attacher)
+		values (libraryAttach_seq.nextval, #{uploadPath}, #{fileName},#{fileType}, 
+				#{lno},#{attacher} )
+	</update>
+	
+	<update id="deleteLibraryAttach">
+		delete from LibraryAttach where lano = #{lano}
+	</update>
+	
+	<update id="deleteAllLibraryAttach">
+		delete 
+		from LibraryAttach 
+		where lno = #{lno}
+	</update>
+
+</mapper>
