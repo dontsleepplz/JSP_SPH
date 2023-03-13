@@ -33,7 +33,7 @@ public class ToDoDAOImpl implements ToDoDAO {
 	@Override
 	public int selectSearchTodoListCount(SearchCriteria cri) throws SQLException {
 		int count=0;
-		count=session.selectOne("TodoMapper.selectSearchTodoListCount",cri);
+		count=session.selectOne("Todo-Mapper.selectSearchTodoListCount",cri);
 		return count;
 	}
 

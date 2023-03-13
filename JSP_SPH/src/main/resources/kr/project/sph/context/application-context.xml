@@ -17,6 +17,22 @@
 	<bean id="todoDAO" class="kr.project.sph.dao.ToDoDAOImpl"
 		p:session-ref="sqlSession"
 	/>	
+	<bean id="scheduleDAO" class="kr.project.sph.dao.ScheduleDAOImpl"
+		p:session-ref="sqlSession"
+	/>
+	<bean id="operationDAO" class="kr.project.sph.dao.OperationDAOImpl"
+		p:session-ref="sqlSession"
+	/>	
+	<bean id="operationTeamDAO" class="kr.project.sph.dao.OperationTeamDAOImpl"
+		p:session-ref="sqlSession"
+	/>
+	<bean id="reservationDAO" class="kr.project.sph.dao.ReservationDAOImpl"
+		p:session-ref="sqlSession"
+	/>
+	<bean id="WardDAO" class="kr.project.sph.dao.WardDAOImpl"
+		p:session-ref="sqlSession"
+	/>
+	
 	<bean id="menuService" class="kr.project.sph.service.MenuServiceImpl" 
 		p:menuDAO-ref="menuDAO"
 	/>

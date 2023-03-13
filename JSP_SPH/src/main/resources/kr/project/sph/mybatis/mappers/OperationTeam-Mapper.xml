@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="OperationTeam-Mapper">
+
+	<sql id="search">
+		<if test="searchType == 's'.toString() ">
+			and otno like '%'||#{keyword}||'%'
+		</if>
+		<if test="searchType == 'r'.toString() ">
+			and role like '%'||#{keyword}||'%'
+		</if>
+	</sql>
+	
+	<select id="selectSearchOperationTeamList" resultType="operationTeam">
+		select
+		*
+		from operationTeam
+		where otno is not null
+		<include refid="search" />
+		order by otno desc
+	</select>
+
+	<select id="selectSearchOperationTeamListCount" resultType="int">
+		select count(*)
+		from operationTeam
+		where otno is not null
+		<include refid="search" />
+	</select>
+	
+	<select id="selectOperationTeamByOTNO" parameterType="int"
+		resultType="operationTeam">
+		select
+		*
+		from operationTeam
+		where otno=#{otno}
+	</select>
+	<select id="selectOperationTeamSequenceNextValue" resultType="int">
+		select
+		operationTeam_seq.nextVal
+		from dual
+	</select>
+
+	<update id="insertOperationTeam" parameterType="operationTeam">
+		insert into
+		operation(otno, role, ono, mno)
+		values(#{otno}, #{role},#{ono},#{mno})
+	</update>
+
+	<update id="updateOperationTeam" parameterType="operationTeam">
+		update operationTeam
+		set
+		role=#{role}, ono=#{ono}, mno=#{mno}
+		where otno=#{otno}
+	</update>
+
+	<update id="deleteOperationTeam" parameterType="int">
+		delete
+		from operationTeam
+		where
+		otno=#{otno}
+	</update>
+
+
+
+
+</mapper>

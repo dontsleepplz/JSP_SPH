@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="Schedule-Mapper">
+
+	<sql id="search">
+		<if test="searchType == 's'.toString() ">
+			and sno like '%'||#{keyword}||'%'
+		</if>
+		<if test="searchType == 't'.toString() ">
+			and title like '%'||#{keyword}||'%'
+		</if>
+		<if test="searchType == 'c'.toString() ">
+			and content like '%'||#{keyword}||'%'
+		</if>
+		<if test="searchType == 'a'.toString() ">
+			and authority like '%'||#{keyword}||'%'
+		</if>
+		<if test="searchType == 'w'.toString() ">
+			and writer like '%'||#{keyword}||'%'
+		</if>
+	</sql>
+	<sql id="dateSearch">
+		<if test="searchDate == 'r'.toString() ">
+			and regDate between #{dateCri.ymdStartDate} and #{dateCri.ymdEndDate}
+		</if>
+		<if test="searchDate == 's'.toString() ">
+			and startDate between #{dateCri.hyphenStartDate} and #{dateCri.hyphenEndDate}
+		</if>
+		<if test="searchDate == 'e'.toString()">
+			and endDate between #{dateCri.hyphenStartDate} and #{dateCri.hyphenEndDate}
+		</if>
+	</sql>
+	<select id="selectSearchScheduleList" resultType="schedule">
+		select
+		*
+		from schedule
+		where sno is not null
+		<include refid="search" />
+		<include refid="dateSearch" />
+		order by sno desc
+	</select>
+
+	<select id="selectSearchScheduleListCount" resultType="int">
+		select count(*)
+		from schedule
+		where sno is not null
+		<include refid="search" />
+		<include refid="dateSearch" />
+	</select>
+	
+	<select id="selectScheduleBySNO" parameterType="int"
+		resultType="schedule">
+		select
+		*
+		from schedule
+		where sno=#{sno}
+	</select>
+	<select id="selectScheduleSequenceNextValue" resultType="int">
+		select
+		shedule_seq.nextVal
+		from dual
+	</select>
+
+	<update id="insertSchedule" parameterType="schedule">
+		insert into
+		schedule(sno,title, content, authority, startDate, endDate,regDate,writer)
+		values(#{sno},#{title},#{content},#{authority},#{startDate},#{endDate},
+	    #{regDate}, #{writer})
+	</update>
+
+	<update id="updateSchedule" parameterType="schedule">
+		update schedule
+		set
+		title=#{title},content=#{content},authority=#{authority},startDate=#{startDate},endDate=#{endDate}
+		where sno=#{sno}
+	</update>
+
+	<update id="deleteSchedule" parameterType="int">
+		delete
+		from schedule
+		where
+		sno=#{sno}
+	</update>
+
+
+
+
+</mapper>

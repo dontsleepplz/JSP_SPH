@@ -16,27 +16,25 @@
 		<if test="searchType == 'c'.toString() ">
 			and content like '%'||#{keyword}||'%'
 		</if>
-		<if test="searchType == 'd'.toString() ">
-			and toDoDate like '%'||#{keyword}||'%'
+		<if test="searchType == 'com'.toString() ">
+			and com like '%'||#{keyword}||'%'
 		</if>
-		<if test="searchType == 'tdt'.toString() ">
-			and toDoTime like '%'||#{keyword}||'%'
+		<if test="searchType == 'i'.toString() ">
+			and imp like '%'||#{keyword}||'%'
 		</if>
 	</sql>
 	<sql id="dateSearch">
 		<if test="searchDate == 'r'.toString() ">
-			and regdate between #{dateCri.ymdStartDate} and #{dateCri.ymdEndDate}
+			and regDate between #{dateCri.ymdStartDate} and #{dateCri.ymdEndDate}
 		</if>
 		<if test="searchDate == 's'.toString() ">
-			and startdate between #{dateCri.hyphenStartDate} and #{dateCri.hyphenEndDate}
+			and startDate between #{dateCri.hyphenStartDate} and #{dateCri.hyphenEndDate}
 		</if>
 		<if test="searchDate == 'e'.toString()">
-			and enddate between #{dateCri.hyphenStartDate} and #{dateCri.hyphenEndDate}
-		</if>
-		<if test="searchDate == 'u'.toString() ">
-			and updatedate between #{dateCri.ymdStartDate} and #{dateCri.ymdEndDate}
+			and endDate between #{dateCri.hyphenStartDate} and #{dateCri.hyphenEndDate}
 		</if>
 	</sql>
+	
 	<select id="selectSearchTodoList" resultType="todo">
 		select
 		*
@@ -50,7 +48,7 @@
 	<select id="selectSearchTodoListCount" resultType="int">
 		select count(*)
 		from todo
-		where id is not null
+		where tno is not null
 		<include refid="search" />
 		<include refid="dateSearch" />
 	</select>
@@ -86,7 +84,7 @@
 
 	<update id="deleteTodo" parameterType="int">
 		delete
-		from member
+		from todo
 		where
 		tno=#{tno}
 	</update>
