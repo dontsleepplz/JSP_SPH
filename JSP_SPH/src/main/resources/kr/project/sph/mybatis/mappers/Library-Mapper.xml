@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="Library-Mapper">
+
+	<sql id="search">
+		<if test="searchType == 't'.toString()">
+			and title like '%'||#{keyword}||'%'			
+		</if>
+		<if test="searchType == 'w'.toString()">
+			and writer like '%'||#{keyword}||'%'			
+		</if>
+		<if test="searchType == 'c'.toString()">
+			and content like '%'||#{keyword}||'%'			
+		</if>
+		<if test="searchType == 'tc'.toString()">
+			and (
+			title like '%'||#{keyword}||'%'
+			or
+			content like '%'||#{keyword}||'%'						
+			)			
+		</if>
+		<if test="searchType == 'cw'.toString()">
+			and (
+			writer like '%'||#{keyword}||'%'
+			or
+			content like '%'||#{keyword}||'%'						
+			)			
+		</if>
+		<if test="searchType == 'tcw'.toString()">
+			and (
+			title like '%'||#{keyword}||'%'
+			or
+			writer like '%'||#{keyword}||'%'
+			or
+			content like '%'||#{keyword}||'%'						
+			)			
+		</if>
+	</sql>
+	
+	<select id="selectSearchLibraryList" resultType="library">
+		select
+		*
+		from
+		library
+		where lno is not null  			  	
+		<include refid="search" />
+		order by lno desc
+	</select>
+	<select id="selectSearchLibraryListCount"  resultType="int">
+		select
+		count(*)
+		from
+		library
+		where lno is not null  			  	
+		<include refid="search" />
+		order by lno desc
+	</select>
+	
+	<update id="insertLibrary">
+		insert 
+		into 
+		library(lno,title,writer,content)
+		values(#{lno},#{title},#{writer},#{content})
+	</update>
+	<select id="selectLibrarySeqNext" resultType="int">
+		select library_seq.nextval as lno from dual
+	</select>
+	
+	
+	<select id="selectLibraryByLno"  resultType="library">
+		select * 
+		from library
+		where lno=#{lno}
+	</select>
+	<update id="increaseViewCnt" parameterType="int">
+		update 
+		library
+		set 
+		viewcnt=viewcnt+1 
+		where lno=#{lno}
+	</update>
+	
+	
+	
+	<update id="updateLibrary" parameterType="library">
+		update 
+		library
+		set 
+		title=#{title}, content=#{content}, updatedate=sysdate 
+		where lno=#{lno}
+	</update>
+	
+	<update id="deleteLibrary" parameterType="int">
+		delete 
+		from library 
+		where lno=#{lno}
+	</update>
+
+</mapper>

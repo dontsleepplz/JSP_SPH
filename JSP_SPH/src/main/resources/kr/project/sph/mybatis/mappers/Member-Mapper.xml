@@ -7,9 +7,6 @@
 <mapper namespace="Member-Mapper">
 
 	<sql id="search">
-		<if test="searchType == 'm'.toString() ">
-			and mno like '%'||#{keyword}||'%'
-		</if>
 		<if test="searchType == 'i'.toString() ">
 			and id like '%'||#{keyword}||'%'
 		</if>
@@ -25,21 +22,20 @@
 		<if test="searchType == 'd'.toString() ">
 			and departcode like '%'||#{departCode}||'%'
 		</if>
-		
 	</sql>
 	<sql id="dateSearch">
-			<if test="searchDate == 'j'.toString() ">
-				and joindate between #{dateCri.ymdStartDate} and #{dateCri.ymdEndDate}
-			</if>
-			<if test="searchDate == 'r'.toString() ">
-				and regdate between #{dateCri.ymdStartDate} and #{dateCri.ymdEndDate}
-			</if>
-			<if test="searchDate == 'u'.toString() ">
-				and updatedate between #{dateCri.ymdStartDate} and #{dateCri.ymdEndDate}
-			</if>
-			<if test="searchDate == 'l'.toString() ">
-				and leavedate between #{dateCri.ymdStartDate} and #{dateCri.ymdEndDate}
-			</if>
+		<if test="searchDate == 'j'.toString() ">
+			and joindate between #{dateCri.ymdStartDate} and #{dateCri.ymdEndDate}
+		</if>
+		<if test="searchDate == 'r'.toString() ">
+			and regdate between #{dateCri.ymdStartDate} and #{dateCri.ymdEndDate}
+		</if>
+		<if test="searchDate == 'u'.toString() ">
+			and updatedate between #{dateCri.ymdStartDate} and #{dateCri.ymdEndDate}
+		</if>
+		<if test="searchDate == 'l'.toString() ">
+			and leavedate between #{dateCri.ymdStartDate} and #{dateCri.ymdEndDate}
+		</if>
 	</sql>
 	
 

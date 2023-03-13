@@ -23,7 +23,7 @@
 		
 		<!-- Attendance -->
 		<typeAlias type="kr.project.sph.dto.AttendanceVO" alias="attendance" />
-		<typeAlias type="kr.project.sph.dto.OffVO" alias="Off" />
+		<typeAlias type="kr.project.sph.dto.OffVO" alias="off" />
 		
 		<!-- ElecSign -->
 		<typeAlias type="kr.project.sph.dto.ElecAttachVO" alias="elecAttach" />

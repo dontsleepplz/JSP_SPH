@@ -4,10 +4,8 @@
 		<pattern>*.do</pattern>
 	</decorator>
 
-
 	<decorator name="iFrame" page="iframe_decorator.jsp">
 		<pattern>/**/*.do</pattern>
-		<pattern>/main.do</pattern>
 	</decorator>
 	
 	<decorator name="admin" page="admin_decorator.jsp">

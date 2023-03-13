@@ -12,5 +12,6 @@ public class AdminMemberController {
 	@GetMapping("/admin/member/main")
 	public void membermain() {}
 	
-
+	@GetMapping("/member/mainD")
+	public void maindash() {}
 }
