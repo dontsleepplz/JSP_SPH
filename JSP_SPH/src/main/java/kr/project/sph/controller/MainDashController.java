@@ -9,7 +9,4 @@ public class MainDashController {
 	@GetMapping("/member/mainDash")
 	public void mainDash() {}
 	
-	
-
-
 }
