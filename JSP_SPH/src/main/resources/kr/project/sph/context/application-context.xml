@@ -8,22 +8,16 @@
 
 	<context:component-scan
 		base-package="kr.project.sph.dao.test" />
-
-	<bean id="memberDAO" class="kr.project.sph.dao.MemberDAOImpl"
-		p:session-ref="sqlSession" />
+	
+	<!-- DAO bean -->
 	<bean id="menuDAO" class="kr.project.sph.dao.MenuDAOImpl"
-		p:session-ref="sqlSession" />
-
+		p:session-ref="sqlSession" 
+	/>
+	<bean id="memberDAO" class="kr.project.sph.dao.MemberDAOImpl"
+		p:session-ref="sqlSession" 
+	/>
 	<bean id="reportDAO" class="kr.project.sph.dao.ReportDAOImpl"
-		p:session-ref="sqlSession" />
-
-	<bean id="menuService"
-		class="kr.project.sph.service.MenuServiceImpl" p:menuDAO-ref="menuDAO" />
-
-
-
-	<bean id="menuDAO" class="kr.project.sph.dao.MenuDAOImpl" 
-		p:session-ref="sqlSession"
+		p:session-ref="sqlSession" 
 	/>
 	<bean id="todoDAO" class="kr.project.sph.dao.ToDoDAOImpl"
 		p:session-ref="sqlSession"
@@ -46,12 +40,16 @@
 	<bean id="wardRecordDAO" class="kr.project.sph.dao.WardRecordDAOImpl"
 		p:session-ref="sqlSession"
 	/>
+
 	
-	<bean id="menuService" class="kr.project.sph.service.MenuServiceImpl" 
-		p:menuDAO-ref="menuDAO"
+	
+	<!-- Service bean -->
+	<bean id="menuService"
+		class="kr.project.sph.service.MenuServiceImpl" p:menuDAO-ref="menuDAO" 
 	/>
+
 	<bean id="todoService" class="kr.project.sph.service.ToDoServiceImpl"
 		p:todoDAO-ref="todoDAO"
-		/>
+	/>
 	
 </beans>
