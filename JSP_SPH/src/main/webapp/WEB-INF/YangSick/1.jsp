@@ -24,6 +24,13 @@
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/bootstrap/dist/css/adminlte.min.css">
 <script nonce="c2295416-0a68-41c6-b12c-5d08b10f3b20">(function(w,d){!function(f,g,h,i){f[h]=f[h]||{};f[h].executed=[];f.zaraz={deferred:[],listeners:[]};f.zaraz.q=[];f.zaraz._f=function(j){return function(){var k=Array.prototype.slice.call(arguments);f.zaraz.q.push({m:j,a:k})}};for(const l of["track","set","debug"])f.zaraz[l]=f.zaraz._f(l);f.zaraz.init=()=>{var m=g.getElementsByTagName(i)[0],n=g.createElement(i),o=g.getElementsByTagName("title")[0];o&&(f[h].t=g.getElementsByTagName("title")[0].text);f[h].x=Math.random();f[h].w=f.screen.width;f[h].h=f.screen.height;f[h].j=f.innerHeight;f[h].e=f.innerWidth;f[h].l=f.location.href;f[h].r=g.referrer;f[h].k=f.screen.colorDepth;f[h].n=g.characterSet;f[h].o=(new Date).getTimezoneOffset();if(f.dataLayer)for(const s of Object.entries(Object.entries(dataLayer).reduce(((t,u)=>({...t[1],...u[1]})))))zaraz.set(s[0],s[1],{scope:"page"});f[h].q=[];for(;f.zaraz.q.length;){const v=f.zaraz.q.shift();f[h].q.push(v)}n.defer=!0;for(const w of[localStorage,sessionStorage])Object.keys(w||{}).filter((y=>y.startsWith("_zaraz_"))).forEach((x=>{try{f[h]["z_"+x.slice(7)]=JSON.parse(w.getItem(x))}catch{f[h]["z_"+x.slice(7)]=w.getItem(x)}}));n.referrerPolicy="origin";n.src="/cdn-cgi/zaraz/s.js?z="+btoa(encodeURIComponent(JSON.stringify(f[h])));m.parentNode.insertBefore(n,m)};["complete","interactive"].includes(g.readyState)?zaraz.init():f.addEventListener("DOMContentLoaded",zaraz.init)}(w,d,"zarazData","script");})(window,document);</script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
+
 </head>
 <body class="hold-transition sidebar-mini">
 	<div class="wrapper">
@@ -74,7 +81,7 @@
 							</div>
 							<div class="form-group row">
 								<label for="inputPassword3" class="col-sm-2 col-form-label"
-									style="padding-left: 50px; padding-top:35px;">기안일</label>
+									style="padding-left: 50px; padding-top: 35px;">기안일</label>
 
 								<div class="form-group">
 									<label></label>
@@ -101,53 +108,54 @@
 									placeholder="">
 							</div>
 						</div>
-				
-				<div class="form-group row">
-					<label for="inputPassword3" class="col-sm-2 col-form-label"
-						style="padding-left: 56px;"> 휴가종류</label>
-					<div class="col-sm-10">
-						<select class="custom-select rounded-0" id="exampleSelectRounded0">
-							<option>연차휴가</option>
-							<option>출산휴가</option>
-							<option>배우자출산휴가</option>
-							<option>생리휴가</option>
-							<option>가족돌봄휴가</option>
-							<option>병가</option>
-						</select>
 
-					</div>
-				</div>
+						<div class="form-group row">
+							<label for="inputPassword3" class="col-sm-2 col-form-label"
+								style="padding-left: 56px;"> 휴가종류</label>
+							<div class="col-sm-10">
+								<select class="custom-select rounded-0"
+									id="exampleSelectRounded0">
+									<option>연차휴가</option>
+									<option>출산휴가</option>
+									<option>배우자출산휴가</option>
+									<option>생리휴가</option>
+									<option>가족돌봄휴가</option>
+									<option>병가</option>
+								</select>
 
-				<div class="card-body">
-					<div class="form-group row">
-						<label for="inputEmail3" class="col-sm-2 col-form-label"
-							style="padding-left: 50px;">휴가사유</label>
-						<div class="col-sm-10" style="border: 1px solid #ced4da;">
-							<div class="note-editable card-block" style="height: 400px;"
-								contenteditable="true" role="textbox" aria-multiline="true"
-								spellcheck="true" autocorrect="true"></div>
+							</div>
 						</div>
-					</div>
-				</form>
+
+						<div class="card-body">
+							<div class="form-group row">
+								<label for="inputEmail3" class="col-sm-2 col-form-label"
+									style="padding-left: 50px;">휴가사유</label>
+								<div class="col-sm-10" style="border: 1px solid #ced4da;">
+									<div class="note-editable card-block" style="height: 400px;"
+										contenteditable="true" role="textbox" aria-multiline="true"
+										spellcheck="true" autocorrect="true"></div>
+								</div>
+							</div>
+					</form>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
 
 	<aside class="control-sidebar control-sidebar-dark"></aside>
 
 	</div>
 
 
-	<script src="../../plugins/jquery/jquery.min.js"></script>
+	<script src="<%=request.getContextPath()%>/resources/bootstrap/plugins/jquery/jquery.min.js"></script>
 
-	<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="<%=request.getContextPath()%>/resources/bootstrap//plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-	<script src="../../dist/js/adminlte.min.js?v=3.2.0"></script>
+	<script src="<%=request.getContextPath()%>/resources/bootstrap//dist/js/adminlte.min.js?v=3.2.0"></script>
 
-	<script src="../../plugins/summernote/summernote-bs4.min.js"></script>
+	<script src="<%=request.getContextPath()%>/resources/bootstrap//plugins/summernote/summernote-bs4.min.js"></script>
 
-	<script src="../../dist/js/demo.js"></script>
+	<script src="<%=request.getContextPath()%>/resources/bootstrap//dist/js/demo.js"></script>
 
 	<script>
   $(function () {

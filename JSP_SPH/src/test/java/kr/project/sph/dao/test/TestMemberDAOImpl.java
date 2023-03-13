@@ -33,8 +33,8 @@ public class TestMemberDAOImpl {
 		
 		SearchDateCriteria datecri = new SearchDateCriteria("20010411", "20230309");
 		SearchCriteria cri = new SearchCriteria(1,100,"i","i","r",datecri);
-		int offset = cri.getStartRowNum();
-		int limit = cri.getPerPageNum();
+				int offset = cri.getStartRowNum();
+				int limit = cri.getPerPageNum();
 		RowBounds rowBounds = new RowBounds(offset,limit);
 		List<MemberVO> memberList = session.selectList("Member-Mapper.selectSearchMemberList",cri,rowBounds);
 		
