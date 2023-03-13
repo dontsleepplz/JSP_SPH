@@ -22,6 +22,4 @@ public interface MemberDAO {
 	
 	void deleteMember(int mno) throws SQLException;
 	
-	
-	
 }

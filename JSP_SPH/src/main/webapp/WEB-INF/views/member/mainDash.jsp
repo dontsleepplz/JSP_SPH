@@ -21,9 +21,6 @@ SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일 hh:mm:ss");
 
 
 <style>
-body {
- background-color:gray;
-}
 #calendar {
 	width: 100%;
 	height: 100%;
@@ -39,6 +36,7 @@ a {
 }
 </style>
 
+
 <div class="content">
 
 	<div class="container-fluid">
@@ -49,15 +47,15 @@ a {
 
 				<!-- 출퇴근 -->
 				<div class="col-md-2">
-					<div class="card" style="height: 55vh;">
+					<div class="card" style="height: 55vh; overflow:hidden;">
 						<div class="card-body">
 
-							<div class="row" style="height: 200px; margin-bottom: 10px;">
+							<div class="row" style="height: 180px; margin-bottom: 10px;">
 								<div class="mailbox-attachments clearfix col-md-12"
 									style="text-align: center;">
 									<div id="pictureView" class="manPicture"
 										data-id="${member.id }"
-										style="border: 1px solid green; height: 200px; width: 150px; margin: 0 auto"></div>
+										style="border: 1px solid green; height: 180px; width: 150px; margin: 0 auto"></div>
 								</div>
 							</div>
 
@@ -397,3 +395,5 @@ a {
 <script src="<%=request.getContextPath()%>/resources/fullcal/dist/index.global.js"></script>
 
 <script src="<%=request.getContextPath()%>/resources/bootstrap/dist/js/pages/dashboard3.js"></script>
+
+

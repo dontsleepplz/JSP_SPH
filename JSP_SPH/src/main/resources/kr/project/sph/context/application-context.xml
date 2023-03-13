@@ -15,6 +15,10 @@
 		p:session-ref="sqlSession"
 	/>
 	
+	<bean id="offDAO" class="kr.project.sph.dao.OffDAOImpl"
+		p:session-ref="sqlSession"
+	/>
+	
 	
 	<bean id="menuService" class="kr.project.sph.service.MenuServiceImpl" 
 		p:menuDAO-ref="menuDAO"
