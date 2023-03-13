@@ -51,7 +51,7 @@
 		<typeAlias type="kr.project.sph.dto.PatientVO" alias="patient" />
 		<typeAlias type="kr.project.sph.dto.ReservationVO" alias="reservation" />
 		<typeAlias type="kr.project.sph.dto.ScheduleVO" alias="schedule" />
-		<typeAlias type="kr.project.sph.dto.ToDoVO" alias="toDo" />
+		<typeAlias type="kr.project.sph.dto.ToDoVO" alias="todo" />
 		<typeAlias type="kr.project.sph.dto.WardRecordVO" alias="wardRecord" />
 		<typeAlias type="kr.project.sph.dto.WardVO" alias="ward" />
 		<typeAlias type="kr.project.sph.dto.RequestVO" alias="request" />

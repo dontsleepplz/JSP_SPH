@@ -5,19 +5,53 @@
 	xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
-	
-	<context:component-scan base-package = "kr.project.sph.dao.test" />
-	
+
+	<context:component-scan
+		base-package="kr.project.sph.dao.test" />
+
 	<bean id="memberDAO" class="kr.project.sph.dao.MemberDAOImpl"
-		p:session-ref="sqlSession"
-	/>
+		p:session-ref="sqlSession" />
+	<bean id="menuDAO" class="kr.project.sph.dao.MenuDAOImpl"
+		p:session-ref="sqlSession" />
+
+	<bean id="reportDAO" class="kr.project.sph.dao.ReportDAOImpl"
+		p:session-ref="sqlSession" />
+
+	<bean id="menuService"
+		class="kr.project.sph.service.MenuServiceImpl" p:menuDAO-ref="menuDAO" />
+
+
+
 	<bean id="menuDAO" class="kr.project.sph.dao.MenuDAOImpl" 
 		p:session-ref="sqlSession"
 	/>
-	
+	<bean id="todoDAO" class="kr.project.sph.dao.ToDoDAOImpl"
+		p:session-ref="sqlSession"
+	/>	
+	<bean id="scheduleDAO" class="kr.project.sph.dao.ScheduleDAOImpl"
+		p:session-ref="sqlSession"
+	/>
+	<bean id="operationDAO" class="kr.project.sph.dao.OperationDAOImpl"
+		p:session-ref="sqlSession"
+	/>	
+	<bean id="operationTeamDAO" class="kr.project.sph.dao.OperationTeamDAOImpl"
+		p:session-ref="sqlSession"
+	/>
+	<bean id="reservationDAO" class="kr.project.sph.dao.ReservationDAOImpl"
+		p:session-ref="sqlSession"
+	/>
+	<bean id="WardDAO" class="kr.project.sph.dao.WardDAOImpl"
+		p:session-ref="sqlSession"
+	/>
+	<bean id="wardRecordDAO" class="kr.project.sph.dao.WardRecordDAOImpl"
+		p:session-ref="sqlSession"
+	/>
 	
 	<bean id="menuService" class="kr.project.sph.service.MenuServiceImpl" 
 		p:menuDAO-ref="menuDAO"
 	/>
+	<bean id="todoService" class="kr.project.sph.service.ToDoServiceImpl"
+		p:todoDAO-ref="todoDAO"
+		/>
 	
 </beans>
