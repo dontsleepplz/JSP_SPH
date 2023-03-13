@@ -34,6 +34,10 @@ SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일 hh:mm:ss");
 	font-size: 14px;
 	max-width: 100%;
 	max-height: 500px;
+	
+}
+#calendar button {
+   width: 80px;
 }
 </style>
 <body class="sidebar-mini sidebar-closed sidebar-collapse">
@@ -457,7 +461,7 @@ SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일 hh:mm:ss");
                         }
                         OpenWindow('<%=request.getContextPath()%>/calender/regist',
 																'calendarRegist',
-																600, 500);
+																700, 800);
 													}
 												}
 											}
@@ -480,7 +484,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // -----------------------------------------------------------------
  
     new Draggable(containerEl, {
-      itemSelector: '.fc-event',
+      itemSelector: '.external-event',
       eventData: function(eventEl) {
         return {
           title: eventEl.innerText

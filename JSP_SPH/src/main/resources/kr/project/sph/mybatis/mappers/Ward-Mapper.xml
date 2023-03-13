@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="Ward-Mapper">
+
+	<sql id="search">
+		<if test="searchType == 'w'.toString() ">
+			and wno like '%'||#{keyword}||'%'
+		</if>
+		<if test="searchType == 's'.toString() ">
+			and state like '%'||#{keyword}||'%'
+		</if>
+		<if test="searchType == 'p'.toString() ">
+			and phone like '%'||#{keyword}||'%'
+		</if>
+	</sql>
+	
+	<select id="selectSearchWardList" resultType="ward">
+		select
+		*
+		from ward
+		where wno is not null
+		<include refid="search" />
+		order by wno desc
+	</select>
+
+	<select id="selectSearchWardListCount" resultType="int">
+		select count(*)
+		from ward
+		where wno is not null
+		<include refid="search" />
+	</select>
+	<select id="selectWardByWNO" parameterType="int"
+		resultType="ward">
+		select
+		*
+		from ward
+		where wno=#{wno}
+	</select>
+	<select id="selectWardSequenceNextValue" resultType="int">
+		select
+		ward_seq.nextVal
+		from dual
+	</select>
+
+	<update id="insertWard" parameterType="ward">
+		insert into
+		ward(wno, state, phone)
+		values(#{wno},#{state},#{phone})
+	</update>
+
+	<update id="updateWard" parameterType="ward">
+		update ward
+		set
+		state=#{state},phone=#{phone}
+
+		where wno=#{wno}
+	</update>
+
+	<update id="deleteWard" parameterType="int">
+		delete
+		from ward
+		where
+		wno=#{wno}
+	</update>
+
+
+
+
+</mapper>

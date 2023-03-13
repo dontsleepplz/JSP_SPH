@@ -10,7 +10,7 @@ public class SearchCriteria {
 	private int perPageNum = 10;
 	private String searchType = "";
 	private String keyword = "";
-	private String searchDate = "r";
+	private String searchDate = "";
 	
 	private int startRowNum = 0;
 

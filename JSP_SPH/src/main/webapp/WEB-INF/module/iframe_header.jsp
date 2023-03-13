@@ -20,6 +20,12 @@
   <decorator:head />
 </head>
 
+<style>
+body{
+	overflow-y:hidden;
+}
+
+</style>
 <body class="hold-transition sidebar-mini">
   <div class="wrapper">
 	<!-- iframe_header -->

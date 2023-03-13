@@ -73,18 +73,13 @@
 </script>
 
 
-<!-- jQuery -->
-<script
-	src="<%=request.getContextPath()%>/resources/bootstrap/plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap 4 -->
-<script
-	src="<%=request.getContextPath()%>/resources/bootstrap/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+<script src="<%=request.getContextPath()%>/resources/bootstrap/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
-<script
-	src="<%=request.getContextPath()%>/resources/bootstrap/dist/js/adminlte.min.js"></script>
+<script src="<%=request.getContextPath()%>/resources/bootstrap/dist/js/adminlte.min.js"></script>
 <!-- DashBoard3 -->
-<script
-	src="<%=request.getContextPath()%>/resources/bootstrap/dist/js/pages/dashboard3.js"></script>
+<script src="<%=request.getContextPath()%>/resources/bootstrap/dist/js/pages/dashboard3.js"></script>
 <!-- common.js  -->
 <script src="<%=request.getContextPath()%>/resources/js/common.min.js"></script>
 </body>

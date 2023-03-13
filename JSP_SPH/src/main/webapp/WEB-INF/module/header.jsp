@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
@@ -22,11 +23,19 @@ SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일 hh:mm:ss");
   <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/bootstrap/plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/bootstrap/dist/css/adminlte.min.css">
-  
+  <!-- jQuery -->
+  <script src="<%=request.getContextPath()%>/resources/bootstrap/plugins/jquery/jquery.min.js"></script>
   <decorator:head />
 </head>
+<style>
+body {
+ overflow-y:hidden;
+}
 
-<body class="hold-transition sidebar-mini">
+</style>
+
+
+<body class="hold-transition sidebar-mini" >
   <div class="wrapper">
 	<!-- header -->
     <nav class="main-header navbar navbar-expand navbar-white navbar-light" style="background-color: rgb(180, 220, 255);">
@@ -76,7 +85,7 @@ SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일 hh:mm:ss");
             <a href="#" class="dropdown-item">
 
               <div class="media">
-                <img src="dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+                <img src="#" alt="User Avatar" class="img-size-50 mr-3 img-circle">
                 <div class="media-body">
                   <h3 class="dropdown-item-title">
                     Brad Diesel
@@ -92,7 +101,7 @@ SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일 hh:mm:ss");
             <a href="#" class="dropdown-item">
 
               <div class="media">
-                <img src="dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+                <img src="#" alt="User Avatar" class="img-size-50 img-circle mr-3">
                 <div class="media-body">
                   <h3 class="dropdown-item-title">
                     John Pierce
@@ -108,7 +117,7 @@ SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일 hh:mm:ss");
             <a href="#" class="dropdown-item">
 
               <div class="media">
-                <img src="dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+                <img src="#" alt="User Avatar" class="img-size-50 img-circle mr-3">
                 <div class="media-body">
                   <h3 class="dropdown-item-title">
                     Nora Silvester

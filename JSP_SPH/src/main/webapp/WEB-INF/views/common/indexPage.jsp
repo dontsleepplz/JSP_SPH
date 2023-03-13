@@ -8,7 +8,7 @@
 
 <body>
 	<!-- S:iframe -->
-	<div class="content-wrapper">
+	<div class="content-wrapper" style="margin-left:0;">
 		<iframe name="ifr" src="" frameborder="0" style="width:100%;height:90vh;"></iframe>
 	</div>
 	<!-- E:iframe -->

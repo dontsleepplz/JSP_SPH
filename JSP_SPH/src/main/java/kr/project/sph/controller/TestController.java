@@ -1,3 +1,4 @@
+
 package kr.project.sph.controller;
 
 import java.util.ArrayList;
@@ -45,7 +46,7 @@ public class TestController {
 	
 	
 
-	@GetMapping("/calender/calendar")
+	@GetMapping("/calender/editSch")
 	public void calendar() {
 
 	}
@@ -115,7 +116,7 @@ public class TestController {
 
 		// URL 스트링에 직접입력
 		menu.setMcode("M000000");
-		menu.setMurl("/calender/calendar.do");
+		menu.setMurl("/work/main.do");
 		menu.setMname("test");
 
 		menuList.add(menu);

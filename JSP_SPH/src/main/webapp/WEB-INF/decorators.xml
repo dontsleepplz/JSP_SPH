@@ -15,7 +15,7 @@
 	</decorator>
 	
 	<decorator name="iframe_admin" page="admin_iframe_decorator.jsp">
-		<pattern>/**/**/*.admin</pattern>
+		<pattern>/**/*.admin</pattern>
 	</decorator>
 	
 	
