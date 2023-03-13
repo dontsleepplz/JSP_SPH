@@ -13,7 +13,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
-import kr.project.sph.dto.MemberVO;
 import kr.project.sph.dto.ToDoVO;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -26,43 +25,49 @@ public class TestTodoDAOImpl {
 	@Autowired
 	private SqlSession session;
 	
-	@Test
-	public void testSelectTodoByTNO()throws Exception{
-		int tno = 1;
-		
-		ToDoVO todo = session.selectOne("Todo-Mapper.selectTodoByTNO",tno);
-		
-		System.out.println(todo.getTno());
-		
-	}
+	/*
+	 * @Test public void testSelectTodoByTNO()throws Exception{ int tno = 1;
+	 * 
+	 * ToDoVO todo = session.selectOne("Todo-Mapper.selectTodoByTNO",tno);
+	 * 
+	 * System.out.println(todo.getTno());
+	 * 
+	 * }
+	 */ 
 	
-	
-	  @Test
-	  
-	  @Rollback public void testInsertTodo() throws Exception{ 
-		  ToDoVO todo = new ToDoVO(); 
-		  
-		  todo.setTno(12);
-		  todo.setTitle("test");
-		  todo.setContent("test");
-		  todo.setCom("1");
-		  todo.setImp("1");
-		  todo.setRegDate(date);
-		  todo.setToDoDate(date);
-		  todo.setToDoTime(date);
-		  todo.setWriter(102121);
-	  
-		  session.update("Todo-Mapper.insertTodo",todo);
-
-		  ToDoVO getTodo = session.selectOne("Todo-Mapper.selectTodoByTNO",todo.getTno());
-
-		 // Assert.assertEquals(todo.getTno(), getTodo.getTno());
-		  System.out.println(todo.getTno());
-		  System.out.println(getTodo.getTno());
-	  }
+	 /* 
+	 * @Test
+	 * 
+	 * @Rollback public void testInsertTodo() throws Exception{ 
+	 * ToDoVO todo = new ToDoVO();
+	 * 
+	 * todo.setTno(12); todo.setTitle("test"); todo.setContent("test");
+	 * todo.setCom("1"); todo.setImp("1"); todo.setRegDate(date);
+	 * todo.setToDoDate(date); todo.setWriter(1234);
+	 * 
+	 * session.update("Todo-Mapper.insertTodo",todo);
+	 * 
+	 * ToDoVO getTodo =
+	 * session.selectOne("Todo-Mapper.selectTodoByTNO",todo.getTno());
+	 * 
+	 * // Assert.assertEquals(todo.getTno(), getTodo.getTno());
+	 * System.out.println(todo.getTno()); System.out.println(getTodo.getTno()); }
+	 */
 	 
-	
-	
+	  @Test
+	  @Rollback
+	  public void testupdateTodo() throws Exception{
+		   ToDoVO todo = session.selectOne("Todo-Mapper.selectTodoByTNO",1);
+		   
+		   todo.setTitle("testtest");
+		   todo.setContent("test하는 중");
+		   
+		   session.update("Todo-Mapper.updateTodo",todo);
+		   
+		  ToDoVO testTodo = session.selectOne("Todo-Mapper.selectTodoByTNO",1);
+
+		  Assert.assertEquals(todo.getTno(), testTodo.getTno());
+	   }
 	
 	
 

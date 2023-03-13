@@ -22,16 +22,16 @@
 		<if test="searchType == 'i'.toString() ">
 			and imp like '%'||#{keyword}||'%'
 		</if>
+		<if test="searchType == 'w'.toString() ">
+			and writer like '%'||#{keyword}||'%'
+		</if>
 	</sql>
 	<sql id="dateSearch">
 		<if test="searchDate == 'r'.toString() ">
 			and regDate between #{dateCri.ymdStartDate} and #{dateCri.ymdEndDate}
 		</if>
 		<if test="searchDate == 's'.toString() ">
-			and startDate between #{dateCri.hyphenStartDate} and #{dateCri.hyphenEndDate}
-		</if>
-		<if test="searchDate == 'e'.toString()">
-			and endDate between #{dateCri.hyphenStartDate} and #{dateCri.hyphenEndDate}
+			and toDoDate between #{dateCri.hyphenStartDate} and #{dateCri.hyphenEndDate}
 		</if>
 	</sql>
 	
@@ -67,17 +67,16 @@
 
 	<update id="insertTodo" parameterType="todo">
 		insert into
-		todo(tno,
-		title, content, com, imp, toDoDate, toDoTime,regDate,writer)
+		todo(tno,title, content, com, imp, toDoDate,regDate,writer)
 		values(#{tno},#{title},#{content},#{com},#{imp},#{toDoDate},
-		#{toDoTime}, #{regDate}, #{writer})
+		#{regDate}, #{writer})
 	</update>
 
 	<update id="updateTodo" parameterType="todo">
 		update todo
 		set
 		title=#{title},content=#{content},com=#{com},imp=#{imp},toDoDate=#{toDoDate},
-		toDoTime=#{toDoTime}
+		regDate=#{regDate},writer=#{writer}
 
 		where tno=#{tno}
 	</update>
