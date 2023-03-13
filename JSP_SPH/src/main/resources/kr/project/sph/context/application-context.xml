@@ -44,12 +44,16 @@
 	
 	
 	<!-- Service bean -->
-	<bean id="menuService"
-		class="kr.project.sph.service.MenuServiceImpl" p:menuDAO-ref="menuDAO" 
+	<bean id="menuService" class="kr.project.sph.service.MenuServiceImpl" 
+		p:menuDAO-ref="menuDAO" 
 	/>
 
 	<bean id="todoService" class="kr.project.sph.service.ToDoServiceImpl"
 		p:todoDAO-ref="todoDAO"
+	/>
+	
+	<bean id="memberService" class="kr.project.sph.service.MemberServiceImpl"
+		p:memberDAO-ref="memberDAO"
 	/>
 	
 </beans>

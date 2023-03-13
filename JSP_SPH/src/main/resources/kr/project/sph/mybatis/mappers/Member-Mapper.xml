@@ -94,7 +94,12 @@
 		from member
 		where mno=#{mno}
 	</update>
-
+	<select id="selectMemberById" parameterType="str" resultType="member">
+		select
+		*
+		from member
+		where id=#{id}
+	</select>
 
 
 

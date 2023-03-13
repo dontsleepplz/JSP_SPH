@@ -101,10 +101,11 @@ a{
     <article>
         <div class = "login_wrapper">
             <div class="login_logo">SPH </div>
-            <form class="login_form">
+            <form class="login_form" action="login.do" method="post">
+            	<input name="retUrl" value="${retUrl }" type="hidden" />
                 <input id="LOGIN_ID" class = "login_text" type="text" name="id" placeholder="전화번호, 사용자 이름 또는 이메일">
-                <input  id="LOGIN_PW" class = "login_text" type="password" name="id" placeholder="비밀번호">
-                <button id="LOGIN_BTN" class = "login_btn" type="button" disabled>로그인</button>
+                <input  id="LOGIN_PW" class = "login_text" type="password" name="pwd" placeholder="비밀번호">
+                <button id="LOGIN_BTN" class = "login_btn" type="submit" disabled>로그인</button>
             </form>
             <div id="find">
             <a class = "login_bottom" href="#" >아이디 찾기</a>/<a class = "login_bottom" href="#" style="margin-top:3px;">비밀번호 찾기</a>
@@ -141,4 +142,11 @@ loginPw.addEventListener('keyup', color);
 color();
 
 </script>
+
+<c:if test="${not empty id and not empty message}">
+  <script>
+  		alert("${message}");
+  		document.querySelector("input[name='id']").value="${id}";
+  </script>
+</c:if>
 </html>
