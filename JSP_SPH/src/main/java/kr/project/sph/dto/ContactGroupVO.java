@@ -6,6 +6,7 @@ public class ContactGroupVO {
 	private String cname;
 	private int writer;
 	private int mno;
+	
 	public int getCnum() {
 		return cnum;
 	}

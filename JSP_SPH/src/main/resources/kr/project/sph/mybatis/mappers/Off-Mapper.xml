@@ -23,16 +23,16 @@
 		order by regDate desc
 	</select>
 	
-	<select id="insertOff" resultType="off">
+	<update id="insertOff" parameterType="off">
 		insert into
 		off(offNum, mno, startDate, endDate)
-		value=(#{offNum},#{mno},#{startDate},#{endDate})
-	</select>
+		values(#{offNum},#{mno},#{startDate},#{endDate})
+	</update>
 	
-	<select id="deleteOff" parameterType="int">
+	<update id="deleteOff" parameterType="int">
 		delete
 		from off
 		where offNum=#{offNum}
-	</select>
+	</update>
 	
 </mapper>
