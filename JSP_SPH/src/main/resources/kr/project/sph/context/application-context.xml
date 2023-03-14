@@ -40,12 +40,8 @@
 	<bean id="wardRecordDAO" class="kr.project.sph.dao.WardRecordDAOImpl"
 		p:session-ref="sqlSession"
 	/>
-	<bean id="patientDAO" class="kr.project.sph.dao.PatientDAOImpl"
-		p:session-ref="sqlSession"
-	/>
-	<bean id="chartDAO" class="kr.project.sph.dao.ChartDAOImpl"
-		p:session-ref="sqlSession"
-	/>
+
+	
 	
 	<!-- Service bean -->
 	<bean id="menuService" class="kr.project.sph.service.MenuServiceImpl" 

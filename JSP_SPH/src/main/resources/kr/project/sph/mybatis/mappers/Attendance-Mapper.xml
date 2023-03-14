@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="Attendance-Mapper">
+
+	<select id="insertAttendanceWork" resultType="attendance">
+		insert into
+		attendance(attendanceCode, attendanceWork, mno)
+		value=(#{attendanceCode},#{attendanceWork},#{mno})
+	</select>
+	
+	<select id="insertAttendanceLeave" resultType="attendance">
+		update attendance
+		set
+		attendanceCode=#{attendanceCode}, attendanceWork=#{attendanceWork}, mno=#{mno}
+		attendanceLeave=sysdate
+	</select>
+	
+	<select id="selectSearchAttendanceList" resultType="attendance">
+		select
+		*
+		from attendance
+		where attendanceCode is not null
+		order by attendanceCode desc
+	</select>
+	
+</mapper>

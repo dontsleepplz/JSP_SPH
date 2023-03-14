@@ -6,21 +6,30 @@
 
 <mapper namespace="Off-Mapper">
 
+	<sql id="dateSearch">
+			<if test="searchDate == 'r'.toString() ">
+				and regdate between #{dateCri.ymdStartDate} and #{dateCri.ymdEndDate}
+			</if>
+			<if test="searchDate == 'o'.toString() ">
+				and startdate and enddate between #{dateCri.ymdStartDate} and #{dateCri.ymdEndDate}
+			</if>
+	</sql>
+
 	<select id="selectSearchOffList" resultType="off"> <!-- 휴가내역 -->
 		select *
 		from off
-		where offNum is not null
-		
-	
+		where offNum is not null and mno=#{mno}
+		<include refid="dateSearch" />
+		order by regDate desc
 	</select>
 	
-	<select id="insertOff">
+	<select id="insertOff" resultType="off">
 		insert into
 		off(offNum, mno, startDate, endDate)
 		value=(#{offNum},#{mno},#{startDate},#{endDate})
 	</select>
 	
-	<select id="removeOff" parameterType="int">
+	<select id="deleteOff" parameterType="int">
 		delete
 		from off
 		where offNum=#{offNum}
