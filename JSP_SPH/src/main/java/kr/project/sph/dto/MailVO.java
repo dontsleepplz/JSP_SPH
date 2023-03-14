@@ -5,7 +5,7 @@ import java.util.List;
 
 public class MailVO {
 
-	private int mmno;
+	private int mnno;
 	private String title;
 	private String content;
 	private int important;
@@ -24,12 +24,12 @@ public class MailVO {
 		this.attachList = attachList;
 	}
 
-	public int getMmno() {
-		return mmno;
+	public int getMnno() {
+		return mnno;
 	}
 
-	public void setMmno(int mmno) {
-		this.mmno = mmno;
+	public void setMmno(int mnno) {
+		this.mnno = mnno;
 	}
 
 	public String getTitle() {

@@ -6,16 +6,25 @@
 
 <mapper namespace="Attendance-Mapper">
 
-	<select id="insertAttendanceWork" parameterType="attendance">
+	<select id="insertAttendanceWork" resultType="attendance">
 		insert into
 		attendance(attendanceCode, attendanceWork, mno)
 		value=(#{attendanceCode},#{attendanceWork},#{mno})
 	</select>
 	
-	<select id="insertAttendanceLeave" parameterType="attendance">
-		insert into
-		attendance(attendanceCode, attendanceLeave, mno)
-		value=(#{attendanceCode},#{attendanceLeave},#{mno})
+	<select id="insertAttendanceLeave" resultType="attendance">
+		update attendance
+		set
+		attendanceCode=#{attendanceCode}, attendanceWork=#{attendanceWork}, mno=#{mno}
+		attendanceLeave=sysdate
+	</select>
+	
+	<select id="selectSearchAttendanceList" resultType="attendance">
+		select
+		*
+		from attendance
+		where attendanceCode is not null
+		order by attendanceCode desc
 	</select>
 	
 </mapper>

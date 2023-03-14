@@ -23,7 +23,7 @@
 		order by regDate desc
 	</select>
 	
-	<select id="insertOff" parameterType="off">
+	<select id="insertOff" resultType="off">
 		insert into
 		off(offNum, mno, startDate, endDate)
 		value=(#{offNum},#{mno},#{startDate},#{endDate})

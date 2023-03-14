@@ -47,7 +47,7 @@ a {
 
 				<!-- 출퇴근 -->
 				<div class="col-md-2">
-					<div class="card" style="height: 55vh; overflow:hidden;">
+					<div class="card" style="height: 55vh;">
 						<div class="card-body">
 
 							<div class="row" style="height: 180px; margin-bottom: 10px;">
@@ -185,8 +185,8 @@ a {
 					<div class="card card-row card-primary"
 						style="height: 40vh; dispiay: inlile; margin: auto; padding: auto;">
 
-						<div class="card-header"
-							style="background: none; border: 1px solid gray;">
+						<div class="card-header" onclick="OpenWindow('noticeGo.do');"
+							style="background: none; border: 1px solid gray; cursor: pointer;">
 							<h3 class="card-title" style="color: black;">공지사항 +</h3>
 						</div>
 
@@ -196,7 +196,7 @@ a {
 								<c:forEach items="${noticeList }" var="notice">
 									<div class="row">
 										<div class="card card-outline" style="cursor: pointer; margin-bottom:3px;"
-											onclick="OpenWindow();">
+											onclick="OpenWindow('detail.do?nno={notice.nno}');">
 											<div class="card-header">
 												<div class="col-md-12 text-left">${noticeList.title }</div>
 											</div>
@@ -225,8 +225,8 @@ a {
 					<div class="card card-row card-primary"
 						style="height: 40vh; dispiay: inlile; margin: auto; padding: auto;">
 
-						<div class="card-header"
-							style="background: none; border: 1px solid gray;">
+						<div class="card-header" onclick="OpenWindow('mailGo.do');"
+							style="background: none; border: 1px solid gray; cursor: pointer;">
 							<h3 class="card-title" style="color: black;">메일 +</h3>
 						</div>
 
@@ -236,7 +236,7 @@ a {
 								<c:forEach items="${mailList }" var="mail">
 									<div class="row">
 										<div class="card card-outline" style="cursor: pointer; margin-bottom:3px;"
-											onclick="OpenWindow();">
+											onclick="OpenWindow('detail.do?mnno={mail.mnno}');");">
 											<div class="card-header">
 												<div class="col-md-3 text-left">${mailList.writer }</div>
 												<div class="col-md-9 text-left">${mailList.title }</div>
@@ -266,8 +266,8 @@ a {
 					<div class="card card-row card-primary"
 						style="height: 40vh; dispiay: inlile; margin: auto; padding: auto;">
 
-						<div class="card-header"
-							style="background: none; border: 1px solid gray;">
+						<div class="card-header" onclick="OpenWindow('elecSignGo.do');"
+							style="background: none; border: 1px solid gray; cursor: pointer;">
 							<h3 class="card-title" style="color: black;">전자결재 +</h3>
 						</div>
 
@@ -277,7 +277,7 @@ a {
 								<c:forEach items="${elecSignList }" var="elecSign">
 									<div class="row">
 										<div class="card card-outline" style="cursor: pointer; margin-bottom:3px;"
-											onclick="OpenWindow();">
+											onclick="OpenWindow('detail.do?sno={elecSign.sno}');">
 											<div class="card-header">
 												<div class="col-md-3 text-left">${elecSignList.writer }</div>
 												<div class="col-md-9 text-left">${elecSignList.title }</div>
