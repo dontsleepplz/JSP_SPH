@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="Chart-Mapper">
+
+	<sql id="search">
+		<if test="searchType == 'c'.toString() ">
+			and cno like '%'||#{keyword}||'%'
+		</if>
+		<if test="searchType == 'p'.toString() ">
+			and pno like '%'||#{keyword}||'%'
+		</if>
+		<if test="searchType == 'w'.toString() ">
+			and writer like '%'||#{keyword}||'%'
+		</if>
+		<if test="searchType == 'ca'.toString() ">
+			and cause like '%'||#{keyword}||'%'
+		</if>
+		<if test="searchType == 'cont'.toString() ">
+			and content like '%'||#{keyword}||'%'
+		</if>
+		<if test="searchType == 'd'.toString() ">
+			and departCode like '%'||#{keyword}||'%'
+		</if>
+	</sql>
+	
+	<sql id="dateSearch">
+		<if test="searchDate == 'r'.toString() ">
+			and regDate between #{dateCri.ymdStartDate} and #{dateCri.ymdEndDate}
+		</if>
+	</sql>
+	<select id="selectSearchChartList" resultType="chart">
+		select
+		*
+		from chart
+		where cno is not null
+		<include refid="search" />
+		<include refid="dateSearch" />
+		order by cno desc
+	</select>
+
+	<select id="selectSearchChartListCount" resultType="int">
+		select count(*)
+		from chart
+		where cno is not null
+		<include refid="search" />
+		<include refid="dateSearch" />
+	</select>
+	
+	<select id="selectChartByCNO" parameterType="int"
+		resultType="chart">
+		select
+		*
+		from chart
+		where cno=#{cno}
+	</select>
+	<select id="selectChartSequenceNextValue" resultType="int">
+		select
+		chart_seq.nextVal
+		from dual
+	</select>
+
+	<update id="insertChart" parameterType="chart">
+		insert into
+		chart(cno, departCode, regDate, cause, pno , content,writer,common_Code)
+		values(#{cno}, #{departCode},#{regDate},#{cause}, #{pno},#{content}, #{writer},#{commonCode})
+	</update>
+
+	<update id="updateChart" parameterType="chart">
+		update chart
+		set
+		departCode=#{departCode}, regDate=#{regDate}, cause=#{cause}, pno=#{pno}, content=#{content}, writer=#{writer},common_Code=#{commonCode}
+		where cno=#{cno}
+	</update>
+
+	<update id="deleteChart" parameterType="int">
+		delete
+		from chart
+		where
+		cno=#{cno}
+	</update>
+
+
+
+
+</mapper>
