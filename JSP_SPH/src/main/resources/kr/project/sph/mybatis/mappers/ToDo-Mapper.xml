@@ -76,7 +76,7 @@
 		update todo
 		set
 		title=#{title},content=#{content},com=#{com},imp=#{imp},toDoDate=#{toDoDate},
-		regDate=#{regDate},writer=#{writer}
+		regDate=sysdate,writer=#{writer}
 
 		where tno=#{tno}
 	</update>

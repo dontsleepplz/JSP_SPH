@@ -72,7 +72,7 @@
 	<update id="updateChart" parameterType="chart">
 		update chart
 		set
-		departCode=#{departCode}, regDate=#{regDate}, cause=#{cause}, pno=#{pno}, content=#{content}, writer=#{writer},common_Code=#{commonCode}
+		departCode=#{departCode}, regDate=sysdate, cause=#{cause}, pno=#{pno}, content=#{content}, writer=#{writer},common_Code=#{commonCode}
 		where cno=#{cno}
 	</update>
 

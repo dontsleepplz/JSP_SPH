@@ -2,15 +2,16 @@ package kr.project.sph.dto;
 
 public class RequestVO {
 	
-	private int RequestNum;
+	private int requestNum;
 	private int tomno;
 	private int cno;
 	private int frommno;
+	
 	public int getRequestNum() {
-		return RequestNum;
+		return requestNum;
 	}
 	public void setRequestNum(int requestNum) {
-		RequestNum = requestNum;
+		this.requestNum = requestNum;
 	}
 	public int getTomno() {
 		return tomno;

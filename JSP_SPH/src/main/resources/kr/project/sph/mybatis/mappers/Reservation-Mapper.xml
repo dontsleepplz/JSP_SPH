@@ -67,7 +67,7 @@
 	<update id="updateReservation" parameterType="reservation">
 		update reservation
 		set
-		reservationDate=#{reservationDate}, regDate=#{regDate}, mno=#{mno}, pno=#{pno}
+		reservationDate=#{reservationDate}, regDate=sysdate, mno=#{mno}, pno=#{pno}
 		where rno=#{rno}
 	</update>
 
