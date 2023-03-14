@@ -7,7 +7,6 @@ import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 
 import kr.project.sph.command.SearchCriteria;
-import kr.project.sph.dto.OperationVO;
 import kr.project.sph.dto.ReservationVO;
 
 public class ReservationDAOImpl implements ReservationDAO {

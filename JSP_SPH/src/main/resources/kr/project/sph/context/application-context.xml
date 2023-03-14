@@ -40,7 +40,9 @@
 	<bean id="wardRecordDAO" class="kr.project.sph.dao.WardRecordDAOImpl"
 		p:session-ref="sqlSession"
 	/>
-
+	<bean id="patientDAO" class="kr.project.sph.dao.PatientDAOImpl"
+		p:session-ref="sqlSession"
+	/>
 	
 	
 	<!-- Service bean -->

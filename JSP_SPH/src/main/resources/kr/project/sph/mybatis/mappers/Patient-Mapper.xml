@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="Patient-Mapper">
+
+	<sql id="search">
+		<if test="searchType == 'p'.toString() ">
+			and pno like '%'||#{keyword}||'%'
+		</if>
+		<if test="searchType == 'n'.toString() ">
+			and name like '%'||#{keyword}||'%'
+		</if>
+		<if test="searchType == 's'.toString() ">
+			and ssn like '%'||#{keyword}||'%'
+		</if>
+		<if test="searchType == 'ph'.toString() ">
+			and phone like '%'||#{keyword}||'%'
+		</if>
+		<if test="searchType == 'a'.toString() ">
+			and address like '%'||#{keyword}||'%'
+		</if>
+	</sql>
+	
+	<select id="selectSearchPatientList" resultType="patient">
+		select
+		*
+		from patient
+		where pno is not null
+		<include refid="search" />
+		order by pno desc
+	</select>
+
+	<select id="selectSearchPatientListCount" resultType="int">
+		select count(*)
+		from patient
+		where pno is not null
+		<include refid="search" />
+	</select>
+	
+	<select id="selectPatientByPNO" parameterType="int"
+		resultType="patient">
+		select
+		*
+		from patient
+		where pno=#{pno}
+	</select>
+	<select id="selectPatientSequenceNextValue" resultType="int">
+		select
+		patient_seq.nextVal
+		from dual
+	</select>
+
+	<update id="insertPatient" parameterType="patient">
+		insert into
+		patient(pno, name, ssn, phone, address)
+		values(#{pno}, #{name},#{ssn},#{phone}, #{address})
+	</update>
+
+	<update id="updatePatient" parameterType="patient">
+		update patient
+		set
+		name=#{name},ssn=#{ssn}, phone=#{phone},address=#{address}
+		where pno=#{pno}
+	</update>
+
+	<update id="deletePatient" parameterType="int">
+		delete
+		from patient
+		where
+		pno=#{pno}
+	</update>
+
+
+
+
+</mapper>
