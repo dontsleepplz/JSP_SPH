@@ -19,6 +19,12 @@
 	<bean id="reportDAO" class="kr.project.sph.dao.ReportDAOImpl"
 		p:session-ref="sqlSession" 
 	/>
+	<bean id="reportAttachDAO" class="kr.project.sph.dao.ReportAttachDAOImpl"
+		p:session-ref="sqlSession"
+	/>
+	<bean id="reportReplyDAO" class="kr.project.sph.dao.ReportReplyDAOImpl"
+		p:session-ref="sqlSession"
+	/>
 	<bean id="todoDAO" class="kr.project.sph.dao.ToDoDAOImpl"
 		p:session-ref="sqlSession"
 	/>	
@@ -40,7 +46,9 @@
 	<bean id="wardRecordDAO" class="kr.project.sph.dao.WardRecordDAOImpl"
 		p:session-ref="sqlSession"
 	/>
-
+	<bean id="requestDAO" class="kr.project.sph.dao.ReportDAOImpl"
+		p:session-ref="sqlSession"
+	/>
 	
 	
 	<!-- Service bean -->

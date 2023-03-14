@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="Request-Mapper">
+		
+	<sql id="search">
+		<if test="searchType == 'R'.toString()">
+			and requestNum like '%'||#{keyword}||'%'			
+		</if>
+		<if test="searchType == 't'.toString()">
+			and tomno like '%'||#{keyword}||'%'			
+		</if>
+		<if test="searchType == 'c'.toString()">
+			and cno like '%'||#{keyword}||'%'			
+		</if>
+		<if test="searchType == 'f'.toString()">
+			and frommno like '%'||#{keyword}||'%'
+		</if>
+	</sql>
+	<select id="selectSearchRequestList"	resultType="request">
+		select
+		*
+		from
+		request
+		where requestNum is not null  			  	
+		<include refid="search" />
+		order by requestNum desc
+	</select>
+	
+	<select id="selectSearchRequestListCount" resultType="int">
+		select
+		count(*)
+		from
+		request
+		where requestNum is not null  			  	
+		<include refid="search" />
+		order by requestNum desc
+	</select>
+	
+	
+	<select id="selectRequestByRequestNum"  resultType="request">
+		select * 
+		from request 
+		where requestNum=#{requestNum}
+	</select>
+	
+	<update id="insertRequest" parameterType="request">
+		insert 
+		into 
+		request(requestNum , tomno,cno,frommno)
+		values
+		(#{requestNum},#{tomno},#{cno},#{frommno})
+	</update>
+	
+	<update id="updateRequest" parameterType="request">
+		update 
+		request 
+		set 
+		tomno=#{tomno}, cno=#{cno}, frommno=#{frommno}
+		where requestNum=#{requestNum}
+	</update>
+	
+	<update id="deleteRequest" parameterType="int">
+		delete 
+		from request 
+		where requestNum=#{requestNum}
+	</update>
+	
+	<update id="increaseViewCnt" parameterType="int">
+		update 
+		request 
+		set 
+		cnt=cnt+1 
+		where requestNum=#{requestNum}
+	</update>
+	
+	<select id="selectRequestSequenceNextValue" resultType="int">
+		select 
+		request_seq.nextval
+		from dual
+	</select>
+	
+</mapper>  
