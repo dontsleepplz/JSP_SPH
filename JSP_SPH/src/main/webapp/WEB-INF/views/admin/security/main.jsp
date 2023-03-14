@@ -14,14 +14,13 @@ div.card {
 	<div class="container-fluid">
 		<div class="row mb-2">
 			<div class="col-sm-6">
-				<h1 class="m-0">로그인 설정</h1>
+				<h1 class="m-0">보안설정</h1>
 			</div>
 			<div class="col-sm-6">
 				<ol class="breadcrumb float-sm-right">
 					<li class="breadcrumb-item"><a href="#">Home</a></li>
 					<li class="breadcrumb-item active">어드민메인</li>
 				</ol>
-				<h1 class="m-0">비밀번호 설정</h1>
 			</div>
 		</div>
 	</div>
@@ -29,81 +28,36 @@ div.card {
 <!-- content-header -->
 
 <div class="content">
-	<div class="container-fluid">
-
-		<div class="row">
-			<div class="col-lg-6">
-				<div class="card" style="">
-					<div class="card-header">
-						<h3 class="card-title">회원 목록</h3>
-						&nbsp;
-						<button type="submit" class="btn btn-primary"
-							style="width: 12%; height: 10%; padding: 0;">등록</button>
-						<div class="card-tools">
-							<div class="input-group input-group-sm">
-								<input type="text" name="table_search"
-									class="form-control float-right" placeholder="Search"
-									style="width: 110px;">
-								<div class="input-group-append">
-									<button type="submit" class="btn btn-default">
-										<i class="fas fa-search"></i>
-									</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-
-
-		</div>
-		<!-- end row -->
+	<div class="container-fluid" >
+		<br> <br>
 		<div class="row">
 			<div class="col-lg-6">
 
-				<div class="card card-warning">
+				<div class="card" style="height:80%;">
 					<div class="card-header">
-						<h3 class="card-title">General Elements</h3>
+						<h3 class="card-title">로그인/로그아웃 설정</h3>
 					</div>
 
 					<div class="card-body">
 						<form>
-							
 							<div class="row">
-								<div class="col-sm-6">
-
+								<div class="col-lg-12">
 									<div class="form-group">
-										<div class="form-check">
-											<input class="form-check-input" type="checkbox"> <label
-												class="form-check-label">Checkbox</label>
+										<div class="row">
+											<div class="col-sm-6">
+												<div class="form-check">
+													<input class="form-check-input" type="radio" name="radio1">
+													<label class="form-check-label">자동로그아웃</label>
+												</div>
+											</div>
+											<div class="col-sm-6">
+												<div class="form-check">
+													<input class="form-check-input" type="radio" name="radio1"
+														checked=""> <label class="form-check-label">자동로그아웃X</label>
+												</div>
+											</div>
 										</div>
-										<div class="form-check">
-											<input class="form-check-input" type="checkbox" checked="">
-											<label class="form-check-label">Checkbox checked</label>
-										</div>
-										<div class="form-check">
-											<input class="form-check-input" type="checkbox" disabled="">
-											<label class="form-check-label">Checkbox disabled</label>
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-6">
-
-									<div class="form-group">
-										<div class="form-check">
-											<input class="form-check-input" type="radio" name="radio1">
-											<label class="form-check-label">Radio</label>
-										</div>
-										<div class="form-check">
-											<input class="form-check-input" type="radio" name="radio1"
-												checked=""> <label class="form-check-label">Radio
-												checked</label>
-										</div>
-										<div class="form-check">
-											<input class="form-check-input" type="radio" disabled="">
-											<label class="form-check-label">Radio disabled</label>
-										</div>
+										<!-- end row -->
 									</div>
 								</div>
 							</div>
@@ -120,18 +74,7 @@ div.card {
 										</select>
 									</div>
 								</div>
-								<div class="col-sm-6">
-									<div class="form-group">
-										<label>Select Disabled</label> <select class="form-control"
-											disabled="">
-											<option>option 1</option>
-											<option>option 2</option>
-											<option>option 3</option>
-											<option>option 4</option>
-											<option>option 5</option>
-										</select>
-									</div>
-								</div>
+
 							</div>
 							<div class="row">
 								<div class="col-sm-6">
@@ -166,7 +109,84 @@ div.card {
 				</div>
 
 			</div>
+			<div class="col-lg-6">
+ 
+				<div class="card" style="height:100%;">
+					<div class="card-header">
+						<h3 class="card-title">비밀번호 관리</h3>
+					</div>
 
+					<div class="card-body">
+						<form>
+							<div class="row">
+								<div class="col-lg-12">
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-6">
+												<div class="form-check">
+													<input class="form-check-input" type="radio" name="radio1">
+													<label class="form-check-label">자동로그아웃</label>
+												</div>
+											</div>
+											<div class="col-sm-6">
+												<div class="form-check">
+													<input class="form-check-input" type="radio" name="radio1"
+														checked=""> <label class="form-check-label">자동로그아웃X</label>
+												</div>
+											</div>
+										</div>
+										<!-- end row -->
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-6">
+
+									<div class="form-group">
+										<label>Select</label> <select class="form-control">
+											<option>option 1</option>
+											<option>option 2</option>
+											<option>option 3</option>
+											<option>option 4</option>
+											<option>option 5</option>
+										</select>
+									</div>
+								</div>
+
+							</div>
+							<div class="row">
+								<div class="col-sm-6">
+
+									<div class="form-group">
+										<label>Select Multiple</label> <select multiple=""
+											class="form-control">
+											<option>option 1</option>
+											<option>option 2</option>
+											<option>option 3</option>
+											<option>option 4</option>
+											<option>option 5</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<div class="form-group">
+										<label>Select Multiple Disabled</label> <select multiple=""
+											class="form-control" disabled="">
+											<option>option 1</option>
+											<option>option 2</option>
+											<option>option 3</option>
+											<option>option 4</option>
+											<option>option 5</option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+
+				</div>
+
+			</div>
 		</div>
 	</div>
 </div>

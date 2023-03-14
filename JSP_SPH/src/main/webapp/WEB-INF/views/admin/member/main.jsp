@@ -30,317 +30,331 @@ div.card {
 	<div class="container-fluid">
 
 		<div class="row">
-			<div class="col-lg-5">
+			<div class="col-lg-10">
+				<div class="row">
+					<div class="col-lg-6">
 
-				<div class="card" style="">
-					<div class="card-header">
-						<h3 class="card-title">회원 목록</h3>&nbsp;
-						<button type="submit" class="btn btn-primary" style="width:12%;height:10%;padding:0;">등록</button>
-						<div class="card-tools">
-							<div class="input-group input-group-sm">
-								<input type="text" name="table_search"
-									class="form-control float-right" placeholder="Search" style="width:110px;">
-								<div class="input-group-append">
-									<button type="submit" class="btn btn-default">
-										<i class="fas fa-search"></i>
-									</button>
+						<div class="card" style="">
+							<div class="card-header">
+								<h3 class="card-title">회원 목록</h3>
+								&nbsp;
+								<button type="submit" class="btn btn-primary"
+									style="width: 12%; height: 10%; padding: 0;">등록</button>
+								<div class="card-tools">
+									<div class="input-group input-group-sm">
+										<input type="text" name="table_search"
+											class="form-control float-right" placeholder="Search"
+											style="width: 110px;">
+										<div class="input-group-append">
+											<button type="submit" class="btn btn-default">
+												<i class="fas fa-search"></i>
+											</button>
+										</div>
+									</div>
 								</div>
 							</div>
+
+							<div class="card-body table-responsive p-0"
+								style="height: 550px; overflow-y: scroll; text-align: center;">
+								<table class="table table-head-fixed text-nowrap table-hover">
+									<thead>
+										<tr>
+											<th>ID</th>
+											<th>User</th>
+											<th>Date</th>
+											<th>Status</th>
+											<th>Reason</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>183</td>
+											<td>John Doe</td>
+											<td>11-7-2014</td>
+											<td><span class="tag tag-success">Approved</span></td>
+											<td>doner.</td>
+										</tr>
+										<tr>
+											<td>219</td>
+											<td>Alexander</td>
+											<td>11-7-2014</td>
+											<td><span class="tag tag-warning">Pending</span></td>
+											<td>doner.</td>
+										</tr>
+										<tr>
+											<td>657</td>
+											<td>Bob Doe</td>
+											<td>11-7-2014</td>
+											<td><span class="tag tag-primary">Approved</span></td>
+											<td>doner.</td>
+										</tr>
+										<tr>
+											<td>175</td>
+											<td>Mike Doe</td>
+											<td>11-7-2014</td>
+											<td><span class="tag tag-danger">Denied</span></td>
+											<td>doner.</td>
+										</tr>
+										<tr>
+											<td>134</td>
+											<td>Jim Doe</td>
+											<td>11-7-2014</td>
+											<td><span class="tag tag-success">Approved</span></td>
+											<td>doner.</td>
+										</tr>
+										<tr>
+											<td>494</td>
+											<td>Victoria Doe</td>
+											<td>11-7-2014</td>
+											<td><span class="tag tag-warning">Pending</span></td>
+											<td>doner.</td>
+										</tr>
+										<tr>
+											<td>832</td>
+											<td>Michael Doe</td>
+											<td>11-7-2014</td>
+											<td><span class="tag tag-primary">Approved</span></td>
+											<td>doner.</td>
+										</tr>
+										<tr>
+											<td>982</td>
+											<td>Rocky Doe</td>
+											<td>11-7-2014</td>
+											<td><span class="tag tag-danger">Denied</span></td>
+											<td>doner.</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
 						</div>
 					</div>
 
-					<div class="card-body table-responsive p-0" style="height:550px;overflow-y: scroll; text-align: center;">
-						<table class="table table-head-fixed text-nowrap table-hover">
-							<thead>
-								<tr>
-									<th>ID</th>
-									<th>User</th>
-									<th>Date</th>
-									<th>Status</th>
-									<th>Reason</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>183</td>
-									<td>John Doe</td>
-									<td>11-7-2014</td>
-									<td><span class="tag tag-success">Approved</span></td>
-									<td>doner.</td>
-								</tr>
-								<tr>
-									<td>219</td>
-									<td>Alexander</td>
-									<td>11-7-2014</td>
-									<td><span class="tag tag-warning">Pending</span></td>
-									<td>doner.</td>
-								</tr>
-								<tr>
-									<td>657</td>
-									<td>Bob Doe</td>
-									<td>11-7-2014</td>
-									<td><span class="tag tag-primary">Approved</span></td>
-									<td>doner.</td>
-								</tr>
-								<tr>
-									<td>175</td>
-									<td>Mike Doe</td>
-									<td>11-7-2014</td>
-									<td><span class="tag tag-danger">Denied</span></td>
-									<td>doner.</td>
-								</tr>
-								<tr>
-									<td>134</td>
-									<td>Jim Doe</td>
-									<td>11-7-2014</td>
-									<td><span class="tag tag-success">Approved</span></td>
-									<td>doner.</td>
-								</tr>
-								<tr>
-									<td>494</td>
-									<td>Victoria Doe</td>
-									<td>11-7-2014</td>
-									<td><span class="tag tag-warning">Pending</span></td>
-									<td>doner.</td>
-								</tr>
-								<tr>
-									<td>832</td>
-									<td>Michael Doe</td>
-									<td>11-7-2014</td>
-									<td><span class="tag tag-primary">Approved</span></td>
-									<td>doner.</td>
-								</tr>
-								<tr>
-									<td>982</td>
-									<td>Rocky Doe</td>
-									<td>11-7-2014</td>
-									<td><span class="tag tag-danger">Denied</span></td>
-									<td>doner.</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-
-				</div>
-
-			</div>
-			<div class="col-lg-5">
-				<div class="card" style="max-height:60%;">
-					<div class="card-header">
-						<h3 class="card-title">접속 로그</h3>
-						<div class="card-tools">
-							<div class="input-group input-group-sm">
-								<input type="text" name="table_search"
-									class="form-control float-right" placeholder="Search" style="width:110px;">
-								<div class="input-group-append">
-									<button type="submit" class="btn btn-default">
-										<i class="fas fa-search"></i>
-									</button>
+					<div class="col-lg-6">
+						<div class="card" style="max-height: 60%;">
+							<div class="card-header">
+								<h3 class="card-title">접속 로그</h3>
+								<div class="card-tools">
+									<div class="input-group input-group-sm">
+										<input type="text" name="table_search"
+											class="form-control float-right" placeholder="Search"
+											style="width: 110px;">
+										<div class="input-group-append">
+											<button type="submit" class="btn btn-default">
+												<i class="fas fa-search"></i>
+											</button>
+										</div>
+									</div>
 								</div>
 							</div>
-						</div>
-					</div>
 
-					<div class="card-body p-0"  style="height:550px;overflow-y: scroll; text-align: center;">
-						<table class="table table-head-fixed text-nowrap table-hover" >
-						
-							<thead>
-								<tr>
-									<th>ID</th>
-									<th>User</th>
-									<th>Date</th>
-									<th>Status</th>
-									<th>Reason</th>
-								</tr>
-							</thead>
-								<tbody >
-									<tr>
-										<td>183</td>
-										<td>John Doe</td>
-										<td>11-7-2014</td>
-										<td><span class="tag tag-success">Approved</span></td>
-										<td>doner.</td>
-									</tr>
-									<tr>
-										<td>183</td>
-										<td>John Doe</td>
-										<td>11-7-2014</td>
-										<td><span class="tag tag-success">Approved</span></td>
-										<td>doner.</td>
-									</tr>
-									<tr>
-										<td>183</td>
-										<td>John Doe</td>
-										<td>11-7-2014</td>
-										<td><span class="tag tag-success">Approved</span></td>
-										<td>doner.</td>
-									</tr>
-									<tr>
-										<td>183</td>
-										<td>John Doe</td>
-										<td>11-7-2014</td>
-										<td><span class="tag tag-success">Approved</span></td>
-										<td>doner.</td>
-									</tr>
-									<tr>
-										<td>183</td>
-										<td>John Doe</td>
-										<td>11-7-2014</td>
-										<td><span class="tag tag-success">Approved</span></td>
-										<td>doner.</td>
-									</tr>
-									<tr>
-										<td>183</td>
-										<td>John Doe</td>
-										<td>11-7-2014</td>
-										<td><span class="tag tag-success">Approved</span></td>
-										<td>doner.</td>
-									</tr>
-									<tr>
-										<td>183</td>
-										<td>John Doe</td>
-										<td>11-7-2014</td>
-										<td><span class="tag tag-success">Approved</span></td>
-										<td>doner.</td>
-									</tr>
-									<tr>
-										<td>183</td>
-										<td>John Doe</td>
-										<td>11-7-2014</td>
-										<td><span class="tag tag-success">Approved</span></td>
-										<td>doner.</td>
-									</tr>
-									<tr>
-										<td>183</td>
-										<td>John Doe</td>
-										<td>11-7-2014</td>
-										<td><span class="tag tag-success">Approved</span></td>
-										<td>doner.</td>
-									</tr>
-									<tr>
-										<td>183</td>
-										<td>John Doe</td>
-										<td>11-7-2014</td>
-										<td><span class="tag tag-success">Approved</span></td>
-										<td>doner.</td>
-									</tr>
-									<tr>
-										<td>183</td>
-										<td>John Doe</td>
-										<td>11-7-2014</td>
-										<td><span class="tag tag-success">Approved</span></td>
-										<td>doner.</td>
-									</tr>
-									<tr>
-										<td>183</td>
-										<td>John Doe</td>
-										<td>11-7-2014</td>
-										<td><span class="tag tag-success">Approved</span></td>
-										<td>doner.</td>
-									</tr>
-									<tr>
-										<td>183</td>
-										<td>John Doe</td>
-										<td>11-7-2014</td>
-										<td><span class="tag tag-success">Approved</span></td>
-										<td>doner.</td>
-									</tr>
-									<tr>
-										<td>183</td>
-										<td>John Doe</td>
-										<td>11-7-2014</td>
-										<td><span class="tag tag-success">Approved</span></td>
-										<td>doner.</td>
-									</tr>
-									<tr>
-										<td>183</td>
-										<td>John Doe</td>
-										<td>11-7-2014</td>
-										<td><span class="tag tag-success">Approved</span></td>
-										<td>doner.</td>
-									</tr>
-									<tr>
-										<td>183</td>
-										<td>John Doe</td>
-										<td>11-7-2014</td>
-										<td><span class="tag tag-success">Approved</span></td>
-										<td>doner.</td>
-									</tr>
-									<tr>
-										<td>183</td>
-										<td>John Doe</td>
-										<td>11-7-2014</td>
-										<td><span class="tag tag-success">Approved</span></td>
-										<td>doner.</td>
-									</tr>
-									<tr>
-										<td>183</td>
-										<td>John Doe</td>
-										<td>11-7-2014</td>
-										<td><span class="tag tag-success">Approved</span></td>
-										<td>doner.</td>
-									</tr>
-									
-									<tr>
-										<td>219</td>
-										<td>Alexander</td>
-										<td>11-7-2014</td>
-										<td><span class="tag tag-warning">Pending</span></td>
-										<td>doner.</td>
-									</tr>
-									<tr>
-										<td>657</td>
-										<td>Bob Doe</td>
-										<td>11-7-2014</td>
-										<td><span class="tag tag-primary">Approved</span></td>
-										<td>doner.</td>
-									</tr>
-									<tr>
-										<td>175</td>
-										<td>Mike Doe</td>
-										<td>11-7-2014</td>
-										<td><span class="tag tag-danger">Denied</span></td>
-										<td>doner.</td>
-									</tr>
-									<tr>
-										<td>134</td>
-										<td>Jim Doe</td>
-										<td>11-7-2014</td>
-										<td><span class="tag tag-success">Approved</span></td>
-										<td>doner.</td>
-									</tr>
-									<tr>
-										<td>494</td>
-										<td>Victoria Doe</td>
-										<td>11-7-2014</td>
-										<td><span class="tag tag-warning">Pending</span></td>
-										<td>doner.</td>
-									</tr>
-									<tr>
-										<td>832</td>
-										<td>Michael Doe</td>
-										<td>11-7-2014</td>
-										<td><span class="tag tag-primary">Approved</span></td>
-										<td>doner.</td>
-									</tr>
-									<tr>
-										<td>982</td>
-										<td>Rocky Doe</td>
-										<td>11-7-2014</td>
-										<td><span class="tag tag-danger">Denied</span></td>
-										<td>doner.</td>
-									</tr>
-								</tbody>
+							<div class="card-body p-0"
+								style="height: 550px; overflow-y: scroll; text-align: center;">
+								<table class="table table-head-fixed text-nowrap table-hover">
+
+									<thead>
+										<tr>
+											<th>ID</th>
+											<th>User</th>
+											<th>Date</th>
+											<th>Status</th>
+											<th>Reason</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>183</td>
+											<td>John Doe</td>
+											<td>11-7-2014</td>
+											<td><span class="tag tag-success">Approved</span></td>
+											<td>doner.</td>
+										</tr>
+										<tr>
+											<td>183</td>
+											<td>John Doe</td>
+											<td>11-7-2014</td>
+											<td><span class="tag tag-success">Approved</span></td>
+											<td>doner.</td>
+										</tr>
+										<tr>
+											<td>183</td>
+											<td>John Doe</td>
+											<td>11-7-2014</td>
+											<td><span class="tag tag-success">Approved</span></td>
+											<td>doner.</td>
+										</tr>
+										<tr>
+											<td>183</td>
+											<td>John Doe</td>
+											<td>11-7-2014</td>
+											<td><span class="tag tag-success">Approved</span></td>
+											<td>doner.</td>
+										</tr>
+										<tr>
+											<td>183</td>
+											<td>John Doe</td>
+											<td>11-7-2014</td>
+											<td><span class="tag tag-success">Approved</span></td>
+											<td>doner.</td>
+										</tr>
+										<tr>
+											<td>183</td>
+											<td>John Doe</td>
+											<td>11-7-2014</td>
+											<td><span class="tag tag-success">Approved</span></td>
+											<td>doner.</td>
+										</tr>
+										<tr>
+											<td>183</td>
+											<td>John Doe</td>
+											<td>11-7-2014</td>
+											<td><span class="tag tag-success">Approved</span></td>
+											<td>doner.</td>
+										</tr>
+										<tr>
+											<td>183</td>
+											<td>John Doe</td>
+											<td>11-7-2014</td>
+											<td><span class="tag tag-success">Approved</span></td>
+											<td>doner.</td>
+										</tr>
+										<tr>
+											<td>183</td>
+											<td>John Doe</td>
+											<td>11-7-2014</td>
+											<td><span class="tag tag-success">Approved</span></td>
+											<td>doner.</td>
+										</tr>
+										<tr>
+											<td>183</td>
+											<td>John Doe</td>
+											<td>11-7-2014</td>
+											<td><span class="tag tag-success">Approved</span></td>
+											<td>doner.</td>
+										</tr>
+										<tr>
+											<td>183</td>
+											<td>John Doe</td>
+											<td>11-7-2014</td>
+											<td><span class="tag tag-success">Approved</span></td>
+											<td>doner.</td>
+										</tr>
+										<tr>
+											<td>183</td>
+											<td>John Doe</td>
+											<td>11-7-2014</td>
+											<td><span class="tag tag-success">Approved</span></td>
+											<td>doner.</td>
+										</tr>
+										<tr>
+											<td>183</td>
+											<td>John Doe</td>
+											<td>11-7-2014</td>
+											<td><span class="tag tag-success">Approved</span></td>
+											<td>doner.</td>
+										</tr>
+										<tr>
+											<td>183</td>
+											<td>John Doe</td>
+											<td>11-7-2014</td>
+											<td><span class="tag tag-success">Approved</span></td>
+											<td>doner.</td>
+										</tr>
+										<tr>
+											<td>183</td>
+											<td>John Doe</td>
+											<td>11-7-2014</td>
+											<td><span class="tag tag-success">Approved</span></td>
+											<td>doner.</td>
+										</tr>
+										<tr>
+											<td>183</td>
+											<td>John Doe</td>
+											<td>11-7-2014</td>
+											<td><span class="tag tag-success">Approved</span></td>
+											<td>doner.</td>
+										</tr>
+										<tr>
+											<td>183</td>
+											<td>John Doe</td>
+											<td>11-7-2014</td>
+											<td><span class="tag tag-success">Approved</span></td>
+											<td>doner.</td>
+										</tr>
+										<tr>
+											<td>183</td>
+											<td>John Doe</td>
+											<td>11-7-2014</td>
+											<td><span class="tag tag-success">Approved</span></td>
+											<td>doner.</td>
+										</tr>
+
+										<tr>
+											<td>219</td>
+											<td>Alexander</td>
+											<td>11-7-2014</td>
+											<td><span class="tag tag-warning">Pending</span></td>
+											<td>doner.</td>
+										</tr>
+										<tr>
+											<td>657</td>
+											<td>Bob Doe</td>
+											<td>11-7-2014</td>
+											<td><span class="tag tag-primary">Approved</span></td>
+											<td>doner.</td>
+										</tr>
+										<tr>
+											<td>175</td>
+											<td>Mike Doe</td>
+											<td>11-7-2014</td>
+											<td><span class="tag tag-danger">Denied</span></td>
+											<td>doner.</td>
+										</tr>
+										<tr>
+											<td>134</td>
+											<td>Jim Doe</td>
+											<td>11-7-2014</td>
+											<td><span class="tag tag-success">Approved</span></td>
+											<td>doner.</td>
+										</tr>
+										<tr>
+											<td>494</td>
+											<td>Victoria Doe</td>
+											<td>11-7-2014</td>
+											<td><span class="tag tag-warning">Pending</span></td>
+											<td>doner.</td>
+										</tr>
+										<tr>
+											<td>832</td>
+											<td>Michael Doe</td>
+											<td>11-7-2014</td>
+											<td><span class="tag tag-primary">Approved</span></td>
+											<td>doner.</td>
+										</tr>
+										<tr>
+											<td>982</td>
+											<td>Rocky Doe</td>
+											<td>11-7-2014</td>
+											<td><span class="tag tag-danger">Denied</span></td>
+											<td>doner.</td>
+										</tr>
+									</tbody>
+									</div>
+								</table>
 							</div>
-						</table>
+						</div>
+
 					</div>
 				</div>
-
+				<!-- second row end -->
 			</div>
+			<!-- col-lg-10 end -->
+
+
 			<div class="col-lg-2">
-				<div class="card card-danger" style="max-height:30%;">
+				<div class="card card-danger">
 					<div class="card-header">
-						<h3 class="card-title">사용자계정 상태</h3>
+						<h3 class="card-title">Donut Chart</h3>
 						<div class="card-tools">
 							<button type="button" class="btn btn-tool"
 								data-card-widget="collapse">
@@ -352,7 +366,7 @@ div.card {
 							</button>
 						</div>
 					</div>
-					<div class="card-body" >
+					<div class="card-body" style="display: block;">
 						<div class="chartjs-size-monitor">
 							<div class="chartjs-size-monitor-expand">
 								<div class=""></div>
@@ -362,20 +376,17 @@ div.card {
 							</div>
 						</div>
 						<canvas id="donutChart"
-							style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 484px;"
-							width="605" height="312" class="chartjs-render-monitor"></canvas>
-							
+							style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 644px;"
+							width="644" height="250" class="chartjs-render-monitor"></canvas>
 					</div>
 
 				</div>
-				
-				
-
 			</div>
-			
-				
+			<!-- col-lg-2 end -->
 
-			
+
+
+
 
 		</div>
 
