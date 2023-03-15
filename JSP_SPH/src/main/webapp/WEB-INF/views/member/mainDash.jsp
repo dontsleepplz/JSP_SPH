@@ -11,13 +11,12 @@
 SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일 hh:mm:ss");
 %>
 
-<c:set var="memberList" value="${dataMap.memberList }" />
-<c:set var="calendarList" value="${dataMap.calendarList }" />
-<c:set var="toDoList" value="${dataMap.toDoList }" />
+<%-- <c:set var="calendarList" value="${dataMap.calendarList }" />
+<c:set var="toDoList" value="${dataMap.toDoList }" /> --%>
 <c:set var="noticeList" value="${dataMap.noticeList }" />
-<c:set var="mailList" value="${dataMap.mailList }" />
+<%-- <c:set var="mailList" value="${dataMap.mailList }" />
 <c:set var="elecSignList" value="${dataMap.elecSignList }" />
-<c:set var="operationList" value="${dataMap.operationList }" />
+<c:set var="operationList" value="${dataMap.operationList }" /> --%>
 
 
 <style>

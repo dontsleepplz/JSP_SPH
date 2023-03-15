@@ -16,7 +16,7 @@ public interface NoticeDAO {
 	
 	int selectNoticeSequenceNextValue() throws SQLException;
 	
-	int increaseViewCount(int nno) throws SQLException;
+	void increaseViewCount(int nno) throws SQLException;
 	
 	void insertNotice(NoticeVO notice) throws SQLException;
 	
