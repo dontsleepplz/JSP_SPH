@@ -8,8 +8,16 @@
 
 <!-- MainFooterScript -->
 <script>
+	function submenu_loc(){
+		var side = document.getElementById("sidebar");
+		if(side==null){
+			$('div[id="content-wrapper"]').css('margin-left','0');
+		};
+	}
+
 	function open_Page(url,mCode){
 		$('iframe[name="ifr"]').attr("src",url);
+		submenu_loc();
 		if(typeof(history.pushState) == 'function'){
 			var renewURL = location.href;
 			renewURL = renewURL.substring(0, renewURL.indexOf(".do")+3);
@@ -42,6 +50,8 @@
 		}
 	}
 	
+	
+	
 	function printData(dataArr,target,templateObject,removeSelector){
 		
 		var template=Handlebars.compile(templateObject.html());
@@ -56,6 +66,7 @@
 	window.onload=function(){
 		open_Page('<%=request.getContextPath()%>${menu.murl}','${menu.mcode}');
 		open_SubMenu('${menu.mcode}'.substring(0,3)+"0000");
+		
 	}
 	</script>
 

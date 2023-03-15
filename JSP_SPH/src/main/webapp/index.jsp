@@ -5,7 +5,9 @@
 <%-- <script>
 	location.href="<%=request.getContextPath()%>/index.do";
 </script> --%>
-
+<script>
+	location.href="<%=request.getContextPath()%>/index.do";
+</script>
 
 <%-- <c:if test="${empty loginUser }">
 	<script>		

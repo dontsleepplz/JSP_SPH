@@ -181,7 +181,7 @@ body {
         <span class="brand-text font-weight-light" style="color:black;">SPH</span>
       </a>
 		<c:if test="${!empty submenu }">
-      <div class="sidebar" >
+      <div class="sidebar" id="sidebar">
 
         <nav class="mt-2">
           <ul class="nav nav-pills nav-sidebar flex-column subMenuList" data-widget="treeview" role="menu" data-accordion="false">

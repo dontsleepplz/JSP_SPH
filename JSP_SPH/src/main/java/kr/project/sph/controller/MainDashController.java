@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class MainDashController {
 	
-	@GetMapping("/member/mainDash")
+	@GetMapping("/member/Home")
 	public void mainDash() {}
 	
 	@GetMapping("/notice")
@@ -15,7 +15,7 @@ public class MainDashController {
 		return url;
 	}
 	
-	@GetMapping("/mail/mailHome")
+	@GetMapping("/mail/inboxMail")
 	public void mailGo() {
 	}
 	

@@ -27,10 +27,17 @@ public class MenuController {
 		String url = "/common/indexPage";
 		List<MenuVO> menuList = menuService.getMainMenuList();
 		MenuVO menu = menuService.getMenuByMcode(mCode);
-
-		model.addAttribute("menuList", menuList);
-		model.addAttribute("menu", menu);
-
+		int submenu = 0;
+		
+		if(menu.getMurl().contains("Home")||menu.getMurl().contains("calendar")) {
+			model.addAttribute("menuList", menuList);
+			model.addAttribute("menu", menu);
+		}else {
+			model.addAttribute("menuList", menuList);
+			model.addAttribute("menu", menu);
+			model.addAttribute("submenu", submenu);
+		}
+		
 		ModelAndView mnv = new ModelAndView();
 		mnv.addObject("model", model);
 		mnv.setViewName(url);
@@ -39,7 +46,6 @@ public class MenuController {
 	}
 
 	@GetMapping("/subMenu")
-
 	@ResponseBody
 	public ResponseEntity<List<MenuVO>> subMenuJson(String mCode) {
 		ResponseEntity<List<MenuVO>> entity = null;
