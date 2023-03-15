@@ -15,16 +15,31 @@ public class MainDashController {
 		return url;
 	}
 	
-	@GetMapping("/mail")
-	public String mailGo() {
-		String url = "/mail/mailHome";
-		return url;
+	@GetMapping("/mail/mailHome")
+	public void mailGo() {
 	}
 	
-	@GetMapping("/elecSign")
-	public String elecSignGo() {
-		String url = "/elecSign/elecSignHome";
-		return url;
+	@GetMapping("/elecSign/elecSignHome")
+	public void elecSignGo() {
 	}
 	
+	@GetMapping("/calender/calendar")
+	public void calendar() {
+		
+	}
+	
+	@GetMapping("/Report/reportHome")
+	public void report() {}
+	
+	@GetMapping("/contactGroup/contactGroupAll")
+	public void contact1() {}
+	
+	@GetMapping("/contactGroup/contactGroupDepart")
+	public void contact2() {}
+	
+	@GetMapping("/contactGroup/contactGroupIndividual")
+	public void contact3() {}
+	
+	@GetMapping("/admin/stati/stati")
+	public void stati() {}
 }

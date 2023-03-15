@@ -48,7 +48,7 @@ body {
         </c:if>
         <c:forEach items="${menuList }" var="menu">
         <li class="nav-item d-none d-sm-inline-block">
-          <a href="javascript:open_SubMenu_go('${menu.mcode }');open_Page('<%=request.getContextPath() %>${menu.murl }','${menu.mcode }');" class="nav-link"><i class="${menu.micon}"></i>&nbsp;${menu.mname }</a>
+          <a href="javascript:open_SubMenu('${menu.mcode }');open_Page('<%=request.getContextPath() %>${menu.murl }','${menu.mcode }');" class="nav-link"><i class="${menu.micon}"></i>&nbsp;${menu.mname }</a>
         </li>
         </c:forEach>
       </ul>

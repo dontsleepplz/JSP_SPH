@@ -36,7 +36,6 @@ a {
 }
 </style>
 
-
 <div class="content">
 
 	<div class="container-fluid">
@@ -207,9 +206,51 @@ a {
 
 							<c:if test="${empty noticeList }">
 								<div>
-									<div class="card card-outline">
+									<div class="card card-outline" style="cursor: pointer; margin-bottom:3px;">
 										<div class="card-header">
-											<div class="col-md-12 text-left">해당내용이 없습니다.</div>
+											<div class="col-md-12 text-left">공지사항 입니다.</div>
+										</div>
+									</div>
+								</div>
+								<div>
+									<div class="card card-outline" style="cursor: pointer; margin-bottom:3px;">
+										<div class="card-header">
+											<div class="col-md-12 text-left">공지사항 입니다.</div>
+										</div>
+									</div>
+								</div>
+								<div>
+									<div class="card card-outline" style="cursor: pointer; margin-bottom:3px;">
+										<div class="card-header">
+											<div class="col-md-12 text-left">공지사항 입니다.</div>
+										</div>
+									</div>
+								</div>
+								<div>
+									<div class="card card-outline" style="cursor: pointer; margin-bottom:3px;">
+										<div class="card-header">
+											<div class="col-md-12 text-left">공지사항 입니다.</div>
+										</div>
+									</div>
+								</div>
+								<div>
+									<div class="card card-outline" style="cursor: pointer; margin-bottom:3px;">
+										<div class="card-header">
+											<div class="col-md-12 text-left">공지사항 입니다.</div>
+										</div>
+									</div>
+								</div>
+								<div>
+									<div class="card card-outline" style="cursor: pointer; margin-bottom:3px;">
+										<div class="card-header">
+											<div class="col-md-12 text-left">공지사항 입니다.</div>
+										</div>
+									</div>
+								</div>
+								<div>
+									<div class="card card-outline" style="cursor: pointer; margin-bottom:3px;">
+										<div class="card-header">
+											<div class="col-md-12 text-left">공지사항 입니다.</div>
 										</div>
 									</div>
 								</div>
@@ -395,5 +436,3 @@ a {
 <script src="<%=request.getContextPath()%>/resources/fullcal/dist/index.global.js"></script>
 
 <script src="<%=request.getContextPath()%>/resources/bootstrap/dist/js/pages/dashboard3.js"></script>
-
-

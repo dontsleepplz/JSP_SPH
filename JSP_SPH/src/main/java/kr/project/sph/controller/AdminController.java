@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class AdminMemberController {
+public class AdminController {
 	
 	@GetMapping("/admin/main")
 	public void main() {}
@@ -12,6 +12,12 @@ public class AdminMemberController {
 	@GetMapping("/admin/member/main")
 	public void membermain() {}
 	
-	@GetMapping("/member/mainD")
-	public void maindash() {}
+	
+	@GetMapping("/admin/security/main")
+	public void secumain() {
+		
+	}
+	
+	
+
 }

@@ -25,41 +25,11 @@ a {
 			<div class="row mb-2">
 
 				<div class="col-md-8">
-					<h1>전체주소록 > ~~~~~부서</h1>
+					<h1>전체주소록</h1>
 				</div>
 
 				<div class="col-md-4">
-					<div class="form-inline">
-						<!-- search bar -->
-						<!-- sort num -->
-						<select class="form-control col-md-3" name="perPageNum"
-							id="perPageNum" onchange="list_go('${cri.page }');">
-							<option value="10" ${cri.perPageNum eq 10 ? 'selected' : '' }>정렬개수</option>
-							<option value="2" ${cri.perPageNum eq 2 ? 'selected' : '' }>2개씩</option>
-							<option value="3" ${cri.perPageNum eq 3 ? 'selected' : '' }>3개씩</option>
-							<option value="5" ${cri.perPageNum eq 5 ? 'selected' : '' }>5개씩</option>
-						</select>
-
-						<!-- search bar -->
-						<select class="form-control col-md-3" name="searchType"
-							id="searchType">
-							<option value="">검색구분</option>
-							<option value="i" ${cri.searchType=='i' ? 'selected':'' }>아이디</option>
-							<option value="n" ${cri.searchType=='n' ? 'selected':'' }>이	름</option>
-							<option value="p" ${cri.searchType=='p' ? 'selected':'' }>전화번호</option>
-							<option value="e" ${cri.searchType=='e' ? 'selected':'' }>이메일</option>
-						</select>
-						<!-- keyword -->
-						<input class="form-control col-md-5" type="text" name="keyword"
-							placeholder="검색어를 입력하세요." value="${cri.keyword }" /> <span
-							class="input-group-append">
-							<button class="btn btn-primary" type="button" id="searchBtn"
-								data-card-widget="search" onclick="list_go(1);">
-								<i class="fa fa-fw fa-search"></i>
-							</button>
-						</span>
-						<!-- end : search bar -->
-					</div>
+					
 				</div>
 
 			</div>
@@ -130,24 +100,9 @@ a {
 					<div class="col-md-12">
 						<div class="card card-row card-primary" style="height: 85vh;">
 							<div class="card-header">
-								<h1 class="card-title">조 직 도</h1>
+								<h1 class="card-title">그 룹</h1>
 							</div>
-							<div class="card-body">
-								<p>이사 : 김 아무개</p>
-							</div>
-							<div class="card-body" style="overflow: auto;">
-								<c:if test="${!empty departList }">
-									<c:forEach items="${departList }" var="depart">
-										<ul>
-											<li style="cursor: pointer;"><a href="#">${depart.name }</a></li>
-										</ul>
-									</c:forEach>
-								</c:if>
-
-								<c:if test="${empty departList }">
-									<div colspan="7" class="text-center">해당내용이 없습니다.</div>
-								</c:if>
-							</div>
+							
 						</div>
 					</div>
 
@@ -155,13 +110,54 @@ a {
 				<!-- ./col-md-4 -->
 
 				<div class="col-md-9">
-					<div class="col-md-12" style="height: 45px;">
+					<div class="row">
+
+					<div class="col-md-6" style="height: 45px;">
+						<button type="button" class="btn btn-primary float-left"
+							style="max-width: 180px; cursor: pointer; margin-x:10px;">
+							연락처 삭제&nbsp;&nbsp;<i class="fas fa-plus"></i>
+						</button>&nbsp;&nbsp;
 						<button type="button" class="btn btn-primary float-left"
 							style="max-width: 180px; cursor: pointer;">
-							개인주소록 추가&nbsp;&nbsp;<i class="fas fa-plus"></i>
+							그룹 추가&nbsp;&nbsp;<i class="fas fa-plus"></i>
 						</button>
 					</div>
+					<div class="col-md-6" style="height: 45px;">
+						<div class="form-inline">
+						<!-- search bar -->
+						<!-- sort num -->
+						<select class="form-control col-md-3" name="perPageNum"
+							id="perPageNum" onchange="list_go('${cri.page }');">
+							<option value="10" ${cri.perPageNum eq 10 ? 'selected' : '' }>정렬개수</option>
+							<option value="2" ${cri.perPageNum eq 2 ? 'selected' : '' }>2개씩</option>
+							<option value="3" ${cri.perPageNum eq 3 ? 'selected' : '' }>3개씩</option>
+							<option value="5" ${cri.perPageNum eq 5 ? 'selected' : '' }>5개씩</option>
+						</select>
 
+						<!-- search bar -->
+						<select class="form-control col-md-3" name="searchType"
+							id="searchType">
+							<option value="">검색구분</option>
+							<option value="i" ${cri.searchType=='i' ? 'selected':'' }>아이디</option>
+							<option value="n" ${cri.searchType=='n' ? 'selected':'' }>이
+								름</option>
+							<option value="p" ${cri.searchType=='p' ? 'selected':'' }>전화번호</option>
+							<option value="e" ${cri.searchType=='e' ? 'selected':'' }>이메일</option>
+						</select>
+						<!-- keyword -->
+						<input class="form-control col-md-5" type="text" name="keyword"
+							placeholder="검색어를 입력하세요." value="${cri.keyword }" /> <span
+							class="input-group-append">
+							<button class="btn btn-primary" type="button" id="searchBtn"
+								data-card-widget="search" onclick="list_go(1);">
+								<i class="fa fa-fw fa-search"></i>
+							</button>
+						</span>
+						<!-- end : search bar -->
+					</div>
+					</div>
+					
+					</div>
 					<div class="col-sm-12">
 						<table class="table table-bordered text-center">
 							<tr>
@@ -197,7 +193,7 @@ a {
 							</c:if>
 						</table>
 					</div>
-					
+
 					<div class="card-footer">
 						<!-- pagination -->
 						<div style="display:${!empty memberList ? 'visible':'none' };">

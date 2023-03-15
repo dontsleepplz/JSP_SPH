@@ -8,7 +8,7 @@
 	<div class="container-fluid">
 		<div class="row mb-2">
 			<div class="col-sm-6">
-				<h1 class="m-0">Example chart</h1>
+				<h1 class="m-0">관리자 메인화면</h1>
 			</div>
 			<div class="col-sm-6">
 				<ol class="breadcrumb float-sm-right">
@@ -286,9 +286,9 @@
 
 
 			<div class="col-lg-2">
-				<div class="card card-danger">
+				<div class="card">
 					<div class="card-header">
-						<h3 class="card-title">Donut Chart</h3>
+						<h3 class="card-title">첨부파일 폴더 용량</h3>
 						<div class="card-tools">
 							<button type="button" class="btn btn-tool"
 								data-card-widget="collapse">
@@ -316,9 +316,9 @@
 
 				</div>
 
-				<div class="card card-danger collapsed-card">
+				<div class="card collapsed-card">
 					<div class="card-header">
-						<h3 class="card-title">Donut Chart</h3>
+						<h3 class="card-title">계정 상태</h3>
 						<div class="card-tools">
 							<button type="button" class="btn btn-tool"
 								data-card-widget="collapse">

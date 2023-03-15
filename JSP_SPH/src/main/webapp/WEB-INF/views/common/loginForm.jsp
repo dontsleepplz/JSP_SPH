@@ -143,10 +143,5 @@ color();
 
 </script>
 
-<c:if test="${not empty id and not empty message}">
-  <script>
-  		alert("${message}");
-  		document.querySelector("input[name='id']").value="${id}";
-  </script>
-</c:if>
+
 </html>

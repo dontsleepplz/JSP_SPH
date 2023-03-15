@@ -188,7 +188,7 @@ a {
 					<div class="card" style="height: 85vh;">
 						<div class="card-body">
 
-							<h1> 대충 옆에거 차트 디테일 </h1>
+							<h1> 예정 : 차트 디테일 </h1>
 							
 						</div>
 					</div>
