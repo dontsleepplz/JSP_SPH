@@ -108,7 +108,8 @@ a{
                 <button id="LOGIN_BTN" class = "login_btn" type="submit" disabled>로그인</button>
             </form>
             <div id="find">
-            <a class = "login_bottom" href="#" >아이디 찾기</a>/<a class = "login_bottom" href="#" style="margin-top:3px;">비밀번호 찾기</a>
+            <a class = "login_bottom" href="javascript:OpenWindow('findId.do','아이디찾기',700,800);" >아이디 찾기</a>/<a class = "login_bottom" href="javascript:OpenWindow('findPwd.do','비밀번호찾기',700,800);" style="margin-top:3px;">비밀번호 찾기</a>
+            <a class = "login_bottom" href="javascript:OpenWindow('otp.do','아이디찾기',700,800);"> OTP Test</a>
             </div>
         </div>
     </article>
@@ -142,6 +143,6 @@ loginPw.addEventListener('keyup', color);
 color();
 
 </script>
-
+<script src="<%=request.getContextPath()%>/resources/js/common.min.js"></script>
 
 </html>

@@ -27,7 +27,7 @@ SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일 hh:mm:ss");
 <div class="col-md-12" style="font-size:14px;">
 	<div class="card card">
 		<div class="card-header " style="background: rgb(180, 220, 255);">
-			<h3 class="card-title">받은메일함 - test</h3>
+			<h3 class="card-title">전체메일함</h3>
 			<div id="keyword" class="card-tools" style="width: 550px;">
 						<div class="input-group row">
 							<!-- search bar -->

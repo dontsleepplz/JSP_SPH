@@ -8,9 +8,11 @@
 div.card {
 	min-height: 100%;
 	max-height: 100%;
+	min-width: 0%;
+	max-width: 100%;
 }
 </style>
-<div class="content-header">
+<div class="content-header" style="background-color: #D3D3D3;">
 	<div class="container-fluid">
 		<div class="row mb-2">
 			<div class="col-sm-6">
@@ -26,19 +28,26 @@ div.card {
 	</div>
 </div>
 
-<div class="content">
+<div class="content" style="background-color: #D3D3D3;">
 	<div class="container-fluid">
 		<div class="row"></div>
 
 		<div class="card">
-			<div class="card-header"><h1 style="font-size:1.5rem">정기 보고</h1> </div>
-			<!-- foreach -->
+			<div class="card-header" style="padding: 0.5rem 0.2rem;">
+						<h3 class="card-title">정기 보고</h3>
+						<div class="card-tools">
+							<button type="button" class="btn btn-tool">
+								<i class="fas fa-plus" style="margin-right:10px"></i>
+							</button>
+						</div>
+					</div>
 			<div class="card-body">
 				<div class="row">
+					<!-- foreach -->
 					<div class="col-sm-2">
 						<div class="card card-row card-primary"
 							style="height: 20vh; dispiay: inlile; margin: auto; padding: auto;">
-							<div class="card-body">
+							<div class="card-body" style="padding-top: 0.5rem;">
 								<div class="row">2023/03/16</div>
 								<div class="row">제목</div>
 								<div class="row">부서</div>
@@ -53,6 +62,99 @@ div.card {
 							</div>
 						</div>
 					</div>
+					<div class="col-sm-2">
+						<div class="card card-row card-primary"
+							style="height: 20vh; dispiay: inlile; margin: auto; padding: auto;">
+							<div class="card-body" style="padding-top: 0.5rem;">
+								<div class="row">2023/03/16</div>
+								<div class="row">제목</div>
+								<div class="row">부서</div>
+								<div class="row">보고 현황</div>
+							</div>
+							<div class="card-footer">
+								<div class="row">
+									<div class="col-sm-4"></div>
+									<div class="col-sm-8">버튼위치</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="card card-row card-primary"
+							style="height: 20vh; dispiay: inlile; margin: auto; padding: auto;">
+							<div class="card-body" style="padding-top: 0.5rem;">
+								<div class="row">2023/03/16</div>
+								<div class="row">제목</div>
+								<div class="row">부서</div>
+								<div class="row">보고 현황</div>
+							</div>
+							<div class="card-footer">
+								<div class="row">
+									<div class="col-sm-4"></div>
+									<div class="col-sm-8">버튼위치</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="card card-row card-primary"
+							style="height: 20vh; dispiay: inlile; margin: auto; padding: auto;">
+							<div class="card-body" style="padding-top: 0.5rem;">
+								<div class="row">2023/03/16</div>
+								<div class="row">제목</div>
+								<div class="row">부서</div>
+								<div class="row">보고 현황</div>
+							</div>
+							<div class="card-footer">
+								<div class="row">
+									<div class="col-sm-4"></div>
+									<div class="col-sm-8">버튼위치</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="card card-row card-primary"
+							style="height: 20vh; dispiay: inlile; margin: auto; padding: auto;">
+							<div class="card-body" style="padding-top: 0.5rem;">
+								<div class="row">2023/03/16</div>
+								<div class="row">제목</div>
+								<div class="row">부서</div>
+								<div class="row">보고 현황</div>
+							</div>
+							<div class="card-footer">
+								<div class="row">
+									<div class="col-sm-4"></div>
+									<div class="col-sm-8">버튼위치</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="card card-row card-primary"
+							style="height: 20vh; dispiay: inlile; margin: auto; padding: auto;">
+							<div class="card-body" style="padding-top: 0.5rem;">
+								<div class="row">2023/03/16</div>
+								<div class="row">제목</div>
+								<div class="row">부서</div>
+								<div class="row">보고 현황</div>
+							</div>
+							<div class="card-footer">
+								<div class="row">
+									<div class="col-sm-4"></div>
+									<div class="col-sm-8">버튼위치</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+
+					<!--  -->
 				</div>
 			</div>
 
@@ -60,14 +162,21 @@ div.card {
 		<div class="row"></div>
 
 		<div class="card">
-			<div class="card-header"><h1 style="font-size:1.5rem">수시 보고</h1></div>
+			<div class="card-header" style="padding: 0.5rem 0.2rem;">
+						<h3 class="card-title">수시 보고</h3>
+						<div class="card-tools">
+							<button type="button" class="btn btn-tool">
+								<i class="fas fa-plus" style="margin-right:10px"></i>
+							</button>
+						</div>
+					</div>
 			<!-- foreach -->
 			<div class="card-body">
 				<div class="row">
 					<div class="col-sm-2">
 						<div class="card card-row card-primary"
-							style="height: 20vh; dispiay: inlile; margin: auto; padding: auto;">
-							<div class="card-body">
+							style="height: 20vh; display: block; margin: auto; padding: auto;">
+							<div class="card-body" style="padding-top: 0.5rem;">
 								<div class="row">2023/03/16</div>
 								<div class="row">제목</div>
 								<div class="row">부서</div>
@@ -87,6 +196,41 @@ div.card {
 
 		</div>
 
+		<div class="row"></div>
+				<div class="card">
+					<div class="card-header" style="padding: 0.5rem 0.2rem;">
+						<h3 class="card-title">작성중인 보고서</h3>
+						<div class="card-tools">
+							<button type="button" class="btn btn-tool">
+								<i class="fas fa-plus" style="margin-right:10px"></i>
+							</button>
+						</div>
+					</div>
+					<!-- foreach -->
+					<div class="card-body">
+						<div class="row">
+							<div class="col-sm-2">
+								<div class="card card-row card-primary"
+									style="height: 20vh; display: block; margin: auto; padding: auto;">
+									<div class="card-body" style="padding-top: 0.5rem;">
+										<div class="row">2023/03/16</div>
+										<div class="row">제목</div>
+										<div class="row">부서</div>
+										<div class="row">보고 현황</div>
+									</div>
+									<div class="card-footer">
+										<div class="row">
+											<div class="col-sm-4"></div>
+											<div class="col-sm-8">버튼위치</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- card -->
 
 	</div>
 

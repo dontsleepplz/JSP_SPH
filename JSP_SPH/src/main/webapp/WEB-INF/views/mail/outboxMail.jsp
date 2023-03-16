@@ -19,7 +19,12 @@ SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일 hh:mm:ss");
 			<div class="col-sm-6">
 				<h1 class="m-0">메일함</h1>
 			</div>
-			
+			<!-- <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active">Dashboard v3</li>
+              </ol>
+            </div> -->
 		</div>
 	</div>
 </div>
@@ -27,7 +32,7 @@ SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일 hh:mm:ss");
 <div class="col-md-12" style="font-size:14px;">
 	<div class="card card">
 		<div class="card-header " style="background: rgb(180, 220, 255);">
-			<h3 class="card-title">받은메일함 - test</h3>
+			<h3 class="card-title">보낸 메일함 - test</h3>
 			<div id="keyword" class="card-tools" style="width: 550px;">
 						<div class="input-group row">
 							<!-- search bar -->

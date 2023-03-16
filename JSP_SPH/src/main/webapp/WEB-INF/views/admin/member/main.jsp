@@ -55,7 +55,7 @@ div.card {
 							</div>
 
 							<div class="card-body table-responsive p-0"
-								style="height: 550px; overflow-y: scroll; text-align: center;">
+								style="height: 550px; overflow-y: scroll; text-align: left;">
 								<table class="table table-head-fixed text-nowrap table-hover">
 									<thead>
 										<tr>

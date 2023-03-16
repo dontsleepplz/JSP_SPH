@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class ElecsignController {
 	
-	@GetMapping("/elecSign/elecSignHome")
+	@GetMapping("/elecsign/elecsignmain")
 	public void elecSignGo() {
 	}
 

@@ -56,5 +56,10 @@ public class CommonController {
 		session.invalidate();
 		return url;
 	}
+	
+	@GetMapping("/common/findId")
+	public void findId() {}
 
+	@GetMapping("/common/findPwd")
+	public void findPwd() {}
 }
