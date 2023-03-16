@@ -432,6 +432,9 @@ a {
 		setTimeout(getTime, 1000); //1000밀리초(1초) 마다 반복
 	}
 </script>
+<script>
+</script>
+
 
 <script src="<%=request.getContextPath()%>/resources/fullcal/dist/index.global.js"></script>
 

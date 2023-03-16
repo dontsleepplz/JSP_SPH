@@ -41,12 +41,11 @@ body {
     <nav class="main-header navbar navbar-expand navbar-white navbar-light" style="background-color: rgb(180, 220, 255);">
 
       <ul class="navbar-nav">
-        <c:if test="${!empty submenu }">
-        <li class="nav-item">
+        <li class="nav-item" id="pushmenu">
           <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
-        </c:if>
         <c:forEach items="${menuList }" var="menu">
+        
         <li class="nav-item d-none d-sm-inline-block">
           <a href="javascript:open_SubMenu('${menu.mcode }');open_Page('<%=request.getContextPath() %>${menu.murl }','${menu.mcode }');" class="nav-link"><i class="${menu.micon}"></i>&nbsp;${menu.mname }</a>
         </li>
@@ -174,23 +173,21 @@ body {
     </nav>
 
 
-    <aside class="main-sidebar sidebar-dark-primary elevation-0" style="background-color:white; border-right:1px solid #DFE1E4;min-height:0%;${empty submenu ?  'display:inline-block;' : ''}" >
-
+    <aside class="main-sidebar sidebar-dark-primary elevation-0" style="background-color:white; border-right:1px solid #DFE1E4;min-height:100%;" >
+	
       <a href="index" class="brand-link" style="background-color: rgb(180, 220, 255); border-bottom:1px solid #dee2e6;">
         <img src="<%=request.getContextPath() %>/resources/img/SPHLogo.png" alt="SPH_logo" class="brand-image img-circle elevation-0" style="opacity: .8;">
         <span class="brand-text font-weight-light" style="color:black;">SPH</span>
       </a>
-		<c:if test="${!empty submenu }">
       <div class="sidebar" id="sidebar">
-
+	<div class="os-content" style="padding: 0px 8px; height: 100%; width: 100%;">
         <nav class="mt-2">
           <ul class="nav nav-pills nav-sidebar flex-column subMenuList" data-widget="treeview" role="menu" data-accordion="false">
             
             
           </ul>
         </nav>
-
+	</div>
       </div>
-		</c:if>
     </aside>
 <!-- E:header -->

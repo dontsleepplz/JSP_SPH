@@ -71,4 +71,10 @@ public class MemberDAOImpl implements MemberDAO{
 		return member;
 	}
 
+	@Override
+	public MemberVO selectMemberByPhone(String phone) throws SQLException {
+		MemberVO member = session.selectOne("Member-Mapper.selectMemberByPhone",phone);
+		return member;
+	}
+
 }

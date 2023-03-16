@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!-- S:footer -->
 
 <aside class="control-sidebar control-sidebar-dark"></aside>
@@ -12,12 +14,35 @@
 		var side = document.getElementById("sidebar");
 		if(side==null){
 			$('div[id="content-wrapper"]').css('margin-left','0');
+			
 		};
 	}
 
 	function open_Page(url,mCode){
+		if(mCode=="M000000"){
+			$('div#sidebar').css('display','none');
+			$('div#content-wrapper').css('margin-left',0);
+			$('aside.main-sidebar').css('display','inline-block');
+			$('aside.main-sidebar').css('min-height','0%');
+			
+			$('li#pushmenu').css('display','none')
+			$('body').attr('onload','getTime()');
+			if($('body').hasClass('sidebar-collapse')){
+				$('body').removeClass('sidebar-collapse');
+				}
+		}else{
+			$('div#sidebar').css('display','block');
+			$('div#content-wrapper').css('margin-left',250);
+			$('aside.main-sidebar').css('display','block');
+			$('li#pushmenu').css('display','block');
+			$('aside.main-sidebar').css('min-height','100%');
+			
+		}
+		
+		
+		
 		$('iframe[name="ifr"]').attr("src",url);
-		submenu_loc();
+		
 		if(typeof(history.pushState) == 'function'){
 			var renewURL = location.href;
 			renewURL = renewURL.substring(0, renewURL.indexOf(".do")+3);
@@ -66,7 +91,6 @@
 	window.onload=function(){
 		open_Page('<%=request.getContextPath()%>${menu.murl}','${menu.mcode}');
 		open_SubMenu('${menu.mcode}'.substring(0,3)+"0000");
-		
 	}
 	</script>
 

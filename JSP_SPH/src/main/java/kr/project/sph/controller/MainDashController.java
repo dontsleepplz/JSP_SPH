@@ -15,13 +15,6 @@ public class MainDashController {
 		return url;
 	}
 	
-	@GetMapping("/mail/inboxMail")
-	public void mailGo() {
-	}
-	
-	@GetMapping("/elecSign/elecSignHome")
-	public void elecSignGo() {
-	}
 	
 	@GetMapping("/calender/calendar")
 	public void calendar() {
