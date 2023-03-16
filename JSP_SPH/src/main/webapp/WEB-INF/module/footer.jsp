@@ -9,14 +9,8 @@
 <!-- E:wrapper -->
 
 <!-- MainFooterScript -->
+
 <script>
-	function submenu_loc(){
-		var side = document.getElementById("sidebar");
-		if(side==null){
-			$('div[id="content-wrapper"]').css('margin-left','0');
-			
-		};
-	}
 
 	function open_Page(url,mCode){
 		if(mCode=="M000000"){
@@ -93,6 +87,8 @@
 		open_SubMenu('${menu.mcode}'.substring(0,3)+"0000");
 	}
 	</script>
+	
+	
 
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>

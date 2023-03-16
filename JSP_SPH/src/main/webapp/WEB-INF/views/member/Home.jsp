@@ -418,21 +418,24 @@ a {
 	
 </script>
 
+
 <script>
-	function getTime() {
-		var d = new Date(); // 현재 날짜와 시간
-		var MM = d.getMonth() + 1;
-		var dd = d.getDate();
-		var hh = d.getHours(); // 시
-		var mm = d.getMinutes(); // 분
-		var ss = d.getSeconds(); // 초
-		var timeBoard = document.getElementById("TimeNow"); // 값이 입력될 공간
-		var time = MM + "월 " + dd + "일 " + hh + "시 " + mm + "분 " + ss + "초" // 형식 지정
-		timeBoard.innerHTML = time; // 출력
-		setTimeout(getTime, 1000); //1000밀리초(1초) 마다 반복
-	}
-</script>
-<script>
+function getTime() {
+	var d = new Date(); // 현재 날짜와 시간
+	var MM = d.getMonth() + 1;
+	var dd = d.getDate();
+	var hh = d.getHours(); // 시
+	var mm = d.getMinutes(); // 분
+	var ss = d.getSeconds(); // 초
+	var timeBoard = document.getElementById("TimeNow"); // 값이 입력될 공간
+	var time = MM + "월 " + dd + "일 " + hh + "시 " + mm + "분 " + ss + "초" // 형식 지정
+	timeBoard.innerHTML = time; // 출력
+	setTimeout(getTime, 1000); //1000밀리초(1초) 마다 반복
+}
+
+window.onload=function(){
+	getTime();
+}
 </script>
 
 

@@ -16,14 +16,6 @@ public class MainDashController {
 	}
 	
 	
-	@GetMapping("/calender/calendar")
-	public void calendar() {
-		
-	}
-	
-	@GetMapping("/Report/reportHome")
-	public void report() {}
-	
 	@GetMapping("/contactGroup/contactGroupAll")
 	public void contact1() {}
 	
