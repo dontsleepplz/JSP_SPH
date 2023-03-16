@@ -2,10 +2,10 @@ package kr.project.sph.dto;
 
 public class ContactGroupVO {
 
-	private int cnum;
-	private String cname;
-	private int writer;
-	private int mno;
+	private int cnum; //그룹번호
+	private String cname; //그룸명
+	private int writer; //작성자
+	private int mno; //사원
 	
 	public int getCnum() {
 		return cnum;

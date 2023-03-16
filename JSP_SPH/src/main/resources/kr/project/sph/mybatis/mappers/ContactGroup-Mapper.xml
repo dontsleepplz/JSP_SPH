@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="ContactGroup-Mapper">
+	
+	<update id="insertGroup" parameterType="contactGroup">
+		insert into
+		contactGroup(cnum, cname, writer, mno)
+		values(#{cnum},#{cname},#{writer},#{mno})
+	</update>
+	
+	<update id="updateGroup" parameterType="contactGroup">
+		update contactGroup
+		set
+		cname=#{cname}, writer=#{writer}, mno=#{mno}
+		where cnum=#{cnum}
+	</update>
+	
+	<update id="deleteGroup" parameterType="int">
+		delete
+		from contactGroup
+		where cnum=#{cnum}
+	</update>
+
+</mapper>
